@@ -62,7 +62,7 @@ get_header();
 						<tr>
 							<th>7</th>
 							<td>10/12</td>
-							<td>Events, jQuery</td>
+							<td>Responding to User Events</td>
 							<td></td>
 						</tr>
 						<tr>
@@ -92,7 +92,7 @@ get_header();
 						<tr>
 							<th>12</th>
 							<td>11/16</td>
-							<td>Mobile</td>
+							<td></td>
 							<td></td>
 						</tr>
 						<tr class="state-void">

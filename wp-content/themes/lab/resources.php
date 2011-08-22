@@ -159,9 +159,14 @@ get_header();
 				<h2>Inspiration</h2>
 				<ul>
 					<li>
+						<h3><a href="http://www.csszengarden.com/">CSS Zen Garden</a></h3>
+					</li>
+					<li>
 						<h3><a href="http://lostworldsfairs.com/">Lost World&#39;s Fairs</a></h3>
 					</li>
-					<li><h3><a href="http://www.chromeexperiments.com/">Chrome Experiments</a></h3></li>
+					<li>
+						<h3><a href="http://www.chromeexperiments.com/">Chrome Experiments</a></h3>
+					</li>
 				</ul>
 			</section>
 		</div>
