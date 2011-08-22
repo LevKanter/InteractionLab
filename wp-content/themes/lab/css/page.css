@@ -1,0 +1,266 @@
+body {
+	height: 100%;
+	background-color: #f1f1f1;
+	font-family: Helvetica, Arial, sans-serif;
+	color: #505050;
+}
+
+::-moz-selection { 
+	background-color: #ee3987; color: #ffffff; 
+}
+::selection { 
+	background-color: #ee3987; color: #ffffff; 
+}
+
+a {
+	color: #2865AC;
+	text-decoration: none;
+}
+a:hover {
+	color: #ee3987;
+}
+a:active {
+	color: #333333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: Georgia, serif;
+	font-weight: normal;
+	color: #111111;
+}
+
+h1 {
+	font-size: 28px;
+}
+h2 {
+	font-size: 18px;
+}
+h3 {
+	font-size: 14px;
+}
+
+.page {
+	position: relative;
+	z-index: 2;
+	width: 736px;
+	min-height: 100%;
+	margin: 0px auto;
+	text-align: left;
+	border-style: solid; 
+	border-color: #cccccc; 
+	border-width: 0px 1px;
+	background-color: #ffffff;
+	-moz-box-shadow: 0px 1px 4px #bbbbbb;
+	-webkit-box-shadow: 0px 1px 4px #bbbbbb;
+	box-shadow: 0px 1px 4px #bbbbbb;
+}
+
+.head {
+	background-color: #efefef;
+}
+.head h1 {
+	float: left; 
+	padding: 20px 15px;
+}
+.head .controls {
+	clear: both;
+}
+
+.controls .nav {
+	float: left; 
+	font-weight: bold;
+}
+.controls .nav > li { 
+	float:left; 
+}
+.controls .nav > li > a {
+	display: block;
+	position: relative; 
+	z-index: 4; 
+	bottom: -1px;
+	margin: 0px 0px 0px 10px;
+	padding: 4px 15px;
+	font-size: 12px;
+	background-color: #ebebeb;
+	border: 1px solid #cccccc; 
+	border-style: solid;
+	border-color: #cccccc;
+	border-width:1px 1px 0px;
+	-moz-border-radius: 5px 5px 0px 0px;
+	-webkit-border-radius: 5px 5px 0px 0px;
+	border-radius: 5px 5px 0px 0px;
+	-moz-box-shadow: 0px 0px 4px #cccccc;
+	-webkit-box-shadow: 0px 0px 4px #cccccc;
+	box-shadow: 0px 0px 4px #cccccc;
+}
+.controls .nav > li > a:hover {
+	background-color: #f4f4f4;
+}
+.controls .nav > li > a:active {
+	border-color: #aaaaaa;
+}
+.controls .nav > li.state-active > a {
+	z-index: 6;
+	cursor: default;
+	color: #333333;
+	background-color: #ffffff;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.body {
+	position: relative; 
+	z-index: 5;
+	padding: 25px 25px 50px;
+	background-color:#ffffff;
+	border-top: 1px solid #cccccc;
+}
+.body section {
+	padding: 20px 0px 0px;
+}
+.body section:first-child {
+	padding-top: 0px;
+}
+
+.body p {
+	font-size: 13px;
+	padding: 10px 0px 0px;
+}
+.body p:first-child {
+	padding-top: 0px;
+}
+
+.body .sidebar {
+	position: absolute;
+	width: 180px;
+}
+
+.toc {
+	padding: 30px 0px 15px;
+	font-size: 13px;
+}
+.toc > li > a {
+	display: block;
+	padding: 5px 0px;
+}
+.toc > li > a:hover {
+	background-color: #f4f4f4;
+}
+
+.body .content {
+	margin: 0px 0px 0px 200px;
+}
+
+.resources > ul {
+	padding: 10px 0px 0px;
+}
+.resources > ul > li {
+	margin: 10px 0px 0px;
+	padding: 10px;
+	overflow: hidden;
+	border: 1px solid #efefef;
+}
+.resources > ul > li:first-child {
+	margin-top: 0px;
+}
+
+.resources img.icon {
+	display: block;
+	float: left;
+	margin: 0px 10px 0px 0px;
+	width: 50px;
+}
+
+.resources .note {
+	display: block;
+	font-size: 12px;
+	font-style: italic;
+	color: #808080;
+}
+
+.resources .info {
+	overflow: hidden;
+}
+
+.sched table {
+	width:100%;
+	margin: 10px 0px 0px;
+}
+.sched table tr.workshop {
+	
+}
+.sched table tr.state-void {
+	opacity: 0.4;
+	background-color: #fafafa;
+	font-style: italic;
+}
+.sched table th,
+.sched table td {
+	padding: 10px;
+	font-size: 13px;
+	border: 1px solid #efefef;
+}
+.sched table th {
+	font-weight: normal;
+}
+.sched table thead th {
+	text-align: left;
+	background-color: #fafafa;
+	font-family: Georgia, serif;
+}
+.sched table thead th small {
+	display: block;
+}
+
+pre.codebox {
+	white-space: pre-wrap;
+	margin: 10px 0px 0px;
+	padding: 10px;
+	border: 1px dashed #dddddd;
+}
+pre.codebox code {
+	font-family: Consolas, monospace;
+	font-size: 13px;
+}
+
+
+.foot {
+	padding: 400px 0px 0px;
+}
+
+.cloud,
+.ground { 
+	position: fixed; 
+	z-index: 1;
+	left: 0; 
+	width: 100%; 
+	background-repeat: repeat-x; 
+}
+.cloud.close { 
+	top: 60px; 
+	background-image: url("../images/clouds_close.gif"); 
+	height: 74px; 
+}
+.cloud.near { 
+	top: 194px; 
+	background-image: url("../images/clouds_near.gif"); 
+	height: 40px; 
+}
+.cloud.far { 
+	top: 294px; 
+	background-image: url("../images/clouds_far.gif"); 
+	height: 26px; 
+}
+
+.ground {
+	bottom: 0px;
+	height: 300px;
+	background-color: #ebebeb;
+	border-top: 1px solid #e1e1e1;
+}
