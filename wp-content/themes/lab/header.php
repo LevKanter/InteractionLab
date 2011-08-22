@@ -12,12 +12,11 @@
 	<div class="page">
 		<div class="head">
 			<h1><a href="<?php bloginfo("url"); ?>"><?php bloginfo("name"); ?></a></h1>
-			<div class="controls clearfix">
-				<ul class="nav">
-					<li><a href=" ">Stuff</a></li>
-					<li><a href=" ">Resources</a></li>
-					<li><a href=" ">Course Info</a></li>
-				</ul>
-			</div>
+			<?php
+				wp_page_menu(array(
+					"menu_class" => "nav clearfix",
+					"show_home" => "Stuff"
+				));
+			?>
 		</div>
 		<div class="body">

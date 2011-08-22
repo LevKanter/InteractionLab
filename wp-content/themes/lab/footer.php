@@ -29,9 +29,9 @@
 		
 				$win = $(window);
 				$s = $(".body .sidebar");
-				threshold = $s.offset().top;
-		
+				
 				if ($s.length) {
+					threshold = $s.offset().top;
 					updatePos($s, threshold);
 					$win.scroll(function() {
 						updatePos($s, threshold);

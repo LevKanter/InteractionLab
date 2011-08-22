@@ -44,7 +44,7 @@ h3 {
 	font-size: 14px;
 }
 
-.page {
+body .page {
 	position: relative;
 	z-index: 2;
 	width: 736px;
@@ -67,18 +67,16 @@ h3 {
 	float: left; 
 	padding: 20px 15px;
 }
-.head .controls {
+.head .nav {
 	clear: both;
-}
-
-.controls .nav {
-	float: left; 
 	font-weight: bold;
 }
-.controls .nav > li { 
+
+
+.head .nav > ul > li { 
 	float:left; 
 }
-.controls .nav > li > a {
+.head .nav > ul > li > a {
 	display: block;
 	position: relative; 
 	z-index: 4; 
@@ -98,13 +96,14 @@ h3 {
 	-webkit-box-shadow: 0px 0px 4px #cccccc;
 	box-shadow: 0px 0px 4px #cccccc;
 }
-.controls .nav > li > a:hover {
+.head .nav > ul > li > a:hover {
 	background-color: #f4f4f4;
 }
-.controls .nav > li > a:active {
+.head .nav > ul > li > a:active {
 	border-color: #aaaaaa;
 }
-.controls .nav > li.state-active > a {
+.head .nav > ul > li.current_page_item > a,
+.single .head .nav > ul > li:first-child > a {
 	z-index: 6;
 	cursor: default;
 	color: #333333;
@@ -136,7 +135,7 @@ h3 {
 	padding-top: 0px;
 }
 
-.body .sidebar {
+.colx2 .sidebar {
 	position: absolute;
 	width: 180px;
 }
@@ -153,7 +152,7 @@ h3 {
 	background-color: #f4f4f4;
 }
 
-.body .content {
+.colx2 .content {
 	margin: 0px 0px 0px 200px;
 }
 

@@ -1,5 +1,7 @@
 <?php
 
+add_theme_support("post-thumbnails");
+
 function lab_js_init() {
 	if (!is_admin()) {
 		wp_deregister_script("jquery");
@@ -7,7 +9,7 @@ function lab_js_init() {
 			array(), NULL, true);
 	}
 }
-add_action("init", "lab_js_init")
+add_action("init", "lab_js_init");
 
 function remove_generator_tag() { 
 	return "";
