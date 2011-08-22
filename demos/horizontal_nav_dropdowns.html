@@ -1,0 +1,125 @@
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+	<head>
+		<meta charset="utf-8"/>
+		<title>Interaction: Lab &rarr; Horizontal Nav (with dropdowns)</title>
+		
+		<style>
+			
+			body {
+				margin: 0px;
+				padding: 0px;
+			}
+			
+			ul {
+				list-style: none;
+				margin: 0px;
+				padding: 0px;
+			}
+			
+			.nav {
+				margin: 20px;
+			}
+			
+			.nav a {
+				display: block;
+				padding: 3px 9px;
+				color: #fff;
+				text-decoration: none;
+			}
+			
+			.nav > li {
+				float: left;
+				position: relative;
+				margin: 0px 3px 0px 0px;
+			}
+			.nav > li > a {
+				background-color: #000;
+			}
+			
+			.nav > li > ul {
+				display: none;
+				position: absolute;
+				width: 200%;
+				top: 100%;
+				left: 0px;
+				padding: 3px 0px 0px;
+				font-size: 12px;
+			}
+			
+			.nav > li:hover > a {
+				background-color: #66ccff;
+				color: #000066;
+			}
+			.nav > li:hover > ul {
+				display: block;
+			}
+			
+			.nav > li > ul > li > a {
+				background-color: #000000;
+			}
+			.nav > li > ul > li > a:hover {
+				background-color: #66ccff;
+				color: #000066;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<ul class="nav">
+			<li>
+				<a href="#">Top Item 1</a>
+				<ul>
+					<li><a href="#">Sub Item 1</a></li>
+					<li><a href="#">Sub Item 2</a></li>
+					<li><a href="#">Sub Item 3</a></li>
+					<li><a href="#">Sub Item 4</a></li>
+					<li><a href="#">Sub Item 5</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">Top Item 2</a>
+				<ul>
+					<li><a href="#">Sub Item 1</a></li>
+					<li><a href="#">Sub Item 2</a></li>
+					<li><a href="#">Sub Item 3</a></li>
+					<li><a href="#">Sub Item 4</a></li>
+					<li><a href="#">Sub Item 5</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">Top Item 3</a>
+				<ul>
+					<li><a href="#">Sub Item 1</a></li>
+					<li><a href="#">Sub Item 2</a></li>
+					<li><a href="#">Sub Item 3</a></li>
+					<li><a href="#">Sub Item 4</a></li>
+					<li><a href="#">Sub Item 5</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">Top Item 4</a>
+				<ul>
+					<li><a href="#">Sub Item 1</a></li>
+					<li><a href="#">Sub Item 2</a></li>
+					<li><a href="#">Sub Item 3</a></li>
+					<li><a href="#">Sub Item 4</a></li>
+					<li><a href="#">Sub Item 5</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">Top Item 5</a>
+				<ul>
+					<li><a href="#">Sub Item 1</a></li>
+					<li><a href="#">Sub Item 2</a></li>
+					<li><a href="#">Sub Item 3</a></li>
+					<li><a href="#">Sub Item 4</a></li>
+					<li><a href="#">Sub Item 5</a></li>
+				</ul>
+			</li>
+		</ul>
+	
+	</body>
+</html>
