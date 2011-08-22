@@ -18,6 +18,11 @@ get_header();
 						<?php the_content(); ?>
 					</section>
 				<?php endwhile; ?>
+				<?php
+					if (is_single()) {
+						comments_template();
+					}
+				?>
 			<?php endif; ?>
 		</div>
 	</div>

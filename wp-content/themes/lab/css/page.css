@@ -44,6 +44,12 @@ h3 {
 	font-size: 14px;
 }
 
+input[type=text],
+input[type=password],
+textarea {
+	font-family: Consolas, monospace;
+}
+
 body .page {
 	position: relative;
 	z-index: 2;
@@ -228,6 +234,17 @@ pre.codebox code {
 	font-size: 13px;
 }
 
+.comment-form > form {
+	padding: 10px 0px 0px;
+}
+.comment-form label {
+	display: block;
+	padding: 0px 0px 2px;
+	font-size: 12px;
+}
+.comment-form textarea {
+	width: 480px;
+}
 
 .foot {
 	padding: 400px 0px 0px;
