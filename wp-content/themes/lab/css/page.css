@@ -253,6 +253,25 @@ pre.codebox code {
 	font-size: 13px;
 }
 
+.comment-stack > ol {
+	padding: 10px 0px 0px;
+}
+.comment-stack > ol > li {
+	margin: 10px 0px 0px;
+	padding: 10px;
+	border: 1px solid #efefef;
+}
+.comment-stack > ol > li:first-child {
+	margin-top: 0px;
+}
+.comment-stack .meta {
+	display: block;
+	margin: 0px 0px 5px;
+	padding: 0px 0px 5px;
+	font-size: 11px;
+	font-style: normal;
+}
+
 .comment-form .box {
 	float: left;
 	margin-left: 15px;
