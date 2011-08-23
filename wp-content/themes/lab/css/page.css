@@ -47,7 +47,15 @@ h3 {
 input[type=text],
 input[type=password],
 textarea {
+	padding: 5px;
+	font-size: 14px;
 	font-family: Consolas, monospace;
+	border: 1px solid #cccccc;
+}
+input[type=text]:focus,
+input[type=password]:focus,
+textarea:focus {
+	border-color: #ee3987;
 }
 
 body .page {
@@ -131,6 +139,17 @@ body .page {
 }
 .body section:first-child {
 	padding-top: 0px;
+}
+
+.body section h2 a {
+	display: block;
+}
+.body section h2 a:hover {
+	color: #ffffff;
+	background-color: #ee3987;
+}
+.body section h2 a:active {
+	background-color: #333333;
 }
 
 .body p {
@@ -234,6 +253,16 @@ pre.codebox code {
 	font-size: 13px;
 }
 
+.comment-form .box {
+	float: left;
+	margin-left: 15px;
+}
+.comment-form .box:first-child {
+	margin-left: 0px;
+}
+.comment-form .tier {
+	clear: both;
+}
 .comment-form > form {
 	padding: 10px 0px 0px;
 }
@@ -242,8 +271,14 @@ pre.codebox code {
 	padding: 0px 0px 2px;
 	font-size: 12px;
 }
+.comment-form input[type=text] {
+	width: 223px;
+	margin: 0px 0px 10px;
+}
 .comment-form textarea {
-	width: 480px;
+	width: 474px;
+	height: 8em;
+	margin: 0px 0px 10px;
 }
 
 .foot {

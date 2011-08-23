@@ -44,30 +44,25 @@ if (post_password_required()) {
 			<?php if (get_option( 'comment_registration' ) && !$user_ID) { // When login is required: ?>
 	    	<?php } else { ?>
 				<?php if (!$user_ID) { // If not logged in: ?>
-			
-					<div>
-						<label for="author">Your name<span class="note">&#42;</span></label>
-						<input name="author" id="author" type="text"/>
+					
+					<div class="tier">
+						<div class="box">
+							<label for="author">Your name</label>
+							<input name="author" id="author" type="text"/>
+						</div>
+						<div class="box">
+							<label for="email">Your email</label>
+							<input name="email" id="email" type="text"/>
+						</div>
 					</div>
 
-					<div>
-						<label for="email">Your email<span class="note">&#42;</span></label>
-						<input name="email" id="email" type="text"/>
-					</div>
-
-					<div>
-						<label for="url">Your <abbr title="Uniform Resource Locator">URL</abbr></label>
-						<input name="url" id="url" type="text"/>
-					</div>
-			
 				<?php } else { // If logged in: ?>
 			
 				<?php } ?>
 		
-				<div>
-					<label for="comment">Your Comment<span class="note">&#42;</span></label>
+				<div class="tier">
+					<label for="comment">Your Comment</label>
 					<textarea name="comment" id="comment" rows="8" cols="56"></textarea>
-					<span class="footnote"><span class="note">&#42;</span>Required</span>
 				</div>
 			
 				<input type="submit" value="Post comment"/>
