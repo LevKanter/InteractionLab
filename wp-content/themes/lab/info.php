@@ -68,31 +68,31 @@ get_header();
 						<tr>
 							<th>8</th>
 							<td>10/19</td>
-							<td>Building Overlays</td>
+							<td>Image Galleries</td>
 							<td></td>
 						</tr>
 						<tr>
 							<th>9</th>
 							<td>10/26</td>
-							<td>Building Image Galleries</td>
+							<td>Overlays</td>
 							<td></td>
 						</tr>
 						<tr>
 							<th>10</th>
 							<td>11/2</td>
-							<td>Building a Contact Form</td>
+							<td>Contact Forms</td>
 							<td></td>
 						</tr>
 						<tr>
 							<th>11</th>
 							<td>11/9</td>
 							<td>Canvas</td>
-							<td>Make a custom drawing tool using &lt;canvas&gt;</td>
+							<td></td>
 						</tr>
 						<tr>
 							<th>12</th>
 							<td>11/16</td>
-							<td></td>
+							<td>Touch</td>
 							<td></td>
 						</tr>
 						<tr class="state-void">
