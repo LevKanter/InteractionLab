@@ -62,37 +62,53 @@ get_header();
 						<tr>
 							<th>7</th>
 							<td>10/12</td>
-							<td>Responding to User Events</td>
+							<td>
+								Responding to User Events
+							</td>
 							<td></td>
 						</tr>
 						<tr>
 							<th>8</th>
 							<td>10/19</td>
-							<td>Image Galleries</td>
+							<td>
+								Image Galleries &amp; Overlays
+							</td>
 							<td></td>
 						</tr>
 						<tr>
 							<th>9</th>
 							<td>10/26</td>
-							<td>Overlays</td>
-							<td></td>
+							<td>
+								Contact Forms &amp; Validation
+							</td>
+							<td></td> 
 						</tr>
 						<tr>
 							<th>10</th>
 							<td>11/2</td>
-							<td>Contact Forms</td>
+							<td>
+								Adapting Layouts To Different Screen Sizes
+								<div class="notes">
+									CSS3 media queries, orientation changes
+								</div>
+							</td>
 							<td></td>
 						</tr>
 						<tr>
 							<th>11</th>
 							<td>11/9</td>
-							<td>Canvas</td>
+							<td>
+								Responding to Touch
+								
+							</td>
 							<td></td>
 						</tr>
 						<tr>
 							<th>12</th>
 							<td>11/16</td>
-							<td>Touch</td>
+							<td>
+								Painting on a Canvas
+							</td>
 							<td></td>
 						</tr>
 						<tr class="state-void">
@@ -101,10 +117,15 @@ get_header();
 							<td>Thanksgiving</td>
 							<td></td>
 						</tr>
-						<tr class="workshop">
+						<tr>
 							<th>14</th>
 							<td>11/30</td>
-							<td>Workshop for Final Project</td>
+							<td>
+								Data Viz with Charts
+								<div class="notes">
+									d3.js
+								</div>
+							</td>
 							<td></td>
 						</tr>
 						<tr class="workshop">
@@ -116,7 +137,7 @@ get_header();
 						<tr>
 							<th>16</th>
 							<td>12/14</td>
-							<td></td>
+							<td><abbr title="To Be Determined">TBD</abbr></td>
 							<td></td>
 						</tr>
 					</tbody>

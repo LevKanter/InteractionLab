@@ -145,11 +145,7 @@ body .page {
 	display: block;
 }
 .body section h2 a:hover {
-	color: #ffffff;
-	background-color: #ee3987;
-}
-.body section h2 a:active {
-	background-color: #333333;
+	background-color: #f4f4f4;
 }
 
 .body p {
@@ -240,6 +236,12 @@ body .page {
 }
 .sched table thead th small {
 	display: block;
+}
+.sched .notes {
+	padding: 3px 0px 0px;
+	font-size: 12px;
+	font-style: italic;
+	color: #999999;
 }
 
 pre.codebox {

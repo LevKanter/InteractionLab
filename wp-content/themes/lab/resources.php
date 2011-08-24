@@ -152,6 +152,9 @@ get_header();
 					<li>
 						<h3><a href="http://www.alistapart.com/">A List Apart</a></h3>
 					</li>
+					<li>
+						<h3><a href="http://www.smashingmagazine.com/">Smashing Magazine</a></h3>
+					</li>
 				</ul>
 			</section>
 			
