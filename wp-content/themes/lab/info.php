@@ -38,19 +38,31 @@ get_header();
 						<tr>
 							<th>3</th>
 							<td>9/14</td>
-							<td>The Box Model</td>
+							<td>
+								The Box Model
+								<div class="notes">
+									Fixed column-width layouts &amp; fluid layouts
+								</div>
+							</td>
 							<td></td>
 						</tr>
 						<tr>
 							<th>4</th>
 							<td>9/21</td>
-							<td>Typography</td>
+							<td>
+								Typography
+								<div class="notes">
+									Styling type, web fonts
+								</div>
+							</td>
 							<td></td>
 						</tr>
 						<tr>
 							<th>5</th>
 							<td>9/28</td>
-							<td>Audio &amp; Video</td>
+							<td>
+								Image Galleries
+							</td>
 							<td></td>
 						</tr>
 						<tr class="workshop">
@@ -64,6 +76,9 @@ get_header();
 							<td>10/12</td>
 							<td>
 								Responding to User Events
+								<div class="notes">
+									
+								</div>
 							</td>
 							<td></td>
 						</tr>
@@ -71,7 +86,7 @@ get_header();
 							<th>8</th>
 							<td>10/19</td>
 							<td>
-								Image Galleries &amp; Overlays
+							
 							</td>
 							<td></td>
 						</tr>
@@ -107,7 +122,7 @@ get_header();
 							<th>12</th>
 							<td>11/16</td>
 							<td>
-								Painting on a Canvas
+							
 							</td>
 							<td></td>
 						</tr>
@@ -121,10 +136,7 @@ get_header();
 							<th>14</th>
 							<td>11/30</td>
 							<td>
-								Data Viz with Charts
-								<div class="notes">
-									d3.js
-								</div>
+							
 							</td>
 							<td></td>
 						</tr>
@@ -137,7 +149,7 @@ get_header();
 						<tr>
 							<th>16</th>
 							<td>12/14</td>
-							<td><abbr title="To Be Determined">TBD</abbr></td>
+							<td><!--<abbr title="To Be Determined">TBD</abbr>--></td>
 							<td></td>
 						</tr>
 					</tbody>
