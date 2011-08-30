@@ -26,7 +26,10 @@ get_header();
 						<tr>
 							<th>1</th>
 							<td>8/31</td>
-							<td>Anatomy of an HTML Page</td>
+							<td>
+								Anatomy of an HTML Page
+								
+							</td>
 							<td></td>
 						</tr>
 						<tr>

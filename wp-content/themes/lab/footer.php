@@ -5,11 +5,6 @@
 		</div>
 	</div>
 
-	<div class="cloud close"></div>
-	<div class="cloud near"></div>
-	<div class="cloud far"></div>
-	<div class="ground"></div>
-	
 	<?php wp_footer(); ?>
 
 	<script type="text/javascript">
