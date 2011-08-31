@@ -20,10 +20,10 @@ get_header();
 		</div>
 		
 		<div class="content">
-			<section class="resources" id="tools">
+			<section id="tools">
 				<h2>Software Tools</h2>
 				<p class="note">The following applications and plug-ins are industrial strength and free. Note that there are many other <a href="http://en.wikipedia.org/wiki/File_Transfer_Protocol"><abbr title="File Transfer Protocal">FTP</abbr></a> clients, text editors, etc, besides the ones listed here, and they all basically achieve the same stuff. If you prefer something that is not on this list, feel free to stick to that. The only exception is <a href="#tools-firebug">Firebug</a>, which is <strong>required</strong> for this class.</p>
-				<ul>
+				<ul class="stack">
 					<li id="tools-firefox">
 						<a href="http://www.mozilla.com/en-US/firefox/new/"><img class="icon" src="<?php bloginfo("template_url"); ?>/images/tools/firefox.png" alt="Firefox logo"/></a>
 						<div class="info">
@@ -77,9 +77,9 @@ get_header();
 				</ul>
 			</section>
 		
-			<section class="resources" id="intro-tutorials">
+			<section id="intro-tutorials">
 				<h2>Introductory Tutorials</h2>
-				<ul>
+				<ul class="stack">
 					<li>
 						<h3><a href="http://www.dontfeartheinternet.com/">Don&#39;t Fear the Internet</a></h3>
 					</li>
@@ -95,9 +95,9 @@ get_header();
 				</ul>
 			</section>
 		
-			<section class="resources" id="references">
+			<section id="references">
 				<h2>References</h2>
-				<ul>
+				<ul class="stack">
 					<li>
 						<h3><a href="http://html5doctor.com/">HTML5 Doctor</a></h3>
 					</li>
@@ -113,9 +113,9 @@ get_header();
 				</ul>
 			</section>
 			
-			<section class="resources" id="libs">
+			<section id="libs">
 				<h2>Libraries &amp; Frameworks</h2>
-				<ul>
+				<ul class="stack">
 					<li>
 						<h3><a href="http://meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/">Eric Meyer&#39;s CSS Reset</a></h3>
 					</li>
@@ -128,9 +128,9 @@ get_header();
 				</ul>
 			</section>
 		
-			<section class="resources" id="playgrounds">
+			<section id="playgrounds">
 				<h2>Code Playgrounds</h2>
-				<ul>
+				<ul class="stack">
 					<li>
 						<h3><a href="http://html-ipsum.com/">HTML-Ipsum</a></h3>
 					</li>
@@ -149,9 +149,9 @@ get_header();
 				</ul>
 			</section>
 			
-			<section class="resources" id="publications">
+			<section id="publications">
 				<h2>Publications</h2>
-				<ul>
+				<ul class="stack">
 					<li>
 						<h3><a href="http://www.alistapart.com/">A List Apart</a></h3>
 					</li>
@@ -161,9 +161,9 @@ get_header();
 				</ul>
 			</section>
 			
-			<section class="resources" id="inspiration">
+			<section id="inspiration">
 				<h2>Inspiration</h2>
-				<ul>
+				<ul class="stack">
 					<li>
 						<h3><a href="http://www.csszengarden.com/">CSS Zen Garden</a></h3>
 					</li>

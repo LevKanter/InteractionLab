@@ -9,7 +9,7 @@ get_header();
 		<div class="content">
 			<?php if (have_posts()) : ?>
 				<?php while (have_posts()) : the_post(); ?>
-					<section>
+					<section class="prime">
 						<h2>
 							<?php if (!is_single()) : ?><a href="<?php the_permalink(); ?>"><?php endif; ?>
 							<?php the_title(); ?>

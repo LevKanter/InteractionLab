@@ -10,7 +10,7 @@ if (post_password_required()) {
 
 <?php if ($comments) { ?>
 
-	<section id="comments" class="comment-stack">
+	<section id="comments" class="comment-list">
 		<h2><?php comments_number('No Comments','One Comment','% Comments'); ?></h2>
 		<ol>
 			<?php foreach($comments as $comment) { ?>
