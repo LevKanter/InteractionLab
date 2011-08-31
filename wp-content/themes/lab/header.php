@@ -11,7 +11,10 @@
 	
 	<div class="page">
 		<div class="head">
-			<h1><a href="<?php bloginfo("url"); ?>"><?php bloginfo("name"); ?></a></h1>
+			<h1>
+				<a href="<?php bloginfo("url"); ?>"><?php bloginfo("name"); ?></a>
+				<!--<small><?php bloginfo("description"); ?></small>-->
+			</h1>
 			<?php
 				wp_page_menu(array(
 					"menu_class" => "nav clearfix",

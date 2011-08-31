@@ -10,6 +10,7 @@ get_header();
 			<div class="sidebar">
 				<ul class="toc">
 					<li><a href="#syllabus">Syllabus</a></li>
+					<li><a href="#details">Class Details</a></li>
 					<li><a href="#sched">Schedule</a></li>
 				</ul>
 			</div>
@@ -52,16 +53,16 @@ get_header();
 					<p>Your final grade will be based on the level of work you put into your homework, your website that you keep for this class, as well as how hard you work in class, and attendance.</p>
 				
 					<dl>
-						<dt>Homework</dt>
+						<dt>Homework:</dt>
 						<dd>50%</dd>
 					
-						<dt>Website</dt>
+						<dt>Website:</dt>
 						<dd>20%</dd>
 					
-						<dt>In-class work</dt>
+						<dt>In-class work:</dt>
 						<dd>20%</dd>
 					
-						<dt>Attendance</dt>
+						<dt>Attendance:</dt>
 						<dd>10%</dd>
 					</dl>
 				
@@ -79,6 +80,33 @@ get_header();
 				
 					<p>In keeping with the University’s policy of providing equal access for students with disabilities, any student with a disability who needs academic accommodations is welcome to meet with me privately. All conversations will be kept confidential. Students requesting any accommodations will also need to meet with Jason Luchs in the office of Student Disability Services, who will conduct an intake, and if appropriate, provide an academic accommodation notification letter to you to bring to me. At that point I will review the letter with you and discuss these accommodations in relation to this course. Mr. Luchs’ office is located in 79 Fifth Avenue, 5th floor. His direct line is (212) 229-5626 x3135. You may also access more information through the University’s <a href="http://www.newschool.edu/studentservices/disability">web site</a>.</p>
 				
+				</section>
+				
+				<section class="prime" id="details">
+					<h2>Class Details</h2>
+					
+					<dl>
+						<dt>Course:</dt>
+						<dd>PUDT 2101 D</dd>
+					
+						<dt>CRN:</dt>
+						<dd>2586</dd>
+					
+						<dt>When:</dt>
+						<dd>Wednesdays, 12&mdash;2:40pm</dd>
+					
+						<dt>Where:</dt>
+						<dd>55 W 13th, Room 909</dd>
+					</dl>
+					
+					<dl>
+						<dt>Taught by:</dt>
+						<dd>Lev Kanter</dd>
+						
+						<dt>Email:</dt>
+						<dd><a href="mailto:kanterl[change to @]newschool[change to dot]edu">kanterl[at]newschool[dot]edu</a></dd>
+					</dl>
+					
 				</section>
 				
 				<section id="sched">

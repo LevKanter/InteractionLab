@@ -1,0 +1,35 @@
+/* 
+	This is an independent CSS file (or "stylesheet").
+	The styles for my first website live here.
+	
+*/
+
+body {
+	font-family: Georgia;
+	color: #ffffff;
+}
+
+h1 {
+	
+	font-family: Helvetica;
+	font-weight: normal;
+	font-style: italic;
+	color: #b33572;
+}
+
+p {
+	color: #000000;
+}
+
+a {
+	color: #1d4972;
+	text-decoration: none;
+}
+
+p a {
+	color: red;
+}
+
+li a {
+	text-decoration: underline;
+}
