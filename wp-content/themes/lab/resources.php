@@ -87,7 +87,7 @@ get_header();
 						<h3><a href="http://www.wpdfd.com/issues/70/css_from_the_ground_up/">CSS from the Ground Up</a></h3>
 					</li>
 					<li>
-						<h3><a href="http://jqfundamentals.com/">jQuery Fundamentals</a></h3>
+						<h3><a href="http://jqfundamentals.com/book/">jQuery Fundamentals</a></h3>
 					</li>
 					<li>
 						<h3><a href="http://docs.jquery.com/Tutorials:How_jQuery_Works">How jQuery Works</a></h3>
