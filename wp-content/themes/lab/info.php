@@ -26,7 +26,7 @@ get_header();
 				
 					<p><em>Interaction: Core Lab</em> is about creating user interfaces, and understanding how they work. Special focus will be on making things for the web. We will learn how to write HTML, CSS, and Javascript in order to produce usable and engaging interfaces. To that end, we will be exploring typography, multi-column layouts, navigation menus, image galleries, and more!</p>
 				
-					<p>If you have never written or seen HTML, fear not! We will concentrate on the basics. Everything is going to be okay! If it happens that you already do have experience with these technologies, fear not, you won’t bored&mdash; we will hone your craft.</p>
+					<p>If you have never written or seen HTML, fear not! We will concentrate on the basics. Everything is going to be okay! If it happens that you already do have experience with these technologies, fear not, you won’t be bored&mdash; we will hone your craft.</p>
 				
 					<h3>Class Website</h3>
 				
