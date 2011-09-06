@@ -1,0 +1,131 @@
+/*
+
+Stylesheet for The Bill of Rights [bor_demo.html]
+
+*/
+
+body {
+	margin: 0px;
+	padding: 60px 0px;
+	border: 5px solid #0a90d7;
+	background-color: #fcfcfc;
+	font-family: Georgia, serif;
+	font-size: 14px;
+	color: #111111;
+}
+
+/*
+We give the <article> element a width AND set its 
+left and right margins to "auto" in order to center it.
+Note that, unfortunately, the "auto" value cannot be used for
+top and bottom margins in order to center something vertically. :-(
+*/
+article {
+	padding: 0px;
+	margin: 0px auto;
+	width: 60%;
+}
+
+h1 {
+	margin: 0px 0px 60px;
+	padding: 15px;
+	border-top: 1px solid #0a90d7;
+	border-bottom: 1px solid #0a90d7;
+	text-align: center;
+	font-family: "Nixie One"; /* loaded in via Google Web Fonts */
+	font-weight: normal;
+	font-size: 42px;
+}
+
+h2 {
+	margin: 0px 0px 20px;
+	padding: 2px 0px;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+p {
+	margin: 0px;
+	padding: 0px 0px 20px;
+	font-size: 14px;
+	line-height: 1.5em;
+}
+
+ol {
+	margin: 0px;
+	padding: 20px 0px 0px 50px;
+	border-top: 1px solid #0a90d7;
+}
+
+ol li {
+	margin: 0px;
+	padding: 20px 0px;
+	list-style-type: upper-roman;
+	list-style-position: outside;
+	font-family: "Nixie One"; /* loaded in via Google Web Fonts */
+	font-size: 36px;
+	color: #0a90d7;
+}
+
+/*
+We applied styles above to "ol li" to control the list markers.
+Here, we cancel some of those out for <p> elements that live inside
+the ordered list items.
+*/
+ol li p {
+	padding-left: 10px;
+	font-family: Georgia, serif;
+	color: #111111;
+}
+
+/*
+By default, <cite> elements are not "block-level" elements.
+In order to make the <cite> behave more like a <p> (i.e. be able to apply
+margins and padding to it, we explicitly set its "display" property to "block".
+*/
+cite {
+	display: block; /* default for <cite> is "display: inline;" */
+	padding: 0px 0px 20px;
+	font-size: 14px;
+	line-height: 1.5em;
+	font-style: italic;
+}
+
+em {
+	font-style: normal;
+	font-variant: small-caps;
+}
+
+/* 
+These very weird-looking "selectors" are used to control
+how text is styled when it is selected/highlighted (i.e. by clicking and
+dragging over it with the mouse). To add to the weirdness, you need to use
+both "::-moz-selection" and "::selection", because Firefox will only recognize
+"::-moz-selection", whereas other browser, such as Chrome and Safari, will
+only recognize "::selection".
+The use of so-called "vendor-specific" selectors is an unfortunate evil
+in writing CSS these days.
+*/
+::-moz-selection { 
+	background-color: #0a90d7; 
+	color: #fcfcfc; 
+}
+::selection { 
+	background-color: #0a90d7; 
+	color: #fcfcfc; 
+}
+
+/* 
+BONUS! uncomment these styles to get an opacity change effect 
+when you "hover" over the list items.
+*/
+
+/*
+ol:hover li {
+	opacity: 0.2;
+}
+
+ol:hover li:hover {
+	opacity: 1.0;
+}
+*/
