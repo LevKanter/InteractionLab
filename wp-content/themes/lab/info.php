@@ -8,11 +8,7 @@ get_header();
 		<div class="colx2">
 			
 			<div class="sidebar">
-				<ul class="toc">
-					<li><a href="#syllabus">Syllabus</a></li>
-					<li><a href="#details">Class Details</a></li>
-					<li><a href="#sched">Schedule</a></li>
-				</ul>
+				
 			</div>
 		
 			<div class="content">

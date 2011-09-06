@@ -8,15 +8,7 @@ get_header();
 	<div class="colx2">
 		
 		<div class="sidebar">
-			<ul class="toc">
-				<li><a href="#tools">Software Tools</a></li>
-				<li><a href="#intro-tutorials">Introductory Tutorials</a></li>
-				<li><a href="#references">References</a></li>
-				<li><a href="#libs">Libraries &amp; Frameworks</a></li>
-				<li><a href="#playgrounds">Code Playgrounds</a></li>
-				<li><a href="#publications">Publications</a></li>
-				<li><a href="#inspiration">Inspiration</a></li>
-			</ul>
+			
 		</div>
 		
 		<div class="content">
