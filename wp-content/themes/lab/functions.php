@@ -16,10 +16,15 @@ function lab_js_init() {
 }
 add_action("init", "lab_js_init");
 
-function lab_site_url($atts) {
+function lab_base_url($atts) {
 	return get_bloginfo("url");
 }
-add_shortcode("base_url", "lab_site_url");
+add_shortcode("base_url", "lab_base_url");
+
+function lab_template_url($atts) {
+	return get_bloginfo("template_url");
+}
+add_shortcode("template_url", "lab_template_url");
 
 function remove_generator_tag() { 
 	return "";
