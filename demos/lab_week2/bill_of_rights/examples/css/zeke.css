@@ -2,7 +2,7 @@
 
 body{ padding: 5% 15%; background-color:#eee5d5; color:#4d463b; 
 	font-family:‘Palatino Linotype’, Palatino, Palladio, ‘URW Palladio L’, ‘Book Antiqua’, Baskerville, ‘Bookman Old Style’, ‘Bitstream Charter’, ‘Nimbus Roman No9 L’, Garamond, ‘Apple Garamond’, ‘ITC Garamond Narrow’, ‘New Century Schoolbook’, ‘Century Schoolbook’, ‘Century Schoolbook L’, Georgia, serif;
-	background: -webkit-radial-gradient(rgba(178, 175, 175, 0.25), rgba(178, 175, 175, 0.25) 35%, rgba(35, 34, 34, 0.5)); 
+	background: -webkit-radial-gradient(rgba(232, 226, 214, 1), rgba(232, 226, 214, 1) 35%, rgba(216, 205, 184, 1)); 
 	background: -moz-radial-gradient(rgba(232, 226, 214, 1), rgba(232, 226, 214, 1) 35%, rgba(216, 205, 184, 1));  
 	font-size:100%;
 	line-height:150%;
