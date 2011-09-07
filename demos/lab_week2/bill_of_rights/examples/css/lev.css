@@ -1,8 +1,16 @@
 /*
 
-Stylesheet for The Bill of Rights [bor_demo.html]
+Stylesheet for The Bill of Rights
 
 */
+
+/*
+Import CSS file made available by Google's "web fonts" site. 
+This CSS will contain an @font-face rule that allows us to 
+use the "Nixie One" font family in our own stylesheet.
+see http://www.google.com/webfonts/specimen/Nixie+One
+*/
+@import url(http://fonts.googleapis.com/css?family=Nixie+One);
 
 body {
 	margin: 0px;

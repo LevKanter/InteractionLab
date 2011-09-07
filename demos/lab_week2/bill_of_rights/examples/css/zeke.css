@@ -1,0 +1,23 @@
+
+
+body{ padding: 5% 15%; background-color:#eee5d5; color:#4d463b; 
+	font-family:‘Palatino Linotype’, Palatino, Palladio, ‘URW Palladio L’, ‘Book Antiqua’, Baskerville, ‘Bookman Old Style’, ‘Bitstream Charter’, ‘Nimbus Roman No9 L’, Garamond, ‘Apple Garamond’, ‘ITC Garamond Narrow’, ‘New Century Schoolbook’, ‘Century Schoolbook’, ‘Century Schoolbook L’, Georgia, serif;
+	background: -webkit-radial-gradient(rgba(178, 175, 175, 0.25), rgba(178, 175, 175, 0.25) 35%, rgba(35, 34, 34, 0.5)); 
+	background: -moz-radial-gradient(rgba(232, 226, 214, 1), rgba(232, 226, 214, 1) 35%, rgba(216, 205, 184, 1));  
+	font-size:100%;
+	line-height:150%;
+	text-shadow:1px 1px 0px rgba(255,255,255,0.7);
+	}
+cite, p, ol {max-width:800px;}	
+	
+h1{font-size:4em; text-align:center; margin-bottom:0.75em;}
+h2{font-size:1.5em; text-align:center; margin-bottom:2em;}
+
+em{text-transform:uppercase;}
+
+ol{list-style-type: none; margin-top:50px; width:75%; }
+ol li{counter-increment: listCounter;  font-weight:bold; font-size:4.5em; margin:0 0 50px -10px; color:#d7d1c7;text-shadow:1px 1px 0px rgba(255,255,255,0.5);}
+ol li:before{content: counter(listCounter)"";}
+ol li:last-child{margin-left:-45px; }
+ol li:last-child p{margin-left:95px; }
+ol p{font-weight:normal; font-size:0.225em; color:#4d463b; line-height:150%; margin: -53px 0 0 60px; text-shadow:1px 1px 0px rgba(255,255,255,1);}

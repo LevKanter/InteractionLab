@@ -1,0 +1,42 @@
+.controls {
+	margin: 0px;
+	padding: 1px 0px 1px 1px;
+	position: fixed;
+	top: 20px;
+	right: 0px;
+	width: 120px;
+	background-color: #000000;
+}
+
+.controls .btn {
+	display: block;
+	margin: 0px;
+	padding: 0px 5px;
+	font-size: 14px;
+	line-height: 2em;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	text-shadow: none;
+	color: #ffffff;
+	border-top: 1px solid #666;
+}
+
+.controls .btn:first-child {
+	border-top: none;
+}
+
+.controls .btn:hover {
+	background-color: #66ccff;
+	color: #000066;
+}
+
+.controls .btn.state-active {
+	background-color: #4b4b4b;
+	cursor: default;
+}
+
+.controls .btn.active:hover {
+	color: #ffffff;
+}

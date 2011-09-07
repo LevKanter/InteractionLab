@@ -7,15 +7,9 @@
 		<title>The Bill of Rights</title>
 		
 		<!-- 
-		Link to a remote CSS file made available by Google's "web fonts" site. This CSS will contain an @font-face rule that allows us to use the "Nixie One" font family in our own stylesheet.
-		see http://www.google.com/webfonts/specimen/Nixie+One
-		-->
-		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nixie+One">
-		
-		<!-- 
 		Link to our own stylesheet. 
 		-->
-		<link rel="stylesheet" href="style_demo.css">
+		<link id="active-style" rel="stylesheet" href="style.css">
 	</head>
 	
 	<body>
@@ -79,6 +73,16 @@
 			</ol>
 			
 		</article>
+		
+		<!--
+		jQuery javascript library
+		-->
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+		
+		<!--
+		Style switcher javascript
+		-->
+		<script type="text/javascript" src="js/style_switcher.js"></script>
 
 	</body>
 </html>
