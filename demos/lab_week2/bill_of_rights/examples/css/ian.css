@@ -1,0 +1,154 @@
+html, body, article, p, ul, ol, li, h1, h2, h3, h4 { 
+	margin: 0; 
+	padding: 0; 
+}
+
+@font-face {
+	font-family: 'OFL Sorts Mill Goudy TT'; 
+	font-style: normal; font-weight: 
+	normal;
+	src: local('OFL Sorts Mill Goudy TT'), local('OFLGoudyStMTT'), url('http://themes.googleusercontent.com/static/fonts/oflsortsmillgoudytt/v1/9ZZVVBRCceNnPBXqWLH8IAznsJgBJReFlc4fyGg_5CcC1LhKU8qFLLahJuQDJSaO.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'OFL Sorts Mill Goudy TT'; 
+	font-style: italic; 
+	font-weight: normal;
+	 src: local('OFL Sorts Mill Goudy Italic TT'), local('OFLGoudyStMTT-Italic'), url('http://themes.googleusercontent.com/static/fonts/oflsortsmillgoudytt/v1/4zlbkWdiblhTyAxV3yYOK1Map0k-03pf3IKr-TpLv1-zty3XAGWFpfUour78S_ql.woff') format('woff');
+}
+
+body {
+	font: 15px/20px 'OFL Sorts Mill Goudy TT', Georgia, serif;
+	text-align: center;
+	background-color: #eee;
+	color: #999;
+	text-shadow: 1px 1px 1px rgba(0,0,0,.1);
+}
+
+article {
+	width: 800px;
+	text-align: left;
+	margin: 40px auto 60px;
+	padding: 200px 40px 15px;
+	background-color: #fff;
+	position: relative;
+	z-index: 1;
+	-moz-column-count: 3;
+	-moz-column-gap: 40px;
+	-webkit-column-count: 3;
+	-webkit-column-gap: 40px;
+	column-count: 3;
+	column-gap: 40px;
+}
+
+p, cite {
+	margin-bottom: 24px;
+	margin-right: 40px;
+}
+
+cite {
+	display: block;
+}
+
+em {
+	text-transform: lowercase;
+	font-variant: small-caps;
+	font-style: normal;
+	letter-spacing: 2px;
+}
+
+h1,
+h1:before {
+	display: block;
+	position: fixed;
+	left: 0;
+	right: 0;
+	width: 880px;
+	margin: 0 auto 0;
+}
+
+h1:before {
+	content: '';
+	top: 0;
+	height: 40px;
+	background-color: #eee;
+	z-index: 4;
+}
+
+h1 {
+	padding: 40px 0 0 0;
+	text-align: center;
+	font-size: 80px;
+	letter-spacing: -2px;
+	line-height: 1;
+	color: #444;
+	z-index: 5;
+	top: 40px;
+	height: 180px;
+	background: -moz-linear-gradient(top, rgba(255,255,255,1) 20%, rgba(255,255,255,0.85) 68%, rgba(255,255,255,0) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(20%,rgba(255,255,255,1)), color-stop(68%,rgba(255,255,255,0.85)), color-stop(100%,rgba(255,255,255,0)));
+	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 20%,rgba(255,255,255,0.85) 68%,rgba(255,255,255,0) 100%);
+	background: -o-linear-gradient(top, rgba(255,255,255,1) 20%,rgba(255,255,255,0.85) 68%,rgba(255,255,255,0) 100%);
+	background: -ms-linear-gradient(top, rgba(255,255,255,1) 20%,rgba(255,255,255,0.85) 68%,rgba(255,255,255,0) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 );
+	background: linear-gradient(top, rgba(255,255,255,1) 20%,rgba(255,255,255,0.85) 68%,rgba(255,255,255,0) 100%);
+}
+
+
+h2,
+ol:before  { 
+	font-style: italic;
+	font-weight: normal;
+	font-size: 24px;
+	line-height: 28px;
+	padding: 0 50px 0 0;
+	color: #777;
+}
+ 
+h2 {
+	height: 84px;
+}
+
+h2:before {
+	display: block;
+	position: absolute;
+	z-index: -1;
+	content: '';
+	top: -200px;
+	left: 0;
+	bottom: 0;
+	width: 32%;
+	background: -moz-linear-gradient(left, rgba(239,239,239,0.2) 73%, rgba(209,209,209,0.2) 88%, rgba(255,255,255,1) 88%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(85%,rgba(239,239,239,0.2)), color-stop(100%,rgba(209,209,209,0.2)));
+	background: -webkit-linear-gradient(left, rgba(239,239,239,0.2) 85%,rgba(209,209,209,0.2) 100%);
+}
+
+/*
+ol:before { 
+	content: 'Amendments';
+	display: block;
+	height: 72px;
+}
+*/
+
+ol {
+	font-size: 18px;
+	line-height: 24px;
+	margin-top: 60px;
+	list-style-type: upper-roman;
+	list-style-position: inside;
+}
+
+ol li {
+	padding-top: 8px;
+	margin-bottom: 48px;
+	border-top: 1px solid #ddd;
+}
+
+ol li p {
+	margin: 0;
+}
+
+cite + p + p + p {
+	margin-bottom: 700px;
+}

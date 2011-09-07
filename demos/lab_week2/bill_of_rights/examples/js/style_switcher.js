@@ -1,7 +1,8 @@
 
 	var stylesheets = {
 		Lev: "css/lev.css",
-		Zeke: "css/zeke.css"
+		Zeke: "css/zeke.css",
+		Ian: "css/ian.css"
 	};
 	
 	jQuery(document).ready(function($) {
