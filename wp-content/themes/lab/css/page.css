@@ -182,6 +182,23 @@ body .page {
 .prime dl:first-child {
 	padding-top: 0px;
 }
+
+.prime ul,
+.prime ol {
+	padding-left: 20px;
+}
+.prime ul {
+	list-style-type: disc;
+}
+.prime ul > li,
+.prime ol > li {
+	padding: 5px 0px 0px;
+}
+.prime ul > li:first-child,
+.prime ol > li:first-child {
+	padding-top: 0px;
+}
+
 .content .note {
 	font-style: italic;
 	color: #808080;

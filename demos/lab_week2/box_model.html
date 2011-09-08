@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Interaction: Lab: Box Model</title>
+		
+		<style>
+		
+			/*
+			"Zero out" the margins and paddings on the <body> element,
+			browsers tend to have default values for these.
+			*/
+			body {
+				margin: 0px;
+				padding: 0px;
+			}
+			
+			p {
+				margin-top: 10px;
+				margin-right: 20px;
+				margin-bottom: 15px;
+				margin-left: 5px;
+				
+				/* 
+				The four margin rules above could be 
+				condensed into a single rule:
+				margin: 10px 20px 15px 5px;
+				
+				How many values you supply to the "margin" property
+				determines which sides of the element get what margin.
+				
+				margin: [TOP] [RIGHT] [BOTTOM] [LEFT]  -- 4 values
+				
+				margin: [TOP] [LEFT & RIGHT] [BOTTOM] -- 3 values
+				
+				margin: [TOP & BOTTOM] [LEFT & RIGHT] -- 2 values
+				
+				Works like this for the "padding" property as well.
+				*/
+				
+				padding: 10px; /* applies 10px padding on all 4 sides of the element */
+				
+				border-width: 10px;
+				border-color: #000000; /* black */
+				border-style: solid; /* also try: "dashed", "dotted", "groove" */
+				
+				width: 600px;
+				
+				/*
+				Though we've defined the width of the element to be 600 pixels,
+				in reality the element is going to take up the space of its width,
+				plus the sum of its padding, border width, and margins:
+				
+				600 + 10 + 10 + 10 + 10 + 20 + 5 = 665 pixels
+				*/
+			}
+		</style>
+	</head>
+	<body>
+		
+		<p>Congress shall make no law respecting an establishment of religion, or prohibiting the free exercise thereof; or abridging the freedom of speech, or of the press; or the right of the people peaceably to assemble, and to petition the Government for a redress of grievances.</p>
+		
+		<p>A well regulated Militia, being necessary to the security of a free State, the right of the people to keep and bear Arms, shall not be infringed.</p>
+	
+	</body>
+</html>
