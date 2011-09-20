@@ -33,7 +33,7 @@
 	color: #000066;
 }
 
-.controls .btn.state-active {
+.controls .btn.active {
 	background-color: #4b4b4b;
 	cursor: default;
 }

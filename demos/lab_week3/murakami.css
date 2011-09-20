@@ -1,0 +1,89 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	background-color: #000022;
+	color: #cccccc;
+	font-family: Georgia, serif;
+}
+
+h1 {
+	margin: 0px;
+	padding: 18px 18px 6px;
+	font-size: 36px;
+	font-weight: normal;
+	font-style: italic;
+	color: #e9da00;
+}
+
+h2 {
+	margin: 0px;
+	padding: 0px 18px 6px;
+	font-size: 18px;
+	font-weight: normal;
+	color: #2885bf;
+}
+
+h3 {
+	margin: 0px;
+	padding: 0px 18px;
+	font-size: 12px;
+	font-weight: normal;
+	font-style: italic;
+}
+
+p {
+	margin: 0px;
+	padding: 12px 18px;
+	font-size: 16px;
+	/* 
+	line height is the leading, in porportion to the font size: 
+	16px * 1.4 = 22.4px 
+	*/ 
+	line-height: 1.4;
+}
+
+/*
+Apply styles to only the first letter of <p> elements:
+*/
+p:first-letter {
+	font-size: 28px;
+	line-height: 1;
+	color: #ffffff;
+}
+
+/*
+Apply styles to any element that has a class attribute ="story"
+*/
+.story {
+	margin: 0px auto;
+	padding: 18px;
+	width: 900px;
+}
+
+/*
+Apply styles to <header> elements that are nested INSIDE
+any element that has a class attribute ="story"
+
+This element gets both a pixel-based width and a "float" property defined to be "right"
+which means that, instead of occupying all the horizontal space it can, the element is
+PUSHED AS FAR TO THE RIGHT AS IT CAN POSSIBLY GO, and the next element AFTER it will be
+displayed up up against its LEFT side.
+
+BONUS: See what happens when "float: right;" is changed to "float: left;"
+*/
+.story header {
+	width: 298px;
+	float: right;
+	text-align: right;
+}
+
+/*
+Apply styles to any element that has a class attribute ="content"
+that is nested INSIDE any element that has a class attribute ="story"
+*/
+.story .content {
+	width: 600px;
+	padding: 12px 0px;
+	margin-bottom: 18px;
+	border: 1px dotted #16415c;
+}

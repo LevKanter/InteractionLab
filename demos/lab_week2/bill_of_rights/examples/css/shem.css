@@ -1,0 +1,150 @@
+@font-face {
+	font-family: "Caslon";
+	src: url("../fonts/ACaslonPro-Regular.otf");
+}
+
+@font-face {
+	font-family: "Caslon Italic";
+	src: url("../fonts/ACaslonPro-Italic.otf");
+}
+
+body{
+	background-color: #fdf9ee;
+	background-image: url(../images/bg.jpg);
+}
+
+p, body{
+	margin: 0px;
+	padding: 0px;
+	font: 16px "Caslon", "Georgia", serif;
+	color: #424242;
+}
+
+a{
+	color: #928c87;
+	text-decoration: none;
+}
+
+a:hover{
+	color: #79a0b7;
+	text-decoration: none;
+}
+
+article{
+	width: 960px;
+	margin: 0px auto;
+}
+
+p em{
+	text-transform: uppercase;
+	font-style: normal;
+	font-weight: normal;
+}
+
+ol{
+	list-style: upper-roman;
+}
+
+h1{
+	text-align: center;
+	font-size: 70px;
+	margin-top: 90px;
+	margin-bottom: 10px;
+	word-spacing: -10px;
+}
+
+h1 em{
+	font: 40px "Caslon Italic";
+	text-transform: none;
+	word-spacing: -2px;
+	vertical-align: 5px;
+}
+
+h2{
+	height: 100px;
+	font-size: 43px;
+	text-align: center;
+	border-top-style: dotted;
+	border-top-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-width: 1px;
+	padding-top: 30px;
+	padding-bottom: 40px;
+	margin-top: 0;
+	margin-bottom: 55px;
+}
+
+cite{
+	font: 17px/24px "Caslon Italic", "Caslon" "Georgia", serif;
+	color: #717171;
+	width: 615px;
+	height: 100px;
+	background: url(../images/ornament_gray.jpg) no-repeat 290px 80px;
+	position: absolute;
+	top: 270px;
+	margin-left: 172px;
+}
+
+article p{
+	color: #515151;
+	line-height: 23px;
+	margin-bottom: 25px;
+	margin-left: 30px;
+	width: 878px;
+	text-align: justify;
+}
+
+nav{
+	background-color: #2c2a25;
+	color: #fffeff;
+	border-bottom: 10px solid #a4785c;
+	margin-top: 50px;
+}
+
+nav p{
+	font-size: 13px;
+	color: #cacaca;
+	text-transform: uppercase;
+	margin: 0;
+	width: 930px;
+	padding-top: 10px;
+	padding-bottom: 5px;
+	padding-left: 30px;
+	border-bottom: 1px dotted #5e5443;
+}
+
+nav ul{
+	padding: 0;
+	margin: 0;
+	text-indent: 19px;
+}
+
+nav ul li{
+	display: inline;
+	font-size: 60px;
+	line-height: 110px;
+	padding: 7px;
+	border-left: 1px dotted #5e5443;
+}
+
+nav ul li#btn1{
+	border-style: none;
+}
+
+article ol{
+	color: #c0d2dd;
+	font-size: 60px;
+	padding-top: 80px;
+	padding-left: 190px;
+	margin: 0;
+	background: #ffffff url(../images/ornament_brown.png) no-repeat 457px 35px;
+}
+
+article ol li p{
+	padding: 0;
+	font-size: 14px;
+	margin: 0 0 60px;
+	display: inline-block;
+	width: 693px;
+	text-align: justify;
+}

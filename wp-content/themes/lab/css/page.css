@@ -1,18 +1,15 @@
 @font-face {
-    font-family: 'Museo300';
-    src: url('../fonts/museo300-regular-webfont.eot');
-    src: url('../fonts/museo300-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/museo300-regular-webfont.woff') format('woff'),
-         url('../fonts/museo300-regular-webfont.ttf') format('truetype'),
-         url('../fonts/museo300-regular-webfont.svg#Museo300') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
+	font-family: "MuseoSlab"; 
+	font-weight: normal; 
+	font-style: normal;
+	src:url('../fonts/museo_slab_500-webfont.eot');
+	src:local('☺'), url('../fonts/museo_slab_500-webfont.woff') format('woff'), url('../fonts/museo_slab_500-webfont.ttf') format('truetype'), url('../fonts/museo_slab_500-webfont.svg#webfontRnwDZmOy') format('svg');
 }
+
 
 body {
 	height: 100%;
-	background-color: #909090;
+	background-color: #e0e0e0;
 	font-family: Tahoma, sans-serif;
 	color: #505050;
 }
@@ -75,17 +72,17 @@ textarea:focus {
 body .page {
 	position: relative;
 	z-index: 2;
-	width: 736px;
+	width: 800px;
 	min-height: 100%;
 	margin: 0px auto;
 	text-align: left;
 	border-style: solid; 
-	border-color: #777777; 
+	border-color: #aaaaaa; 
 	border-width: 0px 1px;
 	background-color: #ffffff;
-	-moz-box-shadow: 0px 1px 4px #666666;
-	-webkit-box-shadow: 0px 1px 4px #666666;
-	box-shadow: 0px 1px 4px #666666;
+	-moz-box-shadow: 0px 1px 4px #999999;
+	-webkit-box-shadow: 0px 1px 4px #999999;
+	box-shadow: 0px 1px 4px #999999;
 }
 
 .head {
@@ -229,6 +226,16 @@ body .page {
 	float: left;
 	margin: 0px .6em 0px 0px;
 	font-style: italic;
+}
+
+p.download a {
+	display: block;
+	padding: 10px 10px 10px 56px;
+	height: 36px;
+	line-height:36px;
+	background-image: url("../images/download.png");
+	background-position: 10px center;
+	border: 1px solid #efefef;
 }
 
 .state-zero {
