@@ -1,11 +1,10 @@
 @font-face {
-	font-family: "MuseoSlab"; 
+	font-family: "museo"; 
 	font-weight: normal; 
 	font-style: normal;
 	src:url('../fonts/museo_slab_500-webfont.eot');
 	src:local('☺'), url('../fonts/museo_slab_500-webfont.woff') format('woff'), url('../fonts/museo_slab_500-webfont.ttf') format('truetype'), url('../fonts/museo_slab_500-webfont.svg#webfontRnwDZmOy') format('svg');
 }
-
 
 body {
 	height: 100%;
@@ -43,9 +42,11 @@ h6 {
 }
 
 h1 {
+	font-family: "museo", Tahoma, sans-serif;
 	font-size: 28px;
 }
 h2 {
+	font-family: "museo", Tahoma, sans-serif;
 	font-size: 18px;
 }
 h3 {
