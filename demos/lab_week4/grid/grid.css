@@ -1,0 +1,81 @@
+body {
+	margin: 0px;
+	padding: 20px;
+}
+
+.grid {
+	margin: 0px auto;
+	padding: 0px;
+	
+	/* 
+	an "outline" is similar to a "border" except
+	it does not take up any space in the layout
+	*/
+	outline: 1px solid #000;
+}
+
+/* 
+	we "clearfix" the .grid element,
+	so that it can wrap the "float: left"
+	.column elements
+*/
+.grid:before,
+.grid:after { 
+	content: ""; 
+	display: table; 
+}
+.grid:after { 
+	clear: both; 
+}
+
+.column {
+	float: left;
+	margin: 0px;
+	padding: 0px;
+}
+
+.x1  { width: 80px; }
+.x2  { width: 160px; }
+.x3  { width: 240px; }
+.x4  { width: 320px; }
+.x5  { width: 400px; }
+.x6  { width: 480px; }
+.x7  { width: 560px; }
+.x8  { width: 640px; }
+.x9  { width: 720px; }
+.x10 { width: 800px; }
+.x11 { width: 880px; }
+.x12 { width: 960px; }
+
+.column .box {
+	padding: 12px;
+	outline: 1px dotted #000000;
+	background-color: #66ccff;
+}
+
+header {
+	padding: 24px 12px;
+	background-color: #efefef;
+}
+
+footer {
+	clear: both;
+	padding: 24px 12px;
+	text-align: center;
+	background-color: #efefef;
+}
+
+h1 {
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+}
+
+::-moz-selection {
+	color: #66ccff;
+	background-color: #000000; 
+}
+::selection {
+	color: #66ccff;
+	background-color: #000000; 
+}

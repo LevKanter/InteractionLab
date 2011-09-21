@@ -4,92 +4,14 @@
 	<head>
 		<meta charset="utf-8"/>
 		<title>Interaction Lab &rarr; Grid</title>
-		
-		<style>
-		
-			body {
-				margin: 0px;
-				padding: 20px;
-			}
-		
-			.grid {
-				margin: 0px auto;
-				padding: 0px;
-			}
-			
-			body.annotated .grid {
-				outline: 1px solid #000;
-			}
-			
-			/* 
-				we "clearfix" the .grid element,
-				so that it can wrap the "float: left"
-				.column elements
-			*/
-			.grid {
-				zoom: 1;
-			}
-			.grid:before,
-			.grid:after { 
-				content: ""; 
-				display:table; 
-			}
-			.grid:after { 
-				clear:both; 
-			}
-			
-			.column {
-				float: left;
-				margin: 0px;
-				padding: 0px;
-			}
-			
-			.x1  { width: 80px;  }
-			.x2  { width: 160px; }
-			.x3  { width: 240px; }
-			.x4  { width: 320px; }
-			.x5  { width: 400px; }
-			.x6  { width: 480px; }
-			.x7  { width: 560px; }
-			.x8  { width: 640px; }
-			.x9  { width: 720px; }
-			.x10 { width: 800px; }
-			.x11 { width: 880px; }
-			.x12 { width: 960px; }
-			
-			.box {
-				padding: 12px;
-			}
-			
-			body.annotated .box {
-				outline: 1px solid #66ccff;
-			}
-			
-			h1 {
-				text-align: center;
-			}
-			
-			footer {
-				clear: both;
-				padding: 12px;
-				text-align: center;
-			}
-			
-			::-moz-selection { 
-				background-color: #66ccff; 
-			}
-			::selection { 
-				background-color: #66ccff; 
-			}
-			
-		</style>
+		<link rel="stylesheet" href="grid.css">
 	</head>
-	<body class="annotated">
+	<body>
 		
 		<div class="grid x12">
 			
 			<header>
-				<h1>Interaction Lab</h1>
+				<h1>Welcome to da Grid</h1>
 			</header>
 			
 			<div class="column x3">
@@ -102,9 +24,14 @@
 				<div class="box">
 					<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
 				</div>
-				<div class="column x3">
+				<div class="column x2">
 					<div class="box">
 						<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+					</div>
+				</div>
+				<div class="column x2">
+					<div class="box">
+						<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
 					</div>
 				</div>
 			</div>
@@ -122,7 +49,7 @@
 			</div>
 			
 			<footer>
-				Lorem ipsum
+				An HTML/CSS template for grid layouts
 			</footer>
 			
 		</div>

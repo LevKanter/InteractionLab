@@ -1,0 +1,84 @@
+/* */
+.clearfix:before,
+.clearfix:after { 
+	content: ""; 
+	display: table; 
+}
+.clearfix:after { 
+	clear: both; 
+}
+/* */
+
+body {
+	margin: 0px;
+	padding: 10px;
+	font-family: Georgia, serif;
+	font-size: 12px;
+}
+
+.wrapper {
+	width: 972px;
+	margin: 0px auto;
+	border: 1px solid #999999;
+}
+
+h1 {
+	text-align: center;
+}
+
+ul {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+nav li {
+	float: left;
+	padding: 5px;
+}
+
+header {
+	clear: both;
+}
+
+.page {
+	padding: 10px 0px;
+}
+
+.column {
+	float: left;
+}
+
+.nav {
+	width: 77px;
+}
+
+.x1 {
+	width: 179px;
+}
+
+.x2 {
+	width: 358px;
+}
+
+.x3 {
+	width: 537px;
+}
+
+article {
+	overflow: hidden;
+	outline: 1px solid #e2e2e2;
+}
+
+footer {
+	clear: both;
+}
+
+.sitemap {
+	border-top: 2px solid #000000;
+}
+
+.sitemap li {
+	float: left;
+	padding: 5px;
+}

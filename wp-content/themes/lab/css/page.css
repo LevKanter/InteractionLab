@@ -111,7 +111,8 @@ body .page {
 	z-index: 4; 
 	bottom: -1px;
 	margin: 0px 0px 0px 10px;
-	padding: 4px 15px 8px;
+	padding: 4px 15px 5px;
+	font-family: "museo", Tahoma, sans-serif;
 	font-size: 12px;
 	background-color: #ebebeb;
 	border: 1px solid #cccccc; 
@@ -258,6 +259,17 @@ p.download a {
 }
 .toc > li > a:hover {
 	background-color: #f4f4f4;
+}
+
+.roster {
+	padding: 30px 0px 15px;
+}
+.roster h2 {
+	padding: 0px 0px 5px;
+	font-size: 14px;
+}
+.roster .toc {
+	padding: 0px;
 }
 
 .stack {
