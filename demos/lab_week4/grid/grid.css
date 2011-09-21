@@ -14,25 +14,22 @@ body {
 	outline: 1px solid #000;
 }
 
-/* 
-	we "clearfix" the .grid element,
-	so that it can wrap the "float: left"
-	.column elements
-*/
-.grid:before,
-.grid:after { 
-	content: ""; 
-	display: table; 
-}
-.grid:after { 
-	clear: both; 
-}
-
 .column {
 	float: left;
 	margin: 0px;
 	padding: 0px;
 }
+
+/*
+	Our grid consists of 12 "units", with a single unit being 80 pixels wide.
+	12 x 80px = 960px total width
+	
+	This assumes that are "columns" butt-up against each other, 
+	they do not have any left or right margins, padding, or borders.
+	If we wanted to give these properties to the columns, that's cool, 
+	but we would have to account for that in our math. Remember, margins, padding, 
+	and borders all add to the space that an element consumes.
+*/
 
 .x1  { width: 80px; }
 .x2  { width: 160px; }
@@ -47,6 +44,11 @@ body {
 .x11 { width: 880px; }
 .x12 { width: 960px; }
 
+/*
+	Here, we do, however, apply padding to the .box elements
+	that are inside our .column element
+*/
+
 .column .box {
 	padding: 12px;
 	outline: 1px dotted #000000;
@@ -58,6 +60,10 @@ header {
 	background-color: #efefef;
 }
 
+/*
+	We use the "clear" property to insure that the footer element
+	is pushed below our .column elements (which have "float: left;")
+*/
 footer {
 	clear: both;
 	padding: 24px 12px;
@@ -71,6 +77,17 @@ h1 {
 	text-align: center;
 }
 
+/*
+BONUS STUFF!!
+These very weird-looking "selectors" are used to control
+how text is styled when it is selected/highlighted (i.e. by clicking and
+dragging over it with the mouse). To add to the weirdness, you need to use
+both "::-moz-selection" and "::selection", because Firefox will only recognize
+"::-moz-selection", whereas other browser, such as Chrome and Safari, will
+only recognize "::selection".
+The use of so-called "vendor-specific" selectors is an unfortunate evil
+in writing CSS these days.
+*/
 ::-moz-selection {
 	color: #66ccff;
 	background-color: #000000; 
