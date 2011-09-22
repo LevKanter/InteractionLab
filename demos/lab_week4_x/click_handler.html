@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Binding a Click Handler Using jQuery</title>
+	</head>
+	<body>
+		
+		<ul class="tabs">
+			<li><a href="#panelA">First Tab</a></li>
+			<li><a href="#panelB">Second Tab</a></li>
+		</ul>
+		
+		<div class="panels">
+			<div id="panelA">
+				First Panel
+			</div>
+			<div id="panelB">
+				Second Panel
+			</div>
+		</div>
+		
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+		
+		<script>
+		
+			jQuery(document).ready(function($) {
+				
+				$(".tabs > li > a").bind("click", function(e) {
+					
+					// click event handler...
+					
+					e.preventDefault();
+					alert("you clicked me");
+					
+				});
+				
+			});
+		
+		</script>
+	</body>
+</html>
