@@ -1,17 +1,16 @@
 /* */
-.clearfix:before,
-.clearfix:after { 
-	content: ""; 
-	display: table; 
-}
-.clearfix:after { 
-	clear: both; 
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0px;
+	clear: both;
+	visibility: hidden;
 }
 /* */
 
 body {
 	margin: 0px;
-	padding: 10px;
+	padding: 15px;
 	font-family: Georgia, serif;
 	font-size: 12px;
 }
@@ -23,6 +22,8 @@ body {
 }
 
 h1 {
+	margin: 0px;
+	padding: 0px;
 	text-align: center;
 }
 
@@ -39,10 +40,11 @@ nav li {
 
 header {
 	clear: both;
+	padding: 30px 0px;
 }
 
 .page {
-	padding: 10px 0px;
+	padding: 15px 0px;
 }
 
 .column {
@@ -51,6 +53,11 @@ header {
 
 .nav {
 	width: 77px;
+}
+
+.nav li {
+	margin: 0px;
+	padding: 0px 5px 5px;
 }
 
 .x1 {
@@ -67,7 +74,10 @@ header {
 
 article {
 	overflow: hidden;
-	outline: 1px solid #e2e2e2;
+}
+
+article header {
+	padding: 0px;
 }
 
 footer {
@@ -75,10 +85,12 @@ footer {
 }
 
 .sitemap {
+	padding: 15px;
 	border-top: 2px solid #000000;
+	text-align: center;
 }
 
 .sitemap li {
-	float: left;
-	padding: 5px;
+	display: inline;
+	padding: 0px 5px;
 }

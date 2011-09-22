@@ -1,17 +1,7 @@
-body {
-	margin: 0px;
-	padding: 20px;
-}
-
 .grid {
 	margin: 0px auto;
 	padding: 0px;
-	
-	/* 
-	an "outline" is similar to a "border" except
-	it does not take up any space in the layout
-	*/
-	outline: 1px solid #000;
+	border: 1px solid #000;
 }
 
 .column {
@@ -31,15 +21,15 @@ body {
 	and borders all add to the space that an element consumes.
 */
 
-.x1  { width: 80px; }
-.x2  { width: 160px; }
-.x3  { width: 240px; }
-.x4  { width: 320px; }
-.x5  { width: 400px; }
-.x6  { width: 480px; }
-.x7  { width: 560px; }
-.x8  { width: 640px; }
-.x9  { width: 720px; }
+.x1 { width: 80px; }
+.x2 { width: 160px; }
+.x3 { width: 240px; }
+.x4 { width: 320px; }
+.x5 { width: 400px; }
+.x6 { width: 480px; }
+.x7 { width: 560px; }
+.x8 { width: 640px; }
+.x9 { width: 720px; }
 .x10 { width: 800px; }
 .x11 { width: 880px; }
 .x12 { width: 960px; }
@@ -51,8 +41,20 @@ body {
 
 .column .box {
 	padding: 12px;
+	
+	/* 
+	an "outline" is similar to a "border" except
+	it does not take up any space in the layout
+	*/
 	outline: 1px dotted #000000;
 	background-color: #66ccff;
+}
+
+/*--------------------------------------------------------------------------*/
+
+body {
+	margin: 0px;
+	padding: 20px;
 }
 
 header {
@@ -63,6 +65,7 @@ header {
 /*
 	We use the "clear" property to insure that the footer element
 	is pushed below our .column elements (which have "float: left;")
+	TRY GETTING RID OF THE CLEAR PROPERTY AND SEE WHAT HAPPENS.
 */
 footer {
 	clear: both;

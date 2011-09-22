@@ -1,0 +1,26 @@
+/* 
+http://www.positioniseverything.net/easyclearing.html 
+*/
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0px;
+	clear: both;
+	visibility: hidden;
+}
+
+.box {
+	width: 480px;
+	margin: 0px 0px 150px;
+	padding: 10px;
+	background-color: #66ccff;
+}
+
+.box img {
+	float: right;
+}
+
+.box p {
+	margin: 0px;
+	padding: 0px;
+}
