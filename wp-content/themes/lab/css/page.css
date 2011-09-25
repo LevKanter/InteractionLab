@@ -1,23 +1,15 @@
-@font-face {
-	font-family: "museo"; 
-	font-weight: normal; 
-	font-style: normal;
-	src:url('../fonts/museo_slab_500-webfont.eot');
-	src:local('☺'), url('../fonts/museo_slab_500-webfont.woff') format('woff'), url('../fonts/museo_slab_500-webfont.ttf') format('truetype'), url('../fonts/museo_slab_500-webfont.svg#webfontRnwDZmOy') format('svg');
-}
-
 body {
-	height: 100%;
-	background-color: #e0e0e0;
-	font-family: Tahoma, sans-serif;
+	padding: 25px 0px;
+	background-color: #e6e6e6;
+	font-family: Palatino, "Palatino Linotype", Palladio, "Book Antiqua", Georgia, serif;
 	color: #505050;
 }
 
 ::-moz-selection { 
-	background-color: #7d7d72; color: #ffffff; 
+	background-color: #000000; color: #ffffff; 
 }
 ::selection { 
-	background-color: #7d7d72; color: #ffffff; 
+	background-color: #000000; color: #ffffff; 
 }
 
 a {
@@ -37,17 +29,17 @@ h3,
 h4,
 h5,
 h6 {
+	font-family: "Droid Sans", Tahoma, sans-serif;
 	font-weight: normal;
 	color: #111111;
 }
 
 h1 {
-	font-family: "museo", Tahoma, sans-serif;
-	font-size: 28px;
+	font-size: 12px;
+	font-weight: bold;
 }
 h2 {
-	font-family: "museo", Tahoma, sans-serif;
-	font-size: 18px;
+	font-size: 21px;
 }
 h3 {
 	font-size: 14px;
@@ -58,28 +50,39 @@ h4 {
 
 input[type=text],
 input[type=password],
-textarea {
+textarea,
+input[type=submit],
+input[type=button],
+button {
 	padding: 5px;
 	font-size: 14px;
-	font-family: Consolas, monospace;
+	font-family: "Droid Sans", Tahoma, sans-serif;
 	border: 1px solid #cccccc;
+	background-color: #ffffff;
 }
 input[type=text]:focus,
 input[type=password]:focus,
-textarea:focus {
+textarea:focus,
+input[type=submit]:hover,
+input[type=button]:hover,
+button:hover {
 	border-color: #666666;
+}
+
+
+label {
+	font-family: "Droid Sans", Tahoma, sans-serif;
 }
 
 body .page {
 	position: relative;
 	z-index: 2;
-	width: 800px;
-	min-height: 100%;
+	width: 736px;
 	margin: 0px auto;
 	text-align: left;
 	border-style: solid; 
 	border-color: #aaaaaa; 
-	border-width: 0px 1px;
+	border-width: 1px;
 	background-color: #ffffff;
 	-moz-box-shadow: 0px 1px 4px #999999;
 	-webkit-box-shadow: 0px 1px 4px #999999;
@@ -87,18 +90,20 @@ body .page {
 }
 
 .head {
-	background-color: #efefef;
+	position: relative;
+	height: 50px;
+	background-color: #ffffff;
 }
 .head h1 {
-	float: left; 
-	padding: 20px 15px;
-}
-.head h1 small {
-	display: block;
-	font-size: 14px;
+	position: absolute;
+	bottom: 0px;
+	left: 25px;
+	padding: 4px 0px 5px;
 }
 .head .nav {
-	clear: both;
+	position: absolute;
+	bottom: 0px;
+	left: 217px;
 }
 
 
@@ -110,43 +115,38 @@ body .page {
 	position: relative; 
 	z-index: 4; 
 	bottom: -1px;
-	margin: 0px 0px 0px 10px;
-	padding: 4px 15px 5px;
-	font-family: "museo", Tahoma, sans-serif;
+	margin: 0px 0px 0px 5px;
+	padding: 4px 8px 5px;
+	font-family: "Droid Sans", Tahoma, sans-serif;
 	font-size: 12px;
-	background-color: #ebebeb;
-	border: 1px solid #cccccc; 
+	font-weight: bold;
 	border-style: solid;
-	border-color: #cccccc;
+	border-color: transparent;
 	border-width:1px 1px 0px;
-	-moz-border-radius: 5px 5px 0px 0px;
-	-webkit-border-radius: 5px 5px 0px 0px;
-	border-radius: 5px 5px 0px 0px;
-	-moz-box-shadow: 0px 0px 4px #cccccc;
-	-webkit-box-shadow: 0px 0px 4px #cccccc;
-	box-shadow: 0px 0px 4px #cccccc;
+	-moz-border-radius: 2px 2px 0px 0px;
+	-webkit-border-radius: 2px 2px 0px 0px;
+	border-radius: 2px 2px 0px 0px;
+}
+.head .nav > ul > li:first-child > a {
+	margin-left: 0px;
 }
 .head .nav > ul > li > a:hover {
-	background-color: #f4f4f4;
-}
-.head .nav > ul > li > a:active {
 	border-color: #aaaaaa;
 }
 .head .nav > ul > li.current_page_item > a,
+.blog .head .nav > ul > li:first-child > a,
 .single .head .nav > ul > li:first-child > a {
 	z-index: 6;
 	cursor: default;
-	color: #333333;
+	color: #666666;
 	background-color: #ffffff;
-	-moz-box-shadow: none;
-	-webkit-box-shadow: none;
-	box-shadow: none;
+	border-color: #cccccc;
 }
 
 .body {
 	position: relative; 
 	z-index: 5;
-	padding: 25px 25px 50px;
+	padding: 50px 25px 50px;
 	background-color:#ffffff;
 	border-top: 1px solid #cccccc;
 }
@@ -164,15 +164,12 @@ body .page {
 }
 
 .content section {
-	padding: 30px 0px 0px;
+	padding: 50px 0px 0px;
 }
 .content section:first-child {
 	padding-top: 0px;
 }
 
-.content section h2 a {
-	display: block;
-}
 .content section h2 a:hover {
 	background-color: #f4f4f4;
 	text-decoration: none;
@@ -182,7 +179,6 @@ body .page {
 .prime ul,
 .prime ol,
 .prime dl {
-	font-family: Palatino, "Palatino Linotype", Palladio,  "Book Antiqua", Georgia, serif;
 	font-size: 14px;
 	padding: 10px 0px 0px;
 }
@@ -217,7 +213,6 @@ body .page {
 
 .prime h3 {
 	padding: 15px 0px 5px;
-	border-bottom: 1px solid #efefef;
 }
 
 .prime em {
@@ -239,6 +234,10 @@ p.download a {
 	background-position: 10px center;
 	border: 1px solid #efefef;
 }
+p.download a:hover {
+	border-color: #aaaaaa;
+	text-decoration: none;
+}
 
 .state-zero {
 	margin: 10px 0px 0px;
@@ -250,7 +249,8 @@ p.download a {
 }
 
 .toc {
-	padding: 30px 0px 15px;
+	padding: 33px 0px 15px;
+	font-family: "Droid Sans", Tahoma, sans-serif;
 	font-size: 13px;
 }
 .toc > li > a {
@@ -262,7 +262,7 @@ p.download a {
 }
 
 .roster {
-	padding: 30px 0px 15px;
+	padding: 38px 0px 15px;
 }
 .roster h2 {
 	padding: 0px 0px 5px;
@@ -390,8 +390,30 @@ pre.codebox code {
 	margin: 0px 0px 10px;
 }
 
-
-
+.pagination {
+	overflow: hidden;
+	margin: 100px 0px 0px;
+	font-size: 14px;
+}
+.pagination > span {
+	display: block;
+	width: 45%;
+}
+.pagination > span.prev {
+	float: left;
+}
+.pagination > span.next {
+	float: right;
+	text-align: right;
+}
+.pagination a {
+	display: block;
+	padding: 10px;
+}
+.pagination a:hover {
+	background-color: #f4f4f4;
+	text-decoration: none;
+}
 
 
 

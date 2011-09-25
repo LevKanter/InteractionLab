@@ -23,6 +23,15 @@ get_header();
 						comments_template();
 					}
 				?>
+				<div class="pagination">
+					<?php if(is_single()) { ?>
+						<span class="prev"><?php next_post_link( '%link', '<span class="arr">&larr;</span> %title'); ?></span>
+						<span class="next"><?php previous_post_link( '%link', '%title <span class="arr">&rarr;</span>'); ?></span>
+					<?php } else { ?>
+						<span class="prev"><?php previous_posts_link('<span class="arr">&larr;</span>  Newer Posts'); ?></span>
+						<span class="next"><?php next_posts_link('Older Posts <span class="arr">&rarr;</span>'); ?></span>
+					<?php } ?>
+				</div>
 			<?php endif; ?>
 		</div>
 	</div>
