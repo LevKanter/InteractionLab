@@ -176,6 +176,7 @@ body .page {
 }
 
 .content p,
+.content blockquote,
 .prime ul,
 .prime ol,
 .prime dl {
@@ -184,6 +185,7 @@ body .page {
 }
 
 .content p:first-child,
+.content blockquote:first-child,
 .prime ul:first-child,
 .prime ol:first-child,
 .prime dl:first-child {
@@ -204,6 +206,11 @@ body .page {
 .prime ul > li:first-child,
 .prime ol > li:first-child {
 	padding-top: 0px;
+}
+
+.prime blockquote {
+	font-style: italic;
+	padding-left: 20px;
 }
 
 .content .note {

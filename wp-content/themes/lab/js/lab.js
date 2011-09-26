@@ -52,6 +52,17 @@
 		update();
 	}
 	
+	function isTouch() {
+		var is;
+		try {
+			document.createEvent("TouchEvent");
+			is = true;
+		} catch (err) {
+			is = false;
+		}
+		return is;
+	}
+	
 	$(function() {
 		var $c, $s;
 		
@@ -60,7 +71,9 @@
 		
 		if ($c.length && $s.length) {
 			generateTOC($c, $s);
-			positionSidebar($s);
+			if (!isTouch()) {
+				positionSidebar($s);
+			}
 		}
 	});
 	
