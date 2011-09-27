@@ -320,14 +320,14 @@ p.download a:hover {
 .content table td {
 	padding: 10px;
 	font-size: 13px;
-	border: 1px solid #efefef;
+	border: 1px solid #dddddd;
 }
 .content table th {
 	font-weight: normal;
 }
 .content table thead th {
+	font-family: "Droid Sans", Tahoma, sans-serif;
 	text-align: left;
-	background-color: #fafafa;
 }
 .content table thead th small {
 	display: block;
