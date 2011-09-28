@@ -5,7 +5,7 @@
 	<meta http-equiv="Content-Type" content="<?php bloginfo("html_type"); ?>; charset=<?php bloginfo("charset"); ?>"/>
 	<title><?php bloginfo("name"); ?> <?php wp_title(); ?></title>
 	<link rel="stylesheet" href="<?php bloginfo("stylesheet_url"); ?>" type="text/css"/>
-	<link rel="shortcut icon" type="images/png" href="<?php bloginfo("template_url"); ?>/images/computer.png"/>
+	<link rel="shortcut icon" type="images/png" href="<?php bloginfo("template_url"); ?>/images/favicon.png"/>
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
