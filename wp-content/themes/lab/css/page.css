@@ -232,6 +232,11 @@ body .page {
 	font-style: italic;
 }
 
+.prime img {
+	display: block;
+	max-width: 100%;
+}
+
 p.download a {
 	display: block;
 	padding: 10px 10px 10px 56px;
