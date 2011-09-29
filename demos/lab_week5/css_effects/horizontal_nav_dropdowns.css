@@ -28,8 +28,19 @@ ul {
 	text-decoration: none;
 }
 
+/*
+Notice the ">" in the selector,
+.nav > li will apply styles to <li> elements only if they are
+"direct children" of an element with the class "nav"
+see http://css-tricks.com/5514-child-and-sibling-selectors/
+*/
 .nav > li {
 	float: left;
+	/*
+	The "position" property is new.
+	see http://reference.sitepoint.com/css/position
+	(we will be covering this in class, so this is just a preview)
+	*/
 	position: relative;
 	margin: 0px 2px 0px 0px;
 }
@@ -51,6 +62,10 @@ ul {
 	background-color: #66ccff;
 	color: #000066;
 }
+
+/*
+This is the key style for exposing the "drop-down" menu:
+*/
 .nav > li:hover > ul {
 	display: block;
 }

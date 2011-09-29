@@ -2,7 +2,7 @@ body {
 	margin: 0px;
 	padding: 30px;
 	font-family: Helvetica, Arial, sans-serif;
-	background-color: #fafafa;
+	background-color: #eeeeee;
 }
 
 .wrapper {
@@ -14,6 +14,11 @@ h1 {
 	margin: 0px 0px 30px;
 	padding: 5px 0px;
 	border: 1px solid #dddddd;
+	/*
+	I only want the border on top and bottom,
+	so in the next two lines I zero it out
+	on the the left and right
+	*/
 	border-left: none;
 	border-right: none;
 	font-size: 18px;
@@ -24,34 +29,151 @@ h1 {
 }
 
 .button {
+	/*
+	The "display" property is new.
+	see http://reference.sitepoint.com/css/display
+	
+	Essentially, we are using "display: inline-block;" here
+	to make the links behave like regular block elements (such as <div>s),
+	so that we can add margins and padding to them,
+	but not expand 100% horizontally.
+	*/
 	display: inline-block;
+	
 	padding: 12px;
 	border: 1px solid #999999;
 	font-size: 14px;
 	font-weight: bold;
 	text-decoration: none;
 	color: #000000;
-	background-color: #eeeeee;
+	background-color: #ffffff;
+	
+	/*
+	Using "border-radius" to make rounded corners
+	*/
 	border-radius: 16px 4px;
+	
+	/*
+	Using "box-shadow" to make a drop shadow
+	around the element
+	*/
 	box-shadow: 1px 1px 5px rgba(0, 0, 0, .4);
-	-moz-transition: box-shadow .6s ease-in;
-	-webkit-transition: box-shadow .6s ease-in;
+	
+	/*
+	Using "transition" to tell the browser to animate properties
+	of an element when they change.
+	Note that we have to use vendor-specific prefixes for this property,
+	because it is not actually standardly supported yet. :(
+	
+	for more info, see:
+	http://net.tutsplus.com/tutorials/html-css-techniques/css-fundametals-css-3-transitions/
+	*/
+	-moz-transition: all .4s ease-in; /* for Firefox */
+	-webkit-transition: all .4s ease-in; /* for Safari and Chrome */
 }
 
+/*
+The :hover "pseudo-class"
+can be used to specify styles that are applied to the element
+only when the user hovers their mouse over it
+*/
 .button:hover {
-	background-color: #66ccff;
 	box-shadow: 1px 1px 12px rgba(0, 0, 0, .8);
 }
 
+/*
+The :active "pseudo-class"
+can be used to specify styles that are applied to the element
+only when the user is clicking down on it
+*/
 .button:active {
+	/*
+	Using the "inset" keyword to make the drop shadow go inwards instead of outwards
+	*/
 	box-shadow: inset 1px 1px 5px rgba(0, 0, 0, .8);
 }
 
-.button.attention {
+.button.highlight {
 	font-size: 18px;
-	background-color: #edecce;
+	
+	/*
+	CSS3 gradient,
+	generating using CSS3 Gradient Generator by Damian Galarza:
+	http://gradients.glrzad.com/
+	
+	(note the slew of vendor-specfic prefixes)
+	*/
+	background-image: linear-gradient(bottom, rgb(240,213,132) 7%, rgb(237,235,164) 73%);
+	background-image: -o-linear-gradient(bottom, rgb(240,213,132) 7%, rgb(237,235,164) 73%); /* for Opera */
+	background-image: -moz-linear-gradient(bottom, rgb(240,213,132) 7%, rgb(237,235,164) 73%);
+	background-image: -webkit-linear-gradient(bottom, rgb(240,213,132) 7%, rgb(237,235,164) 73%);
+	background-image: -ms-linear-gradient(bottom, rgb(240,213,132) 7%, rgb(237,235,164) 73%); /* for Internet Explorer */
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.07, rgb(240,213,132)),
+		color-stop(0.73, rgb(237,235,164))
+	);
 }
 
-.button.attention:hover {
+.button.highlight:hover {
 	background-color: #edeba4;
+}
+
+.button.highlight:active {
+	/*
+	Flipping the gradient when the button is :active
+	*/
+	background-image: linear-gradient(bottom, rgb(237,235,164) 7%, rgb(240,213,132) 73%);
+	background-image: -o-linear-gradient(bottom, rgb(237,235,164) 7%, rgb(240,213,132) 73%);
+	background-image: -moz-linear-gradient(bottom, rgb(237,235,164) 7%, rgb(240,213,132) 73%);
+	background-image: -webkit-linear-gradient(bottom, rgb(237,235,164) 7%, rgb(240,213,132) 73%);
+	background-image: -ms-linear-gradient(bottom, rgb(237,235,164) 7%, rgb(240,213,132) 73%);
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.07, rgb(240,213,132)),
+		color-stop(0.73, rgb(237,235,164))
+	);
+}
+
+.button.pill {
+	border-radius: 24px;
+	padding-left: 18px;
+	padding-right: 18px;
+}
+
+.button.pill:hover {
+	padding-left: 24px;
+	padding-right: 24px;
+}
+
+.button.danger {
+	color: #ffffff;
+	
+	/*
+	Using "text-shadow" to make a drop shadow on the text itself
+	*/
+	text-shadow: 1px 1px rgba(0, 0, 0, 1);
+	
+	background-color: #d74b46;
+}
+
+.button.danger:hover {
+	background-color: #c43c35;
+	border-radius: 0px;
+}
+
+.button.close {
+	background-image: url("images/x.png");
+	background-repeat: no-repeat; /* don't tile the background image */
+	background-position: 93% 5px;
+	 /* adding some extra padding on the right to make room for the background image */
+	padding-right: 36px;
+}
+
+.button.close:hover {
+	color: #d74b46;
 }

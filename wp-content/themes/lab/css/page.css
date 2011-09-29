@@ -232,7 +232,8 @@ body .page {
 	font-style: italic;
 }
 
-.prime img {
+.prime img,
+.prime video {
 	display: block;
 	max-width: 100%;
 }
