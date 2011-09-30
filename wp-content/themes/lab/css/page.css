@@ -69,6 +69,17 @@ button:hover {
 	border-color: #666666;
 }
 
+input[type=submit],
+input[type=button],
+button {
+	cursor: pointer;
+}
+input[type=submit]:active,
+input[type=button]:active,
+button:active {
+	box-shadow: inset 1px 1px 5px rgba(0, 0, 0, .2);
+}
+
 
 label {
 	font-family: "Droid Sans", Tahoma, sans-serif;
