@@ -63,8 +63,15 @@
 		return is;
 	}
 	
+	function filterURL(url) {
+		return url
+			.replace(/^\//,'')
+			.replace(/(index|default).[a-zA-Z]{3,4}$/,'')
+			.replace(/\/$/,'');
+	}
+	
 	$(function() {
-		var $c, $s;
+		var $c, $s, $page, currentPath;
 		
 		$c = $(".body .content");
 		$s = $(".body .sidebar");
@@ -75,6 +82,31 @@
 				positionSidebar($s);
 			}
 		}
+		
+		$page = $("html, body");
+		currentPath = filterURL(window.location.pathname);
+		
+		$("a[href*=#]").each(function() {
+			var path, $t;
+			path = filterURL(this.pathname) || currentPath;
+			
+			if (path === currentPath &&
+			    (this.hostname === window.location.hostname || !this.hostname) && 
+				this.hash.replace(/#/,'')) {
+				
+				$t = $(this.hash);
+				if ($t.length) {
+					$(this).click(function(e) {
+						e.preventDefault();
+						$page.animate({ scrollTop: $t.offset().top }, 300, function() {
+							window.location.hash = $t.attr("id");
+						});
+					});
+				}
+					
+			}
+		});
+		
 	});
 	
 //-----------------------------------------------------
