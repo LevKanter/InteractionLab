@@ -207,8 +207,8 @@ only when the user is clicking down on it
 		linear,
 		left bottom,
 		left top,
-		color-stop(0.07, rgb(240,213,132)),
-		color-stop(0.73, rgb(237,235,164))
+		color-stop(0.07, rgb(237,235,164)),
+		color-stop(0.73, rgb(240,213,132))
 	);
 }
 
@@ -276,3 +276,93 @@ only when the user is clicking down on it
 .mod .toolbar > .button.highlight {
 	font-size: 14px;
 }
+
+.mod .breadcrumb {
+	float: left;
+	padding: 10px;
+	background-color: #f1f1f1;
+	border: 1px solid #cccccc;
+	border-radius: 4px;
+}
+.mod .breadcrumb:hover {
+	border-color: #aaaaaa;
+}
+.mod .breadcrumb > ol {
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+}
+.mod .breadcrumb > ol > li {
+	float: left;
+	margin-left: -1px;
+	border: 1px solid #999999;
+	color: #333333;
+}
+.mod .breadcrumb > ol > li:first-child {
+	margin-left: 0px;
+}
+.mod .breadcrumb > ol > li.current {
+	border-color: transparent;
+	font-family: Georgia, serif;
+	font-style: italic;
+}
+.mod .breadcrumb > ol > li > a {
+	display: block;
+	padding: 6px;
+	text-decoration: none;
+	color: #333333;
+	background-color: #ffffff;
+	font-weight: bold;
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, .2);
+}
+.mod .breadcrumb > ol > li > a:active {
+	box-shadow: inset 1px 1px 5px rgba(0, 0, 0, .2);
+}
+
+.mod .breadcrumb > ol > li.current {
+	padding: 6px;
+}
+
+.mod .pagination {
+	float: left;
+	padding: 10px;
+	background-color: #f1f1f1;
+	border: 1px solid #cccccc;
+	border-radius: 4px;
+}
+.mod .pagination:hover {
+	border-color: #aaaaaa;
+}
+.mod .pagination .item {
+	display: block;
+	float: left;
+	padding: 6px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	text-decoration: none;
+	color: #333333;
+}
+.mod .pagination a.item {
+	font-weight: bold;
+}
+.mod .pagination a.item:hover {
+	background-color: #ffffff;
+	border-color: #999999;
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, .2);
+}
+.mod .pagination a.item:active {
+	box-shadow: inset 1px 1px 5px rgba(0, 0, 0, .2);
+}
+
+.mod .calendar {
+	float: left;
+	padding: 10px;
+	background-color: #f1f1f1;
+	border: 1px solid #cccccc;
+	border-radius: 4px;
+}
+
+.mod .calendar .cal-hd .title {
+	text-align: center;
+}
+
