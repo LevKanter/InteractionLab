@@ -1,7 +1,7 @@
 body {
 	margin: 0px;
 	padding: 30px;
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: "Times New Roman", serif;
 	background-color: #eeeeee;
 }
 
@@ -10,10 +10,18 @@ body {
 	margin: 0px auto;
 }
 
-h1 {
+.example {
+	margin: 60px 0px 0px;
+}
+.example:first-child {
+	margin-top: 0px;
+}
+
+.example > h2 {
 	margin: 0px 0px 30px;
-	padding: 5px 0px;
-	border: 1px solid #dddddd;
+	padding: 3px;
+	text-align: right;
+	border: 1px solid #cccccc;
 	/*
 	I only want the border on top and bottom,
 	so in the next two lines I zero it out
@@ -21,14 +29,79 @@ h1 {
 	*/
 	border-left: none;
 	border-right: none;
-	font-size: 18px;
+	background-color: #ffffff;
+	font-size: 14px;
+	font-weight: bold;
+	text-transform: uppercase;
 }
 
-.demo {
+.mod {
 	margin: 15px 0px;
+	zoom: 1;
+	font-family: Helvetica, Arial, sans-serif;
+}
+.mod:before,
+.mod:after { 
+	content: ""; 
+	display:table; 
+}
+.mod:after { 
+	clear:both; 
 }
 
-.button {
+.mod ::-moz-selection {
+	color: #edeba4;
+	background-color: #000000; 
+}
+.mod ::selection {
+	color: #edeba4;
+	background-color: #000000; 
+}
+
+.mod h1, .mod h2, .mod h3, .mod h4, .mod h5, .mod h6 {
+	font-family: Georgia, serif;
+}
+
+.mod h1 {
+	margin: .6em 0px;
+	padding: 0px;
+	font-size: 28px;
+	font-weight: bold;
+}
+.mod h2 {
+	margin: .6em 0px;
+	padding: 0px;
+	font-size: 18px;
+	font-weight: bold;
+}
+.mod h3 {
+	margin: .6em 0px;
+	padding: 0px;
+	font-size: 16px;
+	font-weight: bold;
+}
+.mod h4 {
+	margin: .6em 0px;
+	padding: 0px;
+	font-size: 14px;
+	font-weight: bold;
+}
+.mod h5 {
+	margin: .6em 0px;
+	padding: 0px;
+	font-size: 14px;
+	font-weight: normal;
+	text-transform: uppercase;
+}
+.mod h6 {
+	margin: .6em 0px;
+	padding: 0px;
+	font-size: 12px;
+	font-weight: normal;
+	text-transform: uppercase;	
+}
+
+.mod .button {
 	/*
 	The "display" property is new.
 	see http://reference.sitepoint.com/css/display
@@ -77,7 +150,7 @@ The :hover "pseudo-class"
 can be used to specify styles that are applied to the element
 only when the user hovers their mouse over it
 */
-.button:hover {
+.mod .button:hover {
 	box-shadow: 1px 1px 12px rgba(0, 0, 0, .8);
 }
 
@@ -86,14 +159,14 @@ The :active "pseudo-class"
 can be used to specify styles that are applied to the element
 only when the user is clicking down on it
 */
-.button:active {
+.mod .button:active {
 	/*
 	Using the "inset" keyword to make the drop shadow go inwards instead of outwards
 	*/
 	box-shadow: inset 1px 1px 5px rgba(0, 0, 0, .8);
 }
 
-.button.highlight {
+.mod .button.highlight {
 	font-size: 18px;
 	
 	/*
@@ -117,11 +190,11 @@ only when the user is clicking down on it
 	);
 }
 
-.button.highlight:hover {
+.mod .button.highlight:hover {
 	background-color: #edeba4;
 }
 
-.button.highlight:active {
+.mod .button.highlight:active {
 	/*
 	Flipping the gradient when the button is :active
 	*/
@@ -139,18 +212,18 @@ only when the user is clicking down on it
 	);
 }
 
-.button.pill {
+.mod .button.pill {
 	border-radius: 24px;
 	padding-left: 18px;
 	padding-right: 18px;
 }
 
-.button.pill:hover {
+.mod .button.pill:hover {
 	padding-left: 24px;
 	padding-right: 24px;
 }
 
-.button.danger {
+.mod .button.danger {
 	color: #ffffff;
 	
 	/*
@@ -161,19 +234,45 @@ only when the user is clicking down on it
 	background-color: #d74b46;
 }
 
-.button.danger:hover {
+.mod .button.danger:hover {
 	background-color: #c43c35;
 	border-radius: 0px;
 }
 
-.button.close {
+.mod .button.close {
 	background-image: url("images/x.png");
 	background-repeat: no-repeat; /* don't tile the background image */
-	background-position: 93% 5px;
-	 /* adding some extra padding on the right to make room for the background image */
-	padding-right: 36px;
+	background-position: 50%;
+	padding: 12px 24px;
+	text-indent: -99999px;
 }
 
-.button.close:hover {
+.mod .button.close:hover {
 	color: #d74b46;
+}
+
+.mod .toolbar {
+	float: left;
+	padding: 10px;
+	background-color: #f1f1f1;
+	border: 1px solid #cccccc;
+	border-radius: 16px 4px;
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, .05);
+}
+.mod .toolbar:hover {
+	border-color: #aaaaaa;
+}
+.mod .toolbar > .button {
+	margin-left: 5px;
+	border-radius: 0px;
+}
+.mod .toolbar > .button:first-child {
+	margin-left: 0px;
+	border-radius: 16px 0px 0px 4px;
+}
+.mod .toolbar > .button:last-child {
+	border-radius: 0px 4px 16px 0px;
+}
+.mod .toolbar > .button.highlight {
+	font-size: 14px;
 }
