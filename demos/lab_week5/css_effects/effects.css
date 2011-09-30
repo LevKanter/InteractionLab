@@ -49,9 +49,9 @@ h1 {
 
 .button.attention {
 	font-size: 18px;
-	background-color: #edecce;
+	background-color: #9cd448;
 }
 
 .button.attention:hover {
-	background-color: #edeba4;
+	background-color: #66ccff;
 }
