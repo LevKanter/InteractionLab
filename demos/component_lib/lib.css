@@ -58,6 +58,11 @@ body {
 	background-color: #000000; 
 }
 
+.mod a {
+	text-decoration: none;
+	color: #000000;
+}
+
 .mod h1, .mod h2, .mod h3, .mod h4, .mod h5, .mod h6 {
 	font-family: Georgia, serif;
 }
@@ -71,13 +76,13 @@ body {
 .mod h2 {
 	margin: .6em 0px;
 	padding: 0px;
-	font-size: 18px;
+	font-size: 21px;
 	font-weight: bold;
 }
 .mod h3 {
 	margin: .6em 0px;
 	padding: 0px;
-	font-size: 16px;
+	font-size: 18px;
 	font-weight: bold;
 }
 .mod h4 {
@@ -89,16 +94,16 @@ body {
 .mod h5 {
 	margin: .6em 0px;
 	padding: 0px;
-	font-size: 14px;
+	font-size: 16px;
 	font-weight: normal;
-	text-transform: uppercase;
+	font-variant: small-caps;
 }
 .mod h6 {
 	margin: .6em 0px;
 	padding: 0px;
-	font-size: 12px;
+	font-size: 14px;
 	font-weight: normal;
-	text-transform: uppercase;	
+	font-variant: small-caps;	
 }
 
 .mod .button {
@@ -117,8 +122,6 @@ body {
 	border: 1px solid #999999;
 	font-size: 14px;
 	font-weight: bold;
-	text-decoration: none;
-	color: #000000;
 	background-color: #ffffff;
 	
 	/*
@@ -166,9 +169,7 @@ only when the user is clicking down on it
 	box-shadow: inset 1px 1px 5px rgba(0, 0, 0, .8);
 }
 
-.mod .button.highlight {
-	font-size: 18px;
-	
+.mod .button.highlight {	
 	/*
 	CSS3 gradient,
 	generating using CSS3 Gradient Generator by Damian Galarza:
@@ -219,8 +220,10 @@ only when the user is clicking down on it
 }
 
 .mod .button.pill:hover {
-	padding-left: 24px;
-	padding-right: 24px;
+	/*padding-left: 24px;
+	padding-right: 24px;*/
+	-moz-transform: scale(1.05);
+	-webkit-transform: scale(1.05);
 }
 
 .mod .button.danger {
@@ -251,96 +254,68 @@ only when the user is clicking down on it
 	color: #d74b46;
 }
 
-.mod .toolbar {
+.mod .ui-container {
 	float: left;
 	padding: 10px;
 	background-color: #f1f1f1;
 	border: 1px solid #cccccc;
-	border-radius: 16px 4px;
+	border-radius: 4px;
 	box-shadow: 1px 1px 5px rgba(0, 0, 0, .05);
 }
-.mod .toolbar:hover {
+.mod .ui-container:hover {
 	border-color: #aaaaaa;
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, .1);
 }
-.mod .toolbar > .button {
+
+.mod .ui-container.button-set {
+	border-radius: 16px 4px;
+}
+
+.mod .button-set > .button {
 	margin-left: 5px;
 	border-radius: 0px;
 }
-.mod .toolbar > .button:first-child {
+.mod .button-set > .button:first-child {
 	margin-left: 0px;
 	border-radius: 16px 0px 0px 4px;
 }
-.mod .toolbar > .button:last-child {
+.mod .button-set > .button:last-child {
 	border-radius: 0px 4px 16px 0px;
 }
-.mod .toolbar > .button.highlight {
-	font-size: 14px;
-}
 
-.mod .breadcrumb {
-	float: left;
-	padding: 10px;
-	background-color: #f1f1f1;
-	border: 1px solid #cccccc;
-	border-radius: 4px;
-}
-.mod .breadcrumb:hover {
-	border-color: #aaaaaa;
-}
 .mod .breadcrumb > ol {
 	margin: 0px;
 	padding: 0px;
-	list-style-type: none;
 }
 .mod .breadcrumb > ol > li {
 	float: left;
-	margin-left: -1px;
-	border: 1px solid #999999;
+	margin: 0px 0px 0px 10px;
 	color: #333333;
+	list-style-type: disc;
+	list-style-position: inside;
 }
 .mod .breadcrumb > ol > li:first-child {
 	margin-left: 0px;
+	list-style-type: none;
 }
 .mod .breadcrumb > ol > li.current {
-	border-color: transparent;
-	font-family: Georgia, serif;
-	font-style: italic;
 }
 .mod .breadcrumb > ol > li > a {
-	display: block;
-	padding: 6px;
-	text-decoration: none;
-	color: #333333;
-	background-color: #ffffff;
 	font-weight: bold;
-	box-shadow: 1px 1px 5px rgba(0, 0, 0, .2);
 }
-.mod .breadcrumb > ol > li > a:active {
-	box-shadow: inset 1px 1px 5px rgba(0, 0, 0, .2);
+.mod .breadcrumb > ol > li > a:hover {
+	color: #666666;
+	border-bottom: 1px solid #bb0000;
 }
 
 .mod .breadcrumb > ol > li.current {
-	padding: 6px;
 }
 
-.mod .pagination {
-	float: left;
-	padding: 10px;
-	background-color: #f1f1f1;
-	border: 1px solid #cccccc;
-	border-radius: 4px;
-}
-.mod .pagination:hover {
-	border-color: #aaaaaa;
-}
 .mod .pagination .item {
 	display: block;
 	float: left;
 	padding: 6px;
 	border: 1px solid transparent;
-	border-radius: 4px;
-	text-decoration: none;
-	color: #333333;
 }
 .mod .pagination a.item {
 	font-weight: bold;
@@ -354,15 +329,64 @@ only when the user is clicking down on it
 	box-shadow: inset 1px 1px 5px rgba(0, 0, 0, .2);
 }
 
-.mod .calendar {
-	float: left;
-	padding: 10px;
-	background-color: #f1f1f1;
-	border: 1px solid #cccccc;
-	border-radius: 4px;
-}
-
 .mod .calendar .cal-hd .title {
+	padding: 0 0 7px;
 	text-align: center;
+	font-size: 12px;
+	font-variant: small-caps;
 }
-
+.mod .calendar .cal-month {
+	border-collapse: collapse;
+	border-spacing: 0px;
+}
+.mod .calendar .cal-month thead th {
+	font-family: Georgia, serif;
+	font-style: italic;
+	padding: 4px;
+	text-align: center;
+	background-color: #ffffff;
+}
+.mod .calendar .cal-month th,
+.mod .calendar .cal-month td {
+	font-size: 16px;
+	font-weight: normal;
+	border: 1px solid #dddddd;
+}
+.mod .calendar .cal-month tbody td a {
+	display: block;
+	padding: 4px;
+	text-align: right;
+	color: #666666;
+	border: 1px solid #ffffff;
+}
+.mod .calendar .cal-month tbody td a:hover {
+	color: #000000;
+	
+	background-image: linear-gradient(bottom, rgb(240,213,132) 7%, rgb(237,235,164) 73%);
+	background-image: -o-linear-gradient(bottom, rgb(240,213,132) 7%, rgb(237,235,164) 73%); /* for Opera */
+	background-image: -moz-linear-gradient(bottom, rgb(240,213,132) 7%, rgb(237,235,164) 73%);
+	background-image: -webkit-linear-gradient(bottom, rgb(240,213,132) 7%, rgb(237,235,164) 73%);
+	background-image: -ms-linear-gradient(bottom, rgb(240,213,132) 7%, rgb(237,235,164) 73%); /* for Internet Explorer */
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.07, rgb(240,213,132)),
+		color-stop(0.73, rgb(237,235,164))
+	);
+}
+.mod .calendar .cal-month tbody td a:active {
+	box-shadow: inset 1px 1px 5px rgba(0, 0, 0, .2);
+	background-image: linear-gradient(bottom, rgb(237,235,164) 7%, rgb(240,213,132) 73%);
+	background-image: -o-linear-gradient(bottom, rgb(237,235,164) 7%, rgb(240,213,132) 73%);
+	background-image: -moz-linear-gradient(bottom, rgb(237,235,164) 7%, rgb(240,213,132) 73%);
+	background-image: -webkit-linear-gradient(bottom, rgb(237,235,164) 7%, rgb(240,213,132) 73%);
+	background-image: -ms-linear-gradient(bottom, rgb(237,235,164) 7%, rgb(240,213,132) 73%);
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.07, rgb(237,235,164)),
+		color-stop(0.73, rgb(240,213,132))
+	);
+}
