@@ -290,7 +290,6 @@ only when the user is clicking down on it
 .mod .breadcrumb > ol > li {
 	float: left;
 	margin: 0px 0px 0px 10px;
-	color: #333333;
 	list-style-type: disc;
 	list-style-position: inside;
 }
@@ -301,11 +300,11 @@ only when the user is clicking down on it
 .mod .breadcrumb > ol > li.current {
 }
 .mod .breadcrumb > ol > li > a {
+	color: #888888;
 	font-weight: bold;
 }
 .mod .breadcrumb > ol > li > a:hover {
-	color: #666666;
-	border-bottom: 1px solid #bb0000;
+	color: #000000;
 }
 
 .mod .breadcrumb > ol > li.current {
@@ -319,14 +318,107 @@ only when the user is clicking down on it
 }
 .mod .pagination a.item {
 	font-weight: bold;
+	color: #888888;
 }
 .mod .pagination a.item:hover {
-	background-color: #ffffff;
+	color: #000000;
+	background-image: linear-gradient(bottom, rgb(240,213,132) 7%, rgb(237,235,164) 73%);
+	background-image: -o-linear-gradient(bottom, rgb(240,213,132) 7%, rgb(237,235,164) 73%); /* for Opera */
+	background-image: -moz-linear-gradient(bottom, rgb(240,213,132) 7%, rgb(237,235,164) 73%);
+	background-image: -webkit-linear-gradient(bottom, rgb(240,213,132) 7%, rgb(237,235,164) 73%);
+	background-image: -ms-linear-gradient(bottom, rgb(240,213,132) 7%, rgb(237,235,164) 73%); /* for Internet Explorer */
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.07, rgb(240,213,132)),
+		color-stop(0.73, rgb(237,235,164))
+	);
 	border-color: #999999;
 	box-shadow: 1px 1px 5px rgba(0, 0, 0, .2);
 }
 .mod .pagination a.item:active {
 	box-shadow: inset 1px 1px 5px rgba(0, 0, 0, .2);
+	background-image: linear-gradient(bottom, rgb(237,235,164) 7%, rgb(240,213,132) 73%);
+	background-image: -o-linear-gradient(bottom, rgb(237,235,164) 7%, rgb(240,213,132) 73%);
+	background-image: -moz-linear-gradient(bottom, rgb(237,235,164) 7%, rgb(240,213,132) 73%);
+	background-image: -webkit-linear-gradient(bottom, rgb(237,235,164) 7%, rgb(240,213,132) 73%);
+	background-image: -ms-linear-gradient(bottom, rgb(237,235,164) 7%, rgb(240,213,132) 73%);
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.07, rgb(237,235,164)),
+		color-stop(0.73, rgb(240,213,132))
+	);
+}
+
+.mod .navbar {
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.mod .navbar li {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+.mod .navbar a {
+	display: block;
+	padding: 4px 10px;
+	border: 1px solid transparent;
+}
+
+.mod .navbar > li {
+	float: left;
+	position: relative;
+	margin: 0px 1px 0px 0px;
+}
+.mod .navbar > li > a {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.mod .navbar > li:hover > a {
+	position: relative;
+	z-index: 2;
+}
+.mod .navbar > li:hover > a {
+	border-left-color: #aaaaaa;
+	border-right-color: #aaaaaa;
+}
+
+.mod .navbar li > ul {
+	display: none;
+	position: absolute;
+	z-index: 1;
+	padding: 0px;
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, .2);
+}
+
+.mod .navbar li > a {
+	background-color: #f1f1f1;
+}
+.mod .navbar li > a:hover {
+	background-color: #edeba4;
+	color: #000000;
+}
+.mod .navbar li > a:active {
+	background-color: #000000;
+	color: #edeba4;
+}
+
+.mod .navbar li:hover > ul {
+	display: block;
+}
+
+.mod .navbar > li > ul {
+	width: 200%;
+	top: 100%;
+	left: 0px;
+	border: 1px solid #aaaaaa;
+}
+.mod .navbar > li > ul > li:first-child > a {
+	
 }
 
 .mod .calendar .cal-hd .title {
