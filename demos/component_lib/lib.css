@@ -274,6 +274,7 @@ only when the user is clicking down on it
 .mod .button-set > .button {
 	margin-left: 5px;
 	border-radius: 0px;
+	font-size: 12px;
 }
 .mod .button-set > .button:first-child {
 	margin-left: 0px;
@@ -292,12 +293,17 @@ only when the user is clicking down on it
 	margin: 0px 0px 0px 10px;
 	list-style-type: disc;
 	list-style-position: inside;
+	font-family: Georgia, serif;
+	font-variant: small-caps;
+	font-size: 14px;
 }
 .mod .breadcrumb > ol > li:first-child {
 	margin-left: 0px;
 	list-style-type: none;
 }
 .mod .breadcrumb > ol > li.current {
+	font-variant: normal;
+	text-transform: uppercase;
 }
 .mod .breadcrumb > ol > li > a {
 	color: #888888;
@@ -307,13 +313,11 @@ only when the user is clicking down on it
 	color: #000000;
 }
 
-.mod .breadcrumb > ol > li.current {
-}
-
 .mod .pagination .item {
 	display: block;
 	float: left;
 	padding: 6px;
+	font-size: 12px;
 	border: 1px solid transparent;
 }
 .mod .pagination a.item {
@@ -357,36 +361,12 @@ only when the user is clicking down on it
 	padding-top: 0px;
 	padding-bottom: 0px;
 }
-
 .mod .navbar li {
+	position: relative;
 	list-style: none;
 	margin: 0px;
 	padding: 0px;
 }
-.mod .navbar a {
-	display: block;
-	padding: 4px 10px;
-	border: 1px solid transparent;
-}
-
-.mod .navbar > li {
-	float: left;
-	position: relative;
-	margin: 0px 1px 0px 0px;
-}
-.mod .navbar > li > a {
-	padding-top: 10px;
-	padding-bottom: 10px;
-}
-.mod .navbar > li:hover > a {
-	position: relative;
-	z-index: 2;
-}
-.mod .navbar > li:hover > a {
-	border-left-color: #aaaaaa;
-	border-right-color: #aaaaaa;
-}
-
 .mod .navbar li > ul {
 	display: none;
 	position: absolute;
@@ -394,31 +374,117 @@ only when the user is clicking down on it
 	padding: 0px;
 	box-shadow: 1px 1px 5px rgba(0, 0, 0, .2);
 }
-
-.mod .navbar li > a {
+.mod .navbar a {
+	display: block;
+	padding: 4px 10px;
+	border: 1px solid transparent;
 	background-color: #f1f1f1;
 }
-.mod .navbar li > a:hover {
+.mod .navbar li:hover > a {
 	background-color: #edeba4;
+	background-image: linear-gradient(bottom, rgb(240,213,132) 7%, rgb(237,235,164) 73%);
+	background-image: -o-linear-gradient(bottom, rgb(240,213,132) 7%, rgb(237,235,164) 73%); /* for Opera */
+	background-image: -moz-linear-gradient(bottom, rgb(240,213,132) 7%, rgb(237,235,164) 73%);
+	background-image: -webkit-linear-gradient(bottom, rgb(240,213,132) 7%, rgb(237,235,164) 73%);
+	background-image: -ms-linear-gradient(bottom, rgb(240,213,132) 7%, rgb(237,235,164) 73%); /* for Internet Explorer */
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.07, rgb(240,213,132)),
+		color-stop(0.73, rgb(237,235,164))
+	);
 	color: #000000;
 }
 .mod .navbar li > a:active {
 	background-color: #000000;
-	color: #edeba4;
+	background-image: linear-gradient(bottom, rgb(237,235,164) 7%, rgb(240,213,132) 73%);
+	background-image: -o-linear-gradient(bottom, rgb(237,235,164) 7%, rgb(240,213,132) 73%);
+	background-image: -moz-linear-gradient(bottom, rgb(237,235,164) 7%, rgb(240,213,132) 73%);
+	background-image: -webkit-linear-gradient(bottom, rgb(237,235,164) 7%, rgb(240,213,132) 73%);
+	background-image: -ms-linear-gradient(bottom, rgb(237,235,164) 7%, rgb(240,213,132) 73%);
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.07, rgb(237,235,164)),
+		color-stop(0.73, rgb(240,213,132))
+	);
+	/*color: #edeba4;*/
 }
-
 .mod .navbar li:hover > ul {
 	display: block;
 }
 
+.mod .navbar > li {
+	float: left;
+}
+.mod .navbar > li > a {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.mod .navbar > li:hover > a {
+	border-left-color: #aaaaaa;
+	border-right-color: #aaaaaa;
+}
+
 .mod .navbar > li > ul {
-	width: 200%;
+	width: 300%;
 	top: 100%;
 	left: 0px;
 	border: 1px solid #aaaaaa;
+	border-top: none;
 }
-.mod .navbar > li > ul > li:first-child > a {
-	
+.mod .navbar > li > ul > li > ul {
+	width: 50%;
+	top: 0px;
+	left: 100%;
+}
+
+
+.mod .navstack.ui-container {
+	width: 25%;
+	padding: 10px 0px;
+	list-style: none;
+}
+.mod .navstack a {
+	display: block;
+	padding: 7px 10px;
+	border-top: 1px solid #dddddd;
+}
+.mod .navstack li:first-child a {
+	border-top: none;
+}
+.mod .navstack a:hover {
+	border-color: transparent;
+	background-color: #edeba4;
+	background-image: linear-gradient(bottom, rgb(240,213,132) 7%, rgb(237,235,164) 73%);
+	background-image: -o-linear-gradient(bottom, rgb(240,213,132) 7%, rgb(237,235,164) 73%); /* for Opera */
+	background-image: -moz-linear-gradient(bottom, rgb(240,213,132) 7%, rgb(237,235,164) 73%);
+	background-image: -webkit-linear-gradient(bottom, rgb(240,213,132) 7%, rgb(237,235,164) 73%);
+	background-image: -ms-linear-gradient(bottom, rgb(240,213,132) 7%, rgb(237,235,164) 73%); /* for Internet Explorer */
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.07, rgb(240,213,132)),
+		color-stop(0.73, rgb(237,235,164))
+	);
+	color: #000000;	
+}
+.mod .navstack a:active {
+	background-image: linear-gradient(bottom, rgb(237,235,164) 7%, rgb(240,213,132) 73%);
+	background-image: -o-linear-gradient(bottom, rgb(237,235,164) 7%, rgb(240,213,132) 73%);
+	background-image: -moz-linear-gradient(bottom, rgb(237,235,164) 7%, rgb(240,213,132) 73%);
+	background-image: -webkit-linear-gradient(bottom, rgb(237,235,164) 7%, rgb(240,213,132) 73%);
+	background-image: -ms-linear-gradient(bottom, rgb(237,235,164) 7%, rgb(240,213,132) 73%);
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.07, rgb(237,235,164)),
+		color-stop(0.73, rgb(240,213,132))
+	);	
 }
 
 .mod .calendar .cal-hd .title {
