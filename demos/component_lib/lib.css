@@ -293,8 +293,6 @@ only when the user is clicking down on it
 	margin: 0px 0px 0px 10px;
 	list-style-type: disc;
 	list-style-position: inside;
-	font-family: Georgia, serif;
-	font-variant: small-caps;
 	font-size: 14px;
 }
 .mod .breadcrumb > ol > li:first-child {
@@ -302,7 +300,6 @@ only when the user is clicking down on it
 	list-style-type: none;
 }
 .mod .breadcrumb > ol > li.current {
-	font-variant: normal;
 	text-transform: uppercase;
 }
 .mod .breadcrumb > ol > li > a {
@@ -358,8 +355,10 @@ only when the user is clicking down on it
 }
 
 .mod .navbar {
+	margin: 0px;
 	padding-top: 0px;
 	padding-bottom: 0px;
+	font-size: 14px;
 }
 .mod .navbar li {
 	position: relative;
@@ -376,7 +375,7 @@ only when the user is clicking down on it
 }
 .mod .navbar a {
 	display: block;
-	padding: 4px 10px;
+	padding: 7px 10px;
 	border: 1px solid transparent;
 	background-color: #f1f1f1;
 }
@@ -433,19 +432,22 @@ only when the user is clicking down on it
 	top: 100%;
 	left: 0px;
 	border: 1px solid #aaaaaa;
-	border-top: none;
+	border-top-color: #cccccc;
 }
 .mod .navbar > li > ul > li > ul {
 	width: 50%;
 	top: 0px;
 	left: 100%;
+	border: 1px solid #cccccc;
 }
 
 
 .mod .navstack.ui-container {
 	width: 25%;
+	margin: 0px;
 	padding: 10px 0px;
 	list-style: none;
+	font-size: 14px;
 }
 .mod .navstack a {
 	display: block;

@@ -1,0 +1,84 @@
+/* 
+"Universal" selector
+Applies these styles to ALL elements
+*/
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+.menu {
+	margin: 30px;
+	float: left;
+}
+
+.menu li {
+	list-style: none;
+	
+	/*
+	We make the <li>s "position: relative;"
+	to be able to absolutely position the inner <ul>s
+	with the top and left offsets being RELATIVE to their parent <li>
+	*/
+	position: relative;
+}
+
+/*
+"Child" selector
+Applies these styles to <li> elements
+that are direct children of an element with a class "menu"
+(we don't want to float ALL <li>s inside .menu, just the top level ones)
+*/
+.menu > li {
+	float: left;
+	margin-right: 15px;
+}
+
+.menu ul {
+	/*
+	Hide the element
+	*/
+	display: none;
+	
+	/*
+	We make the <ul>s "position: absolute;"
+	so that they don't take up any space in the layout
+	once they are revealed. 
+	This also allows them to appear above the rest of the content.
+	*/
+	position: absolute;
+	
+	/* ---------------------------------------------------------------
+	Because the element is inside of a relatively position <li>,
+	the "top" and "left" offsets are with respect to that parent <li>
+	---------------------------------------------------------------- */
+	
+	/* 
+	"top: 100%;" Sets the top offset to 100% of the parent's HEIGHT.
+	This makes the element appear directly below the parent.
+	*/
+	top: 100%;
+	left: 0px;
+	
+	/*
+	Once an element is absolutely positioned, its width will NOT
+	expand to be as wide as possible (like block elements normally behave).
+	Here, we explicitly define a width.
+	*/
+	width: 400px;
+	
+	padding: 12px;
+	background-color: #fff;
+	border: 1px solid #000;
+}
+
+.menu li:hover > ul {
+	/*
+	Show the element
+	*/
+	display: block;
+}
+
+p {
+	clear: left;
+}

@@ -26,6 +26,17 @@ function lab_template_url($atts) {
 }
 add_shortcode("template_url", "lab_template_url");
 
+function lab_post_url($atts) {
+	extract(shortcode_atts(array(
+		"id" => ""
+	), $atts));
+	
+	if ($id) {
+		return get_permalink($id);
+	}
+}
+add_shortcode("post_url", "lab_post_url");
+
 function remove_generator_tag() { 
 	return "";
 }

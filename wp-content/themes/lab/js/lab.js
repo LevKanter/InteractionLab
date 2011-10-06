@@ -1,6 +1,7 @@
 (function(window, app, $) {
 	
-	var $win = $(window);
+	var $win = $(window),
+	    $body = $("body");
 	
 	function generateTOC($c, $s) {
 		var $sections, $toc;
@@ -76,7 +77,7 @@
 		$c = $(".body .content");
 		$s = $(".body .sidebar");
 		
-		if ($c.length && $s.length) {
+		if ($c.length && $s.length && !$body.hasClass("home")) {
 			generateTOC($c, $s);
 			if (!isTouch()) {
 				positionSidebar($s);
