@@ -1,0 +1,30 @@
+body {
+	background-color: #f1f1f1;
+}
+
+.button {
+	display: block;
+	float: left;
+	padding: 5px;
+	border: 1px solid;
+	margin: 0px 0px 10px;
+}
+
+.button:hover {
+	background-color: #000000;
+	color: #ffffff;
+}
+
+#box {
+	clear: left;
+	width: 500px;
+	border: 1px solid;
+	padding: 5px;
+	background-color: #ffffff;
+	
+	/*
+	Using display: none; to start the element out hidden.
+	We'll reveal it with javascript, using jQuery, by modifying its display property.
+	*/
+	display: none;
+}
