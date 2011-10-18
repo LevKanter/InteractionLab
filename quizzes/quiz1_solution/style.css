@@ -1,9 +1,23 @@
 /* quiz css */
 
+body {
+	background-image: url("images/pattern.gif");
+	background-repeat: repeat;
+	font-family: Georgia;
+}
 
+.page {
+	background-color: #ffffff;
+	border: 1px double #000000;
+}
 
+h1 {
+	text-transform: uppercase;
+}
 
-
+h2 {
+	font-style: italic;
+}
 
 
 
