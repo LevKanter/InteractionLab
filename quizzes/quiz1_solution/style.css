@@ -1,36 +1,114 @@
 /* quiz css */
 
 body {
+	margin: 0px;
+	padding: 0px;
 	background-image: url("images/pattern.gif");
 	background-repeat: repeat;
-	font-family: Georgia;
-}
-
-.page {
-	background-color: #ffffff;
-	border: 1px double #000000;
+	background-attachment: fixed;
+	font-family: Georgia, serif;
 }
 
 h1 {
+	margin: 0px;
+	padding: 0px;
+	font-size: 14px;
+	font-weight: normal;
 	text-transform: uppercase;
+	letter-spacing: .1em;
 }
 
 h2 {
+	margin: 0px;
+	padding: .6em 0px;
+	font-size: 36px;
+	font-style: italic;
+	font-weight: normal;
+}
+
+h3 {
+	margin: 0px;
+	padding: 0px 0px 20px;
+	font-size: 18px;
+	font-weight: normal;
+}
+
+p {
+	margin: 0px;
+	padding: 1em 0px 0px;
+	font-size: 16px;
+}
+p:first-child {
+	padding-top: 0px;
+}
+
+a {
+	color: #ff0000;
+	text-decoration: none;
+}
+
+strong {
+	text-transform: uppercase;
+	font-style: inherit;
+	font-weight: inherit;
+	letter-spacing: .1em;
+}
+
+header {
+	text-align: center;
+}
+
+.page {
+	position: relative;
+	width: 644px;
+	margin: 10px auto 30px;
+	padding: 30px;
+	background-color: #ffffff;
+	border: 3px double #000000;
+}
+
+.main {
+	float: left;
+	width: 400px;
+}
+
+.main p {
+	line-height: 1.5;
+}
+
+.side {
+	float: right;
+	width: 205px;
+}
+
+.side p {
+	padding-right: 10px;
+	font-size: 11px;
 	font-style: italic;
 }
 
+.side p cite {
+	font-style: normal;
+}
 
+.sticker {
+	position: absolute;
+	top: 10px;
+	right: -77px;
+	width: 200px;
+	height: 200px;
+	background-image: url("images/sticker.png");
+	font-style: italic;
+	color: #ffffff;
+	text-align: center;
+	font-size: 21px;
+}
 
-
-
-
-
-
-
-
-
-
-
+.sticker > span {
+	display: block;
+	padding: 45px;
+	margin-top: 20px;
+}
 
 /* 
 This is a more advanced, juiced-up "clearfix" than the versionn

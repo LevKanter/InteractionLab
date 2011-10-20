@@ -1,0 +1,276 @@
+<!doctype html> 
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US"> 
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>	
+	<title>My Canvas</title>
+	<style type="text/css">
+		body { background-color:#333333; }
+		canvas { 
+			display:block; margin:auto; padding:5px; 
+			border:1px solid #666666;
+		}
+	</style>
+</head>
+	
+<body onload="start();">
+	
+	<canvas id="sketch" width="800" height="600">
+		<p>canvas not supported</p>
+	</canvas>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+	<script>
+
+				
+				graphics: {
+					circle: function(G, props) {
+						G.fillStyle = props.color || "rgb(0, 0, 0)";
+						G.beginPath();
+						G.save();
+							G.translate(props.x, props.y);
+							G.arc(0, 0, props.r, 0, 2*Math.PI, true);
+						G.restore();
+						G.closePath();
+						G.fill();
+						//G.stroke();
+						
+						return G;
+					}
+				},
+				
+				ui: {
+					hookMouse: function(ns, element) {
+						if (!ns || !element) return false;
+
+						ns.mouseX = 0;
+						ns.mouseY = 0;
+						ns.pmouseX = 0;
+						ns.pmouseY = 0;
+						ns.mousePressed = false;
+
+						TC.jQ(element)
+							.bind("mousemove", function(e) {
+								ns.pmouseX = ns.mouseX;
+								ns.pmouseY = ns.mouseY;
+								ns.mouseX = e.pageX - this.offsetLeft;
+								ns.mouseY = e.pageY - this.offsetTop;
+							}).bind("mousedown", function() {
+								ns.mousePressed = true;
+							}).bind("mouseup", function() {
+								ns.mousePressed = false;
+							});
+
+						return ns;
+					}
+				}
+			};
+		}
+
+		TC.setup = function() {
+			TC.log("TC.setup");
+			TC.setupCanvas("#sketch");
+			
+			TC.PS = TC.particleSystem();
+			TC.canvas.play();
+		};
+		
+		function start(id) {
+			var $canvas;
+			
+			$canvas = $("#" + id)[0];
+			
+			if (typeof canvas.getContext !== "function") {
+				return false;
+			}
+			
+			TC.canvas = {
+				width: TC.jQ(id).attr("width"),
+				height: TC.jQ(id).attr("height"),
+				G: canvas.getContext("2d"),
+				interval: null,
+				play: function() {
+					this.interval = setInterval(TC.draw, 1000/60);
+				},
+				stop: function() {
+					clearInterval(this.interval);
+					this.interval = null;
+				},
+				toggle: function() {
+					if (this.interval) this.stop();
+					else this.play();
+				},
+				keypressHandler: function(e) {
+					var key = e.which || e.keyCode;
+					//TC.log(key);
+					switch (key) {
+						case 112: // p
+						case 80:  // P
+							TC.canvas.toggle();
+							break;
+						case 32: // space
+							if (!TC.canvas.interval) {
+								TC.draw();
+							}
+							break;
+						case 13:
+							if (TC.PS) TC.PS.flush();
+							break;
+						
+					}
+				}
+			};
+			
+			TC.jQ(document).bind("keypress", TC.canvas.keypressHandler);
+			return TC.ui.hookMouse(TC.canvas, canvas);
+		};
+		
+		TC.draw = function() {
+			//TC.log("TC.draw");
+			var G = TC.canvas.G;
+			
+			//G.clearRect(0, 0, TC.canvas.width, TC.canvas.height);
+			//G.drawImage(TC.img, 0, 0);
+			
+			/*var grad = G.createRadialGradient(200, 205, 600, 400, 100, 0);
+				grad.addColorStop(0, '#ccaa00');  
+				grad.addColorStop(0.9, '#00aacc'); 
+				grad.addColorStop(0.7, "#dd0000");
+				grad.addColorStop(1, 'rgba(1,159,98,0)');
+			
+			for (var i = 0; i < 5; i += 1) {
+				TC.graphics.circle(G, {
+					color: grad, //"rgb("+ Math.floor(Math.random()*255) + "," + Math.floor(Math.random()*255) + "," + Math.floor(Math.random()*255) + ")",
+					x: TC.Math.random(TC.canvas.width),
+					y: TC.Math.random(TC.canvas.height),
+					r: TC.Math.random(20) + 5
+				});
+			}*/
+			
+			TC.PS.update();
+			TC.PS.draw(G);
+			
+			if (TC.canvas.mousePressed) {
+				TC.PS.add(TC.particle({
+					pos: TC.Vec2D(TC.canvas.mouseX, TC.canvas.mouseY),
+					acc: TC.Vec2D(TC.Math.random(-.96, .96), TC.Math.random(-.96, .96)),
+					radius: 7,
+					draw: function(G) {
+						TC.graphics.circle(G, {
+							color: "rgb("+ Math.floor(Math.random()*10) + "," + Math.floor(TC.Math.random(100, 200)) + "," + Math.floor(Math.random()*10) + ")",
+							x: this.pos.x,
+							y: this.pos.y,
+							r: this.radius
+						});
+						TC.graphics.circle(G, {
+							color: "rgb(0, 0, 20)",
+							x: this.pos.x + 3,
+							y: this.pos.y + 3,
+							r: this.radius - 3
+						});
+					}
+				}));
+			}
+			
+			// erase
+			G.fillStyle = "rgba(51, 51, 51, 0.01)";
+			G.fillRect(0, 0, TC.canvas.width, TC.canvas.height);
+		};
+		
+		TC.particle = function(options) {
+			var p = TC.jQ.extend ({
+				pos: TC.Vec2D(TC.canvas.width/2, TC.canvas.height/2),
+				vel: TC.Vec2D(TC.Math.random(-5, 5), TC.Math.random(-5, 5)),
+				acc: TC.Vec2D(),
+				radius: TC.Math.random(3, 5),
+				age: 0,
+				update: function() {
+					this.vel.add(this.acc);
+					this.pos.add(this.vel);
+					this.pos.add(TC.Vec2D(TC.Math.random(-6, 6), TC.Math.random(-6, 6)));
+					this.updateBounds();
+					//this.acc.mult(0);
+					this.age += 1;
+				},
+				updateBounds: function() {
+					if (this.pos.x < 0 || this.pos.x > TC.canvas.width) {
+						this.vel.mult(-1, 1);
+					}
+					if (this.pos.y < 0 || this.pos.y > TC.canvas.height) {
+						this.vel.mult(1, -1);
+					}
+				},
+				draw: function(G) {
+					TC.graphics.circle(G, {
+						color: "rgb("+ Math.floor(Math.random()*10) + "," + Math.floor(TC.Math.random(100, 200)) + "," + Math.floor(Math.random()*10) + ")",
+						x: this.pos.x,
+						y: this.pos.y,
+						r: this.radius
+					});
+				}
+			}, options);
+			return p;						
+		};
+		
+		TC.particleSystem = function(nParticles) {
+			var PS = {
+				update: function() {
+					for (var i in particles) {
+						particles[i].update();
+						/*if (particles[i].age > 100) {
+							delete particles[i];
+						}*/
+					}
+				},
+				draw: function(G) {
+					for (var i in particles)
+						particles[i].draw(G);
+				},
+				add: function(particle) {
+					if (particle)
+						size = particles.push(particle);
+					else
+						size = particles.push(TC.particle());
+				},
+				flush: function() {
+					for (var i in particles)
+						delete particles[i];
+					size = 0;
+				}
+			}, 
+				particles = [],
+				size = 0;
+				
+			var n = nParticles || 0;
+			for (var i = 0; i < n; i += 1)
+				PS.add();
+			return PS;			
+		};
+		
+		TC.Vec2D = function(x, y) {
+			return {
+				x: x || 0,
+				y: y || 0,
+				add: function(vec) {
+					this.x += vec.x;
+					this.y += vec.y;
+				},
+				sub: function(vec) {
+					this.x -= vec.x;
+					this.y -= vec.y;
+				},
+				mult: function() {
+					if (arguments.length === 0) return; 
+					if (arguments.length === 1) {
+						this.x *= arguments[0];
+						this.y *= arguments[0];
+					} else {
+						this.x *= arguments[0];
+						this.y *= arguments[1];
+					}
+				}
+			};
+		};
+		
+	</script>
+</body>
+</html>
