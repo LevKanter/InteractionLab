@@ -3,10 +3,23 @@
 body {
 	margin: 0px;
 	padding: 0px;
-	background-image: url("images/pattern.gif");
-	background-repeat: repeat;
-	background-attachment: fixed;
 	font-family: Georgia, serif;
+	
+	background-image: url("images/pattern.gif");
+	
+	/*
+	background-repeat is usually set to "repeat" by default,
+	but let's be explicit about it here anyway.
+	*/
+	background-repeat: repeat;
+	
+	/*
+	background-attachment is not necessary, but setting it
+	to "fixed" achieves a nice effect for the tiled background-image
+	when scrolling the page.
+	see: http://reference.sitepoint.com/css/background-attachment
+	*/
+	background-attachment: fixed;
 }
 
 h1 {
@@ -15,6 +28,14 @@ h1 {
 	font-size: 14px;
 	font-weight: normal;
 	text-transform: uppercase;
+	/*
+	Notice that the units here is something called "em"
+	(rather than "px"). Em's (NOT to be confused with the <em> tag) 
+	represent the current font-size of the element.
+	So ".1em" defines the measurement as 1/10th of the font-size.
+	This allows us to keep the letter-spacing of the element
+	porportionate to its font size.
+	*/
 	letter-spacing: .1em;
 }
 
@@ -38,6 +59,15 @@ p {
 	padding: 1em 0px 0px;
 	font-size: 16px;
 }
+/*
+Using a :first-child pseudo-class
+to zero out the top padding for all <p>
+elements that are the first "child"
+of their parent (this was not necessary
+for the quiz at all, but in general
+it's an extremely useful technique).
+see: http://css-tricks.com/snippets/css/remove-margins-first-element/
+*/
 p:first-child {
 	padding-top: 0px;
 }
@@ -49,9 +79,23 @@ a {
 
 strong {
 	text-transform: uppercase;
+	/*
+	"inherit" means this property is whatever it already
+	happens to be in the element's parent element.
+	Not all CSS properties can be inherited, but most
+	typography-related things can be.
+	*/
 	font-style: inherit;
 	font-weight: inherit;
 	letter-spacing: .1em;
+}
+
+em {
+	/*
+	For <em>s, font-style is usually set to "italic" by default,
+	but let's be explicit about it here anyway.
+	*/
+	font-style: italic;
 }
 
 header {
@@ -59,8 +103,15 @@ header {
 }
 
 .page {
+	/*
+	The .page container is relatively positioned
+	so that we can put the "sticker" inside of it
+	and have the sticker's offset be with respect
+	to the .page, rather than the entire window.
+	*/
 	position: relative;
-	width: 644px;
+	
+	width: 645px;
 	margin: 10px auto 30px;
 	padding: 30px;
 	background-color: #ffffff;
@@ -69,10 +120,16 @@ header {
 
 .main {
 	float: left;
-	width: 400px;
+	width: 390px;
 }
 
 .main p {
+	/*
+	A line-height of "1.5" sets the line height
+	(AKA the leading) to 1.5 multiplied by the
+	element's font-size. This allows us to keep
+	the line height proportional to the font size.
+	*/
 	line-height: 1.5;
 }
 
@@ -93,22 +150,50 @@ header {
 
 .sticker {
 	position: absolute;
+	/*
+	We have this element inside of the .page,
+	and .page is relatively positioned (i.e. 
+	.page { position: relativel }). Subsequently,
+	this sticker element's offsets (top, right in this case)
+	are with respect to .page
+	*/
 	top: 10px;
 	right: -77px;
+	
 	width: 200px;
 	height: 200px;
 	background-image: url("images/sticker.png");
+	
 	font-style: italic;
 	color: #ffffff;
 	text-align: center;
-	font-size: 21px;
+	font-size: 24px;
 }
 
 .sticker > span {
+	/*
+	<span>s are "display: inline;" by default
+	we make it "block" so that we can give it
+	margins, padding, width, etc
+	*/
 	display: block;
-	padding: 45px;
-	margin-top: 20px;
+	margin: 58px 30px 0px;
 }
+
+/*
+BONUS! Uncomment these styles and then hover
+over the sticker! It will blow your mind.
+*/
+/*
+.sticker {
+	-moz-transition: -moz-transform .1s ease-in;
+	-webkit-transition: -webkit-transform .1s ease-in;
+}
+.sticker:hover {
+	-moz-transform: rotate(30deg);
+	-webkit-transform: rotate(30deg);
+}
+*/
 
 /* 
 This is a more advanced, juiced-up "clearfix" than the versionn
