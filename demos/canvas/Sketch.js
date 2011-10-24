@@ -107,10 +107,10 @@
 			});
 		
 			S.mouseX = 0,
-		    S.mouseY = 0,
-		    S.pmouseX = 0,
-		    S.pmouseY = 0,
-		    S.mousePressed = false;
+			S.mouseY = 0,
+			S.pmouseX = 0,
+			S.pmouseY = 0,
+			S.mousePressed = false;
 		
 			$c.bind("mousemove", function (e) {
 				
