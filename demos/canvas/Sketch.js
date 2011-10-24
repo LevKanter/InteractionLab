@@ -78,8 +78,8 @@
 			cache.padY = trimpx($c.css("border-top-width")) + trimpx($c.css("padding-top"));
 			
 			function setDimensions (w, h) {
-				S.width = w || $c.width();
-				S.height = h || $c.height();
+				S.width = w;
+				S.height = h;
 
 				// make sure the canvas has width and height attributes
 				// that correspond to its width and height as specified
@@ -88,7 +88,7 @@
 				$c[0].height = S.height;
 			}
 			
-			setDimensions();
+			setDimensions($c.width(), $c.height());
 			
 			// ui & events
 			
@@ -130,19 +130,16 @@
 				o.mouseReleased(S);
 			});
 			
-			// start loop
+			// start & loop
 			
-			looping = o.looping;
 			o.setup(S);
-			loop();
+			S.setLooping(o.looping);
 		}
 	
 		function loop () {
 			o.update(S);
 			o.draw(S);
-			if (looping) {
-				loopTimer = window.setTimeout(loop, o.frameRate);
-			}
+			loopTimer = window.setTimeout(loop, o.frameRate);
 		}
 	
 		S.setLooping = function (on) {
@@ -152,6 +149,7 @@
 			} else {
 				if (loopTimer) {
 					window.clearTimeout(loopTimer);
+					loopTimer = null;
 				}
 				looping = false;
 			}
