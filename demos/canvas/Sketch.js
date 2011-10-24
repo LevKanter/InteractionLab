@@ -9,7 +9,7 @@
 	}
 	
 	function Sketch (options) {
-		var S, o, looping, loopTimer, cache;
+		var S, o, loopTimer, cache;
 	
 		S = this;
 		o = $.extend({
@@ -144,14 +144,10 @@
 	
 		S.setLooping = function (on) {
 			if (on) {
-				looping = true;
 				loop();
-			} else {
-				if (loopTimer) {
-					window.clearTimeout(loopTimer);
-					loopTimer = null;
-				}
-				looping = false;
+			} else if (loopTimer) {
+				window.clearTimeout(loopTimer);
+				loopTimer = null;
 			}
 			return S;
 		};
