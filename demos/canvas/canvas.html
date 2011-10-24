@@ -11,9 +11,11 @@
 		
 		canvas {
 			display: block;
-			margin: 30px auto;
+			margin: 0px auto;
 			padding: 10px;
 			border: 3px double #cccccc;
+		
+			
 		}
 		
 	</style>
@@ -22,162 +24,88 @@
 	
 <body>
 	
-	<canvas id="sketch" width="600" height="480">
+	<canvas width="600" height="400">
 		<p>canvas not supported</p>
 	</canvas>
 	
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+	<script src="Sketch.js"></script>
 	<script>
-		(function(window) {
+		(function(window, $) {
 	
-			var frameRate = 1000/60,
-			    looping = true,
-		
-			    canvas, // the canvas DOM element
-			
-			    $c, // a jQuery object that represents the canvas,
-			        // useful if we want to bind events, etc
-			
-			    context, // the canvas's "graphics" context
-			             // we will call functions on this object
-			             // to render stuff on the canvas
-			
-			    width, // width of the canvas
-			    height, // height of the canvas
-			
-			    mouseX = 0,
-			    mouseY = 0,
-			    pmouseX = 0,
-			    pmouseY = 0,
-			    mousePressed = false,
-			
-			    bg, // background color
-			    fg; // foreground color
-			
 			function circle(x, y, r) {
-				context.fillStyle = fg;
-				context.beginPath();
-				context.save();
-				context.translate(x, y);
-				context.arc(0, 0, r, 0, 2*Math.PI, true);
-				context.restore();
-				context.closePath();
-				context.fill();
-			}
-
-			function cursor() {
-				$c.css("cursor", "default");
-			}
-
-			function noCursor() {
-				$c.css("cursor", "none");
-			}
-		
-			function prepareCanvas(id) {
-
-				var c = document.getElementById(id);
-			
-				if (!c) {
-					// no element with the specified id
-					return false;
-				}
-
-				if (typeof c.getContext !== "function") {
-					// the browser does not support canvas
-					return false;
-				}
-			
-				canvas = c;
-
-				context = canvas.getContext("2d");
-
-				width = canvas.width;
-				height = canvas.height;
-				
-				$c = $(canvas);
-
-				$c
-					.bind("mousemove", function(event) {
-
-						pmouseX = mouseX;
-						pmouseY = mouseY;
-						mouseX = event.pageX - this.offsetLeft;
-						mouseY = event.pageY - this.offsetTop;
-
-					}).bind("mousedown", function() {
-
-						mousePressed = true;
-						mousePressedEvent();
-
-					}).bind("mouseup", function() {
-
-						mousePressed = false;
-						mouseReleasedEvent();
-
-					}).trigger("focus");
-			
-				return true;
+				this.fillStyle = "rgb(0, 0, 0)";
+				this.beginPath();
+				this.save();
+				this.translate(x, y);
+				this.arc(0, 0, r, 0, 2*Math.PI, true);
+				this.restore();
+				this.closePath();
+				this.fill();
 			}
 			
-			function setup() {
-				//noCursor();
-				
-				bg = "rgba(0, 150, 30, 1)";
-				fg = "rgb(0, 0, 180)";
-				
-				context.fillStyle = bg;
-				context.fillRect(0, 0, width, height);
-			}
-		
-			function draw() {
-				//context.clearRect(0, 0, width, height);
-				
-				if (mousePressed) {
-					circle(mouseX, mouseY, 15);
-				}
-			}
-		
-			function mousePressedEvent() {
-				console.info("mouse pressed!");
-			}
-		
-			function mouseReleasedEvent() {
-				console.info("mouse released!");
-			}
-		
-			
-		
-			function loop() {
-				draw();
-				if (looping) {
-					window.setTimeout(loop, frameRate);
-				}
-			}
+			var brushsize = 6;
 			
 			$(document).ready(function() {
-				
-				var id = "sketch";
-				
-				if ( prepareCanvas(id) ) {
+			
+				Sketch({
+					selector: "canvas",
 					
-					setup();
-					loop();
-					
-					window.stop = function() {
-						looping = false;
-					};
+					setup: function(instance) {
+						instance.ctx.fillStyle = "rgba(0, 150, 30, 1)";
+						instance.ctx.fillRect(0, 0, instance.width, instance.height);
+						
+						var ctx = instance.ctx;
+						  for (var i=0;i<6;i++){  
+						    for (var j=0;j<6;j++){  
+						      ctx.fillStyle = 'rgb(' + Math.floor(255-42.5*i) + ',' +   
+						                       Math.floor(255-42.5*j) + ',0)';  
+						      ctx.fillRect(j*25,i*25,25,25);  
+						    }  
+						  }
 
-					window.start = function() {
-						looping = true;
-						loop();
-					};
-					
-				} else {
-					console.warn("there was a problem initializing the canvas");
-				}
+						console.log(instance);
+					},
+					update: function(instance) {
+						
+					},
+					draw: function(instance) {
+						//instance.ctx.clearRect(0, 0, instance.width, instance.height);
+						//return;
+						instance.ctx.fillStyle = "rgba(0, 150, 30, .01)";
+						instance.ctx.fillRect(0, 0, instance.width, instance.height);
+						
+						instance.ctx.font = 'italic 400 36px/2 Georgia, sans-serif';
+						instance.ctx.fillStyle = "rgb(0, 0, 0)";
+						instance.ctx.fillText("hello world", 30, 30);
+
+						if (instance.mousePressed) {
+							//circle.call(instance.ctx, instance.mouseX, instance.mouseY, brushsize);
+							instance.ctx.fillStyle = "rgb(0, 0, 0)";
+							
+							instance.ctx.fillRect(instance.mouseX, 0, 1, instance.height);
+							instance.ctx.fillRect(0, instance.mouseY, instance.width, 1);
+							
+							//instance.ctx.fillRect(instance.mouseX, instance.mouseY, brushsize, brushsize);
+						}
+					},
+					mousePressed: function() {
+						console.info("mouse pressed!");
+					},
+					mouseReleased: function() {
+						console.info("mouse released!");
+					},
+					keyPressed: function () {
+						
+					}
+				});
 			});
 			
-		}(this));
+			
+			
+		}(this, this.jQuery));
+		
+		
 		
 	</script>
 </body>
