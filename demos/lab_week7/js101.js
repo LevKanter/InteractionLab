@@ -36,7 +36,7 @@ jQuery(document).ready(function() {
 		// we can cancel the default behavior that occurs when clicking on a link
 		// by calling the function preventDefault on the "object" that was passed as a "parameter" to our EVENT HANDLER function
 		
-		event.preventDefault(); // ( http://api.jquery.com/event.preventDefault/ )
+		//event.preventDefault(); // ( http://api.jquery.com/event.preventDefault/ )
 		
 		// call our function, passing it our div as the "element" parameter
 		

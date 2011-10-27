@@ -7,11 +7,54 @@ body {
 
 .content {
 	width: 600px;
+	margin-left: 140px;
 }
 
-section {
+.content section {
 	margin: 0px 0px 30px;
 	padding: 15px;
 	background-color: #ffffff;
 	box-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
+	display: none;
 }
+
+.content section.active {
+	display: block;
+	opacity: 0.5;
+}
+
+.toc {
+	position: fixed;
+	left: 30px;
+	top: 30px;
+}
+
+.toc a {
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

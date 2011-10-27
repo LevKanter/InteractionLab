@@ -27,10 +27,14 @@
 				this.acc.div(this.mass);
 				this.acc.sub(PVector.mult(this.vel, this.drag));
 				
-				if (this.maxAcc > 0) this.acc.limit(this.maxAcc);
+				if (this.maxAcc > 0) {
+					this.acc.limit(this.maxAcc);
+				}
 				this.vel.add(this.acc);
 				
-				if (this.maxVel > 0) this.vel.limit(this.maxVel);
+				if (this.maxVel > 0) {
+					this.vel.limit(this.maxVel);
+				}
 				this.pos.add(this.vel);
 				
 				this.acc.mult(0);
@@ -66,8 +70,57 @@
 		init();
 	}
 	
-	window.Particle = function (options) {
-		return new Particle(options);
-	};
+	function ParticleSystem (options) {
+		var me, o, particles, capacity;
+		
+		me = this;
+		o = $.extend({
+			capacity: -1,
+			overflow: $.noop
+		}, options);
+		
+		function init () {
+			capacity = o.capacity;
+			me.flush();
+		}
+		
+		this.update = function () {
+			particles = $.map(particles, function(p, i) {
+				p.update();
+				return p.dead ? null : p;
+			});
+			return this;
+		};
+		
+		this.add = function (p) {
+			if (capacity > 0 && particles.length > capacity) {
+				o.overflow(p);
+			} else {
+				particles.push(p);
+			}
+			return this;
+		};
+		
+		this.size = function () {
+			return particles.length;
+		};
+		
+		this.flush = function () {
+			particles = [];
+			return this;
+		};
+		
+		init();
+	}
+	
+	function publish (key, fn, ns) {
+		ns = ns || window;
+		ns[key] = function (options) {
+			return new fn(options);
+		};
+	}
+	
+	publish("Particle", Particle);
+	publish("ParticleSystem", ParticleSystem);
 	
 }(this, this.jQuery, this.PVector));
