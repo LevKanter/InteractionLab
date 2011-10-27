@@ -1,0 +1,36 @@
+body {
+	background-color: #f1f1f1;
+	font-family: Georgia, serif;
+}
+
+.accordion {
+	width: 600px;
+	border: 1px solid;
+	border-top-width: 0;
+}
+
+.accordion .head {
+	border-top: 1px solid;
+}
+
+.accordion .head h2 {
+	margin: 0px;
+	padding: 0px;
+	font-weight: normal;
+	font-style: italic;
+}
+.accordion .head h2 a {
+	display: block;
+	padding: 10px;
+	color: #000000;
+	text-decoration: none;
+}
+.accordion .head h2 a:hover {
+	background-color: #ffffff;
+	color: #00aacc;
+}
+
+.accordion .body {
+	display: none;
+	padding: 10px;
+}
