@@ -1,84 +1,92 @@
-<!doctype html> 
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US"> 
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>	
-	<title>Fun With Canvas</title>
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Fun With Canvas</title>
+		<link rel="stylesheet" href="sketch.css">
+	</head>
+	<body>
 	
-	<style>
+		<canvas>
+			<p>canvas not supported</p>
+		</canvas>
 	
-		canvas {
-			display: block;
-			width: 800px;
-			height: 600px;
-			margin: 0px auto;
-			padding: 10px;
-			border: 3px double #cccccc;
-		}
-		
-	</style>
-
-</head>
-	
-<body>
-	
-	<canvas>
-		<p>canvas not supported</p>
-	</canvas>
-	
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-	<script src="Sketch.js"></script>
-	<script src="PVector.js"></script>
-	<script src="Particle.js"></script>
-	<script>
-		(function(window, $) {
-	
-			function circle(ctx, x, y, r) {
-				ctx.fillStyle = "rgb(0, 0, 0)";
-				ctx.beginPath();
-				ctx.save();
-				ctx.translate(x, y);
-				ctx.arc(0, 0, r, 0, 2*Math.PI, true);
-				ctx.restore();
-				ctx.closePath();
-				ctx.fill();
-			}
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+		<script src="Sketch.js"></script>
+		<script src="PVector.js"></script>
+		<script src="Particle.js"></script>
+		<script>
+			(function(window, $) {
 			
-			$(document).ready(function() {
+				var particles,
+				    anchors,
+				    gw,
+				    gh,
+				    gspacing;
 			
-				Sketch({
-					selector: "canvas",
+				$(document).ready(function() {
+			
+					Sketch({
+						selector: "canvas",
 					
-					setup: function(S) {
+						setup: function(S) {
+							var i, j, p;
 						
-						for (var i = 0; i < 6; i += 1) {  
-							for (var j = 0; j < 6; j+= 1) {  
-								S.ctx.fillStyle = 'rgb(' + Math.floor(255-42.5*i) + ',' + Math.floor(255-42.5*j) + ',0)';  
-								S.ctx.fillRect(j*25,i*25,25,25);  
-							}  
+							gw = 40;
+							gh = 30;
+							gspacing = 26;
+						
+							particles = [];
+							anchors = [];
+						
+							for (i = 0; i < gw; i += 1) {
+								for (j = 0; j < gh; j += 1) {
+									p = Particle();
+									p.drag.set(0.8, 0.8);
+									p.pos.set(i*gspacing, j*gspacing);
+								
+									particles.push(p);
+									anchors.push(new PVector(p.pos.x, p.pos.y));
+								}
+							}
+						},
+						update: function(S) {
+							var i;
+							
+							for (i = 0; i < particles.length; i += 1) {
+								particles[i].update();
+								particles[i].attract(new PVector(S.mouseX, S.mouseY), 300, 8.5);
+								particles[i].applyForce(PVector.div(PVector.sub(anchors[i], particles[i].pos), 25));
+							}
+						},
+						draw: function(S) {
+							var i;
+							S.ctx.clearRect(0, 0, S.width, S.height);
+							
+							for (i = 0; i < particles.length; i += 1) {
+								S.ctx.fillStyle = "#00aacc";
+								S.ctx.beginPath();
+								S.ctx.save();
+								S.ctx.translate(particles[i].pos.x, particles[i].pos.y);
+								S.ctx.arc(0, 0, 10, 0, 2*Math.PI, true);
+								S.ctx.restore();
+								S.ctx.closePath();
+								S.ctx.fill();
+							}
+						},
+						mousePressed: function() {
+						
+						},
+						mouseReleased: function() {
+					
+						},
+						keyPressed: function () {
+						
 						}
-
-					},
-					update: function(S) {
-						
-					},
-					draw: function(S) {
-						//S.ctx.clearRect(0, 0, S.width, S.height);
-						//return;
-					},
-					mousePressed: function() {
-					
-					},
-					mouseReleased: function() {
-					
-					},
-					keyPressed: function () {
-						
-					}
+					});
 				});
-			});
 			
-		}(this, this.jQuery));
-		
-	</script>
-</body>
+			}(this, this.jQuery));
+		</script>
+	</body>
 </html>
