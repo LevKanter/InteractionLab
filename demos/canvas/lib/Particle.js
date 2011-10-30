@@ -112,15 +112,15 @@
 		
 		init();
 	}
+
+//------------------------------------------------------------------------------
+
+	window.Particle = function(options) {
+		return new Particle(options);
+	};
 	
-	function publish(key, fn, ns) {
-		ns = typeof ns === "object" ? ns : window; 
-		ns[key] = function(options) {
-			return new fn(options);
-		};
-	}
-	
-	publish("Particle", Particle);
-	publish("ParticleSystem", ParticleSystem);
+	window.ParticleSystem = function(options) {
+		return new ParticleSystem(options);
+	};
 	
 }(this, this.jQuery, this.PVector));

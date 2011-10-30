@@ -1,9 +1,46 @@
+body {
+	background-color: #eeeeee;
+	font-family: Georgia, serif;
+}
+
+.wrap {
+	width: 980px;
+	margin: 0px auto;
+}
+
 canvas {
 	display: block;
+	float: left;
 	width: 800px;
 	height: 600px;
-	margin: 0px auto;
 	padding: 0px;
-	border: 3px double #cccccc;
 	background-color: #000000;
+}
+
+.gui {
+	width: 160px;
+	float: right;
+}
+.gui > table {
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0px;
+	border: 1px solid #cccccc;
+}
+.gui tr {
+	
+}
+.gui tr:hover {
+	background-color: #ffffff;
+}
+.gui th,
+.gui td {
+	padding: 5px;
+	border-bottom: 1px solid #cccccc;
+	
+}
+.gui th {
+	text-align: left;
+	font-weight: normal;
+	font-style: italic;
 }

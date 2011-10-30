@@ -2,6 +2,10 @@
 	
 	var debug = (window.console && window.console.log instanceof Function) ? window.console.log : $.noop;
 	
+	if (! window.requestAnimFrame) {
+		debug("missing raf");
+	}
+	
 	// remove "px" from a string representing a css pixel dimension
 	// and cast as a Number (i.e. trimpx("10px") returns 10)
 	function trimpx(s) {
@@ -19,7 +23,6 @@
 			selector: null,
 			
 			looping: true,
-			frameRate: 1000/60,
 			graphicsMode: "2d",
 			
 			// callbacks
@@ -142,16 +145,17 @@
 		function loop() {
 			o.update(S);
 			o.draw(S);
-			looping = window.setTimeout(loop, o.frameRate);
+			if (looping) {
+				window.requestAnimFrame(loop);
+			}
 		}
 	
 		S.setLooping = function(on) {
-			if (looping) {
-				window.clearTimeout(looping);
-				looping = null;
-			}
 			if (on) {
+				looping = true;
 				loop();
+			} else {
+				looping = false;
 			}
 			return S;
 		};
