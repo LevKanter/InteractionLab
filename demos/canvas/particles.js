@@ -11,40 +11,8 @@
 	function randomColor() {
 		return '#'+(Math.random()*0xFFFFFF<<0).toString(16);
 	}
-	
-	function GUI(options) {
-		
-		var $gui, o;
-		
-		$gui = $(".gui");
-		o = $.extend({
-			pars: {}
-		}, options);
-		
-		$gui.find("[data-param]").each(function() {
-			
-			var $control, par;
-			
-			$control = $(this);
-			par = $control.attr("data-param");
-			
-			if (o.pars && o.pars[par]) {
-				$control.bind("change", function() {
-					o.pars[par] = $control.attr("value");
-					console.log(o.pars[par]);
-				});
-			}
-		});
-	
-	}
 
 	$(document).ready(function() {
-		
-		GUI({
-			pars: {
-				r: r
-			}
-		});
 		
 		Sketch({
 			selector: "canvas",
