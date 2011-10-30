@@ -1,15 +1,16 @@
 (function(window, $) {
 	
-	var debug = (window.console && window.console.log) ? window.console.log : $.noop;
+	var debug = (window.console && window.console.log instanceof Function) ? window.console.log : $.noop;
 	
 	// remove "px" from a string representing a css pixel dimension
 	// and cast as a Number (i.e. trimpx("10px") returns 10)
-	function trimpx (s) {
+	function trimpx(s) {
 		return Number(s.substring(0, s.length - 2));
 	}
 	
-	function Sketch (options) {
-		var S, o, loopTimer, cache;
+	function Sketch(options) {
+		
+		var S, o, looping, cache, guid;
 	
 		S = this;
 		o = $.extend({
@@ -25,6 +26,7 @@
 			setup: $.noop,
 			update: $.noop,
 			draw: $.noop,
+			destroy: $.noop,
 			
 			mousePressed: $.noop,
 			mouseReleased: $.noop,
@@ -33,8 +35,9 @@
 			
 		}, options);
 		cache = {};
+		guid = "sketch_" + new Date().getTime();
 	
-		function init () {
+		function init() {
 			var $c;
 			
 			if (o.selector instanceof $) {
@@ -77,7 +80,7 @@
 			cache.padX = trimpx($c.css("border-left-width")) + trimpx($c.css("padding-left"));
 			cache.padY = trimpx($c.css("border-top-width")) + trimpx($c.css("padding-top"));
 			
-			function setDimensions (w, h) {
+			function setDimensions(w, h) {
 				S.width = w;
 				S.height = h;
 
@@ -92,7 +95,7 @@
 			
 			// ui & events
 			
-			$(window).bind("resize", function () {
+			$(window).bind("resize."+guid, function() {
 				var w, h;
 				w = $c.width();
 				h = $c.height();
@@ -102,7 +105,7 @@
 				o.windowResized(S);
 			});
 			
-			$(window.document).bind("keypress", function (e) {
+			$(window.document).bind("keypress."+guid, function(e) {
 				o.keyPressed(S, e.keyCode || e.which);
 			});
 		
@@ -112,19 +115,19 @@
 			S.pmouseY = 0,
 			S.mousePressed = false;
 		
-			$c.bind("mousemove", function (e) {
+			$c.bind("mousemove."+guid, function(e) {
 				
 				S.pmouseX = S.mouseX;
 				S.pmouseY = S.mouseY;
 				S.mouseX = e.pageX - (this.offsetLeft + cache.padX);
 				S.mouseY = e.pageY - (this.offsetTop + cache.padY);
 
-			}).bind("mousedown", function () {
+			}).bind("mousedown."+guid, function() {
 			
 				S.mousePressed = true;
 				o.mousePressed(S);
 			
-			}).bind("mouseup", function () {
+			}).bind("mouseup."+guid, function() {
 			
 				S.mousePressed = false;
 				o.mouseReleased(S);
@@ -136,33 +139,35 @@
 			S.setLooping(o.looping);
 		}
 	
-		function loop () {
+		function loop() {
 			o.update(S);
 			o.draw(S);
-			loopTimer = window.setTimeout(loop, o.frameRate);
+			looping = window.setTimeout(loop, o.frameRate);
 		}
 	
-		S.setLooping = function (on) {
+		S.setLooping = function(on) {
+			if (looping) {
+				window.clearTimeout(looping);
+				looping = null;
+			}
 			if (on) {
 				loop();
-			} else if (loopTimer) {
-				window.clearTimeout(loopTimer);
-				loopTimer = null;
 			}
 			return S;
 		};
 		
-		S.setCtxProps = function (props) {
-			$.each(props, function (k, v) {
-				S.ctx[k] = v;
-			});
-			return S;
+		S.destroy = function() {
+			$c.unbind("mousemove."+guid).unbind("mousedown."+guid).unbind("mouseup."+guid);
+			$(window).unbind("resize."+guid);
+			$(window.document).unbind("keypress."+guid);
+			S.setLooping(false);
+			o.destroy(S);
 		};
 	
 		init();
 	}
 	
-	window.Sketch = function (options) {
+	window.Sketch = function(options) {
 		return new Sketch(options);
 	};
 

@@ -22,7 +22,12 @@
 				    anchors,
 				    gw,
 				    gh,
-				    gspacing;
+				    gspacing,
+				    c;
+				
+				function randomColor() {
+					return '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+				}
 			
 				$(document).ready(function() {
 			
@@ -49,33 +54,37 @@
 									anchors.push(new PVector(p.pos.x, p.pos.y));
 								}
 							}
+							
+							S.ctx.globalAlpha = 0.4;
+							c = randomColor();
 						},
 						update: function(S) {
 							var i;
 							
 							for (i = 0; i < particles.length; i += 1) {
 								particles[i].update();
-								particles[i].attract(new PVector(S.mouseX, S.mouseY), 300, 8.5);
-								particles[i].applyForce(PVector.div(PVector.sub(anchors[i], particles[i].pos), 25));
+								particles[i].repel(new PVector(S.mouseX, S.mouseY), 300, 16);
+								particles[i].applyForce(PVector.div(PVector.sub(anchors[i], particles[i].pos), 125));
 							}
 						},
 						draw: function(S) {
 							var i;
+							
 							S.ctx.clearRect(0, 0, S.width, S.height);
 							
 							for (i = 0; i < particles.length; i += 1) {
-								S.ctx.fillStyle = "#00aacc";
+								S.ctx.fillStyle = c;// "#00aacc";
 								S.ctx.beginPath();
 								S.ctx.save();
 								S.ctx.translate(particles[i].pos.x, particles[i].pos.y);
-								S.ctx.arc(0, 0, 10, 0, 2*Math.PI, true);
+								S.ctx.arc(0, 0, gspacing, 0, 2*Math.PI, true);
 								S.ctx.restore();
 								S.ctx.closePath();
 								S.ctx.fill();
 							}
 						},
 						mousePressed: function() {
-						
+							
 						},
 						mouseReleased: function() {
 					
