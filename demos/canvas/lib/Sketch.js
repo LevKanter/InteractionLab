@@ -2,9 +2,18 @@
 	
 	var debug = (window.console && window.console.log instanceof Function) ? window.console.log : $.noop;
 	
-	if (! window.requestAnimFrame) {
-		debug("missing raf");
-	}
+	// requestAnim shim layer by Paul Irish
+	// http://paulirish.com/2011/requestanimationframe-for-smart-animating/
+	var raf = (function(){
+		return  window.requestAnimationFrame       || 
+		        window.webkitRequestAnimationFrame || 
+		        window.mozRequestAnimationFrame    || 
+		        window.oRequestAnimationFrame      || 
+		        window.msRequestAnimationFrame     || 
+		        function(/* function */ callback, /* DOMElement */ element){
+		        	window.setTimeout(callback, 1000 / 60);
+		        };
+	}());
 	
 	// remove "px" from a string representing a css pixel dimension
 	// and cast as a Number (i.e. trimpx("10px") returns 10)
@@ -146,7 +155,7 @@
 			o.update(S);
 			o.draw(S);
 			if (looping) {
-				window.requestAnimFrame(loop);
+				raf(loop);
 			}
 		}
 	
