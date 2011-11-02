@@ -42,7 +42,7 @@
 			
 			mousePressed: $.noop,
 			mouseReleased: $.noop,
-			keyPressed: $.noop,
+			keyDown: $.noop,
 			windowResized: $.noop
 			
 		}, options);
@@ -117,8 +117,8 @@
 				o.windowResized(S);
 			});
 			
-			$(window.document).bind("keypress."+guid, function(e) {
-				o.keyPressed(S, e.keyCode || e.which);
+			$(window.document).bind("keydown."+guid, function(e) {
+				o.keyDown(S, e.keyCode || e.which);
 			});
 		
 			S.mouseX = 0,
@@ -172,7 +172,7 @@
 		S.destroy = function() {
 			$c.unbind("mousemove."+guid).unbind("mousedown."+guid).unbind("mouseup."+guid);
 			$(window).unbind("resize."+guid);
-			$(window.document).unbind("keypress."+guid);
+			$(window.document).unbind("keydown."+guid);
 			S.setLooping(false);
 			o.destroy(S);
 		};
