@@ -36,8 +36,8 @@ canvas {
 .gui th,
 .gui td {
 	padding: 5px;
+	vertical-align: middle;
 	border-bottom: 1px solid #cccccc;
-	
 }
 .gui th {
 	text-align: left;
