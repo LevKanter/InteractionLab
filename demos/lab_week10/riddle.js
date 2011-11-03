@@ -17,6 +17,8 @@ jQuery(document).ready(function() {
 	// to determine if they are correct and respond accordingly:
 	processSubmit = function() {
 		
+		// what the user typed is represented by the "value" attribute
+		// of the input, so let's get that:
 		var userAnswer = input.attr("value");
 		
 		if (response) {
@@ -28,13 +30,14 @@ jQuery(document).ready(function() {
 			response.remove();
 		}
 		
-		// check if the user answer is correct or not
+		// check if the user answer is correct or not --
 		// we call .toLowerCase() to convert the user's
 		// answer to all lowercase, so that our simple
-		// check is not case sensitive:
+		// check is not case sensitive
+		// (NOTE: this is not a sophisticated way to match the answer):
 		if (userAnswer.toLowerCase() == answer) {
 			// they're right
-		
+			
 			response = $("<p>You are right</p>");
 			
 		} else {
@@ -56,10 +59,22 @@ jQuery(document).ready(function() {
 		processSubmit();
 	});
 	
-	input.bind("keydown", function() {
-		// determine which was pressed
-		
+	// bind a keydown event "handler" to the input element,
+	// to receive events when the user is typing
+	// when an event is triggered, jQuery always passes an argument
+	// to the handler function that's an object that holds info
+	// about the event (for details, see http://api.jquery.com/category/events/event-object/)
+	
+	// Here, we look at the "which" property of the event object to determine
+	// which key was pressed (every key can be identified by a unique "key code"):
+	// for a table of key codes, see http://www.cambiaresearch.com/articles/15/javascript-char-codes-key-codes
+	input.bind("keydown", function(event) {
+		// the enter key's code value is 13
+		// if the key that was pressed is the enter key...
+		if (event.which == 13) {
+			processSubmit();
+		}
 	});
-	
+
+//close our jQuery(document).ready(function() {	
 });
-	
