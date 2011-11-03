@@ -27,10 +27,35 @@ function accordion(container) {
 	});
 }
 
+// an alternate, slightly more compact approach,
+// where we just store all the sections once in a
+// variable, and then access individual sections
+// by their index in the collection
+function oAccordion(container, options) {
+	var sections = container.children("section");
+	sections.each(function(i) {
+		var s = sections.eq(i);
+		// we use the jQuery function, .data()
+		// to cache a reference to the section's
+		// corresponding body:
+		s.data("body", s.find(".body"));
+		s.find(".head a").click(function(e) {
+			e.preventDefault();
+			sections.each(function(j) {
+				sections.eq(j).data("body")[i == j ? "slideToggle" : "slideUp"](options.speed);
+			});
+		});
+	});
+}
+
+$.prototype.oAccordion = function(options) {
+	return this.each(function() {
+		oAccordion($(this), options);
+	});
+};
+
 $(document).ready(function() {
-	// setup all ".accordion" elements,
-	// by passing each one to our function, accordion():
-	$(".accordion").each(function() {
-		accordion($(this));
+	$(".accordion").oAccordion({
+		speed: 100
 	});
 });

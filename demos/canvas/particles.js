@@ -6,7 +6,8 @@
 	    gw,
 	    gh,
 	    r,
-	    c;
+	    c,
+	    energy;
 	
 	function randomColor() {
 		return '#'+(Math.random()*0xFFFFFF<<0).toString(16);
@@ -20,6 +21,10 @@
 			return window.Math.random()*arguments[0];
 		}
 		return window.Math.random()*(arguments[1] - arguments[0]) + arguments[0];
+	}
+	
+	function resetEnergy() {
+		energy = 1;
 	}
 
 	$(document).ready(function() {
@@ -49,8 +54,10 @@
 					}
 				}
 				
+				resetEnergy();
+				
 				S.ctx.globalAlpha = 0.4;
-				c = randomColor();
+				//c = randomColor();
 			},
 			update: function(S) {
 				var i;
@@ -58,9 +65,13 @@
 				for (i = 0; i < particles.length; i += 1) {
 					particles[i].update();
 					if (S.mousePressed) {
-						particles[i].repel(new PVector(S.mouseX, S.mouseY), 100, 16);
+						particles[i].repel(new PVector(S.mouseX, S.mouseY), 100, energy);
 					}
-					particles[i].applyForce(PVector.div(PVector.sub(anchors[i], particles[i].pos), 16));
+					particles[i].applyForce(PVector.div(PVector.sub(anchors[i], particles[i].pos), energy));
+				}
+				
+				if (S.mousePressed) {
+					energy += 30;
 				}
 			},
 			draw: function(S) {
@@ -69,7 +80,7 @@
 				S.ctx.clearRect(0, 0, S.width, S.height);
 				
 				for (i = 0; i < particles.length; i += 1) {
-					S.ctx.fillStyle = "#00aacc";
+					S.ctx.fillStyle = "#79775f";// "#00aacc";
 					S.ctx.beginPath();
 					S.ctx.save();
 					S.ctx.translate(particles[i].pos.x, particles[i].pos.y);
@@ -83,7 +94,7 @@
 				
 			},
 			mouseReleased: function() {
-		
+				resetEnergy();
 			},
 			keyDown: function () {
 			

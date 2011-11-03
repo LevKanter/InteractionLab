@@ -1,5 +1,57 @@
 body {
 	margin: 0px;
-	padding: 30px;
+	padding: 15px;
 	background-color: #f1f1f1;
+	font-family: Georgia, serif;
+}
+
+#question {
+	font-size: 36px;
+	padding: 0;
+	margin: 0;
+}
+
+/*
+using an "attribute selector" to apply styles
+to input elements only if they have their "type"
+attribute specified as "text"
+*/
+input[type="text"] {
+	background-color: #f1f1f1;
+	font-size: 36px;
+	font-family: Georgia, serif;
+	margin: 30px 0px 15px;
+}
+
+/* 
+using the :focus psuedo-class to apply styles
+to the text input only when it's in "focus"
+*/
+input[type="text"]:focus {
+	outline: none;
+	background-color: #ffffff;
+}
+
+/*
+using an "attribute selector" to apply styles
+to input elements only if they have their "type"
+attribute specified as "button"
+*/
+input[type="button"] {
+	font-size: 18px;
+}
+
+.response {
+	font-size: 24px;
+	font-style: italic;
+	color: green;
+}
+
+/*
+apply styles to an element that has both the classes
+"response" and "fail"
+*/
+.response.fail {
+	color: red;
+	font-weight: bold;
 }
