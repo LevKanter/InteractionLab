@@ -1,3 +1,9 @@
+// initial approach
+// there is nothing deeply bad about this implentation,
+// but there is room for improvement --> specifically,
+// not how we store all the sibling section bodies for
+// EACH individual section, rather than only ever
+// storing them once
 function accordion(container) {
 
 	var speed = 200;
@@ -50,7 +56,7 @@ function oAccordion(container, options) {
 
 // let's make our oAccordion function part of the jQuery object
 // prototype, so that we can simply call it on any jQuery instance directly
-// (this is commonly referred to in jQuery-speak as a plugin)
+// (this is commonly referred to in jQuery-speak as a "plugin")
 $.prototype.oAccordion = function(options) {
 	return this.each(function() {
 		oAccordion($(this), options);

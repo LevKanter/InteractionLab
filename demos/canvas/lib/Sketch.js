@@ -1,6 +1,6 @@
 (function(window, $) {
 	
-	var debug = (window.console && window.console.log instanceof Function) ? window.console.log : $.noop;
+	var debug = (window.console && $.isFunction(window.console.log)) ? window.console.log : $.noop;
 	
 	// requestAnim shim layer by Paul Irish
 	// http://paulirish.com/2011/requestanimationframe-for-smart-animating/
@@ -72,20 +72,19 @@
 				return false;
 				
 			// if we've selected more than one canvas,
-			// take the first one
+			// take the first one and ignore the rest
 			} else {
-				$c = $c.first();
+				$c = $c.eq(0);
 			}
 
-			if (! $c[0].getContext instanceof Function) {
+			if (! $.isFunction($c[0].getContext)) {
 				debug("<canvas> drawing is not supported by this environment");
 				return false;
 			}
 			
 			S.ctx = $c[0].getContext(o.graphicsMode);
 			if (! S.ctx) {
-				debug("graphics context unavailable:");
-				debug(o.graphicsMode);
+				debug("%s graphics context unavailable", o.graphicsMode);
 				return false;
 			}
 			
@@ -118,7 +117,7 @@
 			});
 			
 			$(window.document).bind("keydown."+guid, function(e) {
-				o.keyDown(S, e.keyCode || e.which);
+				o.keyDown(S, e.which);
 			});
 		
 			S.mouseX = 0,
