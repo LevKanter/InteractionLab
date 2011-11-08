@@ -23,13 +23,13 @@
 	
 	function Sketch(options) {
 		
-		var S, o, looping, cache, guid;
+		var S, o, $c, looping, cache, guid;
 	
 		S = this;
 		o = $.extend({
 			
 			// config
-			selector: null,
+			selector: null, // required
 			
 			looping: true,
 			graphicsMode: "2d",
@@ -50,7 +50,6 @@
 		guid = "sketch_" + new Date().getTime();
 	
 		function init() {
-			var $c;
 			
 			if (o.selector instanceof $) {
 				$c = o.selector;
@@ -64,7 +63,7 @@
 			// if the element we have is not actually a canvas,
 			// we look for a canvas contained by the element
 			if ($c.length && $c[0].nodeName.toLowerCase() !== "canvas") {
-				$c = $("canvas", $c);
+				$c = $c.find("canvas");
 			}
 
 			if (! $c.length) {
@@ -88,20 +87,7 @@
 				return false;
 			}
 			
-			cache.padX = trimpx($c.css("border-left-width")) + trimpx($c.css("padding-left"));
-			cache.padY = trimpx($c.css("border-top-width")) + trimpx($c.css("padding-top"));
-			
-			function setDimensions(w, h) {
-				S.width = w;
-				S.height = h;
-
-				// make sure the canvas has width and height attributes
-				// that correspond to its width and height as specified
-				// by its css
-				$c[0].width = S.width;
-				$c[0].height = S.height;
-			}
-			
+			cacheLayout();
 			setDimensions($c.width(), $c.height());
 			
 			// ui & events
@@ -110,10 +96,11 @@
 				var w, h;
 				w = $c.width();
 				h = $c.height();
-				if (w !== S.width || h !== S.height) {
-					setDimensions(w, h);
+				if (o.windowResized(S, w, h) !== false) {
+					if (w !== S.width || h !== S.height) {
+						setDimensions(w, h);
+					}
 				}
-				o.windowResized(S);
 			});
 			
 			$(window.document).bind("keydown."+guid, function(e) {
@@ -148,6 +135,22 @@
 			
 			o.setup(S);
 			S.setLooping(o.looping);
+		}
+		
+		function cacheLayout() {
+			cache.padX = trimpx($c.css("border-left-width")) + trimpx($c.css("padding-left"));
+			cache.padY = trimpx($c.css("border-top-width")) + trimpx($c.css("padding-top"));
+		}
+		
+		function setDimensions(w, h) {
+			S.width = w;
+			S.height = h;
+
+			// make sure the canvas has width and height attributes
+			// that correspond to its width and height as specified
+			// by its css
+			$c[0].width = S.width;
+			$c[0].height = S.height;
 		}
 	
 		function loop() {
