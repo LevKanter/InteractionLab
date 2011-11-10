@@ -3,18 +3,89 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Slideshow</title>
-		<link rel="stylesheet" href="week9.css">
+		<style>
+			body {
+				font-family: Georgia, serif;
+				background-color: #e1d9b9;
+				color: #30785d;
+			}
+			.slide {
+				display: none;
+			}
+			.slide.active {
+				display: block;
+			}
+			.slide img {
+				box-shadow: 0px 0px 8px rgba(0, 0, 0, .6);
+			}
+			.nav a {
+				color: inherit;
+				font-size: 24px;
+				text-decoration: none;
+			}
+		</style>
 	</head>
 	<body>
 		
-		<img src="images/WildGarden1.png" alt="Composition 1">
-		<img src="images/WildGarden2.png" alt="Composition 2">
-		<img src="images/WildGarden3.png" alt="Composition 3">
-		<img src="images/WildGarden4.png" alt="Composition 4">
+		<div class="slideshow">
+			<div id="slide1" class="slide active">
+				<img src="images/WildGarden1.png" alt="Composition 1">
+			</div>
+			<div id="slide2" class="slide">
+				<img src="images/WildGarden2.png" alt="Composition 2">
+			</div>
+			<div id="slide3" class="slide">
+				<img src="images/WildGarden3.png" alt="Composition 3">
+			</div>
+			<div id="slide4" class="slide">
+				<img src="images/WildGarden4.png" alt="Composition 4">
+			</div>
+		</div>
+		
+		<div class="nav">
+			<a href="#" id="prev">Prev</a>
+			<a href="#slide1">1</a>
+			<a href="#slide2">2</a>
+			<a href="#slide3">3</a>
+			<a href="#slide4">4</a>
+			<a href="#" id="next">Next</a>
+		</div>
 		
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 		<script>
-		
+			$(document).ready(function() {
+				
+				var slides = $(".slide");
+				
+				$(".nav a").not("#prev").not("#next").bind("click", function(event) {
+					event.preventDefault();
+					var target = $($(this).attr("href"));
+					target.addClass("active").siblings().removeClass("active");
+				});
+				
+				$("#next").bind("click", function(event) {
+					event.preventDefault();
+					var active = slides.filter(".active");
+					var target = active.next();
+					if (target.length == 0) {
+						target = slides.first();
+					}
+					active.removeClass("active");
+					target.addClass("active");
+				});
+				
+				$("#prev").bind("click", function(event) {
+					event.preventDefault();
+					var active = slides.filter(".active");
+					var target = active.prev();
+					if (target.length == 0) {
+						target = slides.last();
+					}
+					active.removeClass("active");
+					target.addClass("active");
+				});
+				
+			});
 		</script>
 	</body>
 </html>
