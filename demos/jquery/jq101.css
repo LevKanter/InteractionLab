@@ -1,0 +1,53 @@
+body {
+	background-color: #fffbe6;
+	color: #612f68;
+	font-family: Georgia, serif;
+}
+
+::-moz-selection {
+	color: #fffbe6;
+	background-color: #612f68; 
+}
+::selection {
+	color: #fffbe6;
+	background-color: #612f68; 
+}
+
+
+h1 {
+	text-align: center;
+	font-size: 48px;
+	font-weight: normal;
+}
+
+h2 {
+	font-size: 32px;
+	font-weight: normal;
+	font-style: italic;
+}
+
+p {
+	font-size: 18px;
+	padding: 0px 0px 15px;
+}
+
+.wrap {
+	margin: 10px 0px;
+	text-align: left;
+}
+
+.wrap > header {
+	margin: 0px 0px 20px;
+	padding: 0px 0px 10px;
+	border-bottom: 1px solid #944250;
+}
+
+.wrap > section {
+	width: 800px;
+	margin: 0px auto;
+	padding: 0px 10px 20px;
+}
+
+.wrap > section > header {
+	padding: 0px 0px 20px;
+}
