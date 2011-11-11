@@ -1,0 +1,40 @@
+body {
+	background-color: #fefefe;
+	color: #693467;
+}
+
+.wrap {
+	width: 600px;
+	margin: 30px auto;
+}
+
+.slide {
+	display: none;
+}
+.slide.active {
+	display: block;
+}
+
+.slide img {
+	box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.nav {
+	margin: 15px 0px;
+}
+.nav a {
+	display: block;
+	float: left;
+	padding: 15px;
+	margin-right: 5px;
+	background-color: #333333;
+	color: #ffffff;
+	font-size: 18px;
+	text-decoration: none;
+}
+.nav a:hover {
+	background-color: #ff9640;
+}
+.nav a:active {
+	background-color: #bf7130;
+}
