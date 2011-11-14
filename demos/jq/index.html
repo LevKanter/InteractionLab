@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Interaction Lab &rarr; Build Stuff with jQuery</title>
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/jq.css">
+		<link rel="stylesheet" href="css/demo.css">
+		<script>
+			this.JQ = {
+				demos: [],
+				runtime: {}
+			};
+		</script>
+	</head>
+	<body>
+		<article class="main">
+			<header>
+				<h1>Build Stuff with jQuery</h1>
+			</header>
+			<section>
+				<p>Modern web browsers provide a Javascript environment in which all the various HTML elements that make up the page can be accessed and manipulated. </p>
+			</section>
+			<section>
+				<header>
+					<h2>Ready?</h2>
+					<p>Beyond just presenting and displaying <a href="">HTML documents</a>, modern browsers provide a Javascript environment environment</p> 
+										<p>Beyond just presenting and displaying HTML documents, modern browsers provide a Javascript environment environment</p> 
+										
+<pre class="prettyprint lang-js"><code>var onReady = function() {
+	console.log("Ready!");
+};
+
+jQuery(document).ready(onReady);</code></pre>
+
+<pre class="prettyprint lang-js"><code>jQuery(document).ready(function() {
+	console.log("Ready!");
+});</code></pre>
+
+<pre class="prettyprint lang-js"><code>var $ = jQuery;
+var divs = $("div");</code></pre>
+					
+				</header>
+			</section>
+			<section>
+				<header>
+					<h2>Get Elements</h2>
+				</header>
+			</section>
+			<section>
+				<header>
+					<h2>Manipulate Elements</h2>
+				</header>
+			</section>
+			<section>
+				<header>
+					<h2>Wire Events to Elements</h2>
+				</header>
+				
+				<div id="demo-slideToggle" class="demo">
+					<div class="module">
+						<div class="head">
+							<h3>Header</h3>
+						</div>
+						<div class="body">
+							<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+						</div>
+					</div>
+					<script>
+						this.JQ.demos.push(function(app) {
+							var d = $("#demo-slideToggle");
+							
+							var head = d.find(".head");
+							var body = d.find(".body");
+							
+							head.bind("click", function() {
+								body.slideToggle("fast");
+							});
+						});
+					</script>
+				</div>
+				
+			</section>
+		</article>
+		
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+		<script src="js/prettify.js"></script>
+		<script src="js/jq.js"></script>
+	</body>
+</html>
