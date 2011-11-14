@@ -1,0 +1,126 @@
+@font-face {
+	font-family: "MuseoSlab";
+	font-weight: normal; 
+	font-style: normal;
+	
+	src: url("../fonts/museo_slab_500-webfont.eot");
+	src: local("☺"), 
+	     url("../fonts/museo_slab_500-webfont.woff") format("woff"), 
+	     url("../fonts/museo_slab_500-webfont.ttf") format("truetype"), 
+	     url("../fonts/museo_slab_500-webfont.svg#webfontRnwDZmOy") format("svg");
+}
+
+body {
+	background-color: #fffbe6;
+	color: #612f68;
+	font-family: Georgia, serif;
+}
+
+::-moz-selection {
+	color: #fffbe6;
+	background-color: #612f68; 
+}
+::selection {
+	color: #fffbe6;
+	background-color: #612f68; 
+}
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
+	font-family: "MuseoSlab";
+	font-weight: normal;
+	color: #333333;
+}
+
+h1 {
+	text-align: center;
+	font-size: 48px;
+}
+
+h2 {
+	font-size: 32px;
+	padding: 0px 0px 15px;
+}
+
+p,
+ul,
+ol,
+dl {
+	font-size: 18px;
+	padding: 0px 0px 15px;
+}
+ul {
+	list-style: disc;
+	padding-left: 1.4em;
+}
+ol {
+	list-style: decimal;
+	padding-left: 1.4em;
+}
+
+a {
+	text-decoration: none;
+	color: #5373ca;
+	border-bottom: 1px solid #5373ca;
+}
+a:hover {
+	color: #fffbe6;
+	background-color: #5373ca;
+}
+a:active {
+	background-color: #333333;
+	border-color: #333333;
+}
+
+.main {
+	padding: 0px 0px 100px;
+	text-align: left;
+}
+.main > header {
+	margin: 0px 0px 30px;
+	padding: 10px 0px;
+	border-bottom: 1px solid #944250;
+	box-shadow: 0px 1px 2px rgba(0, 0, 0, .5);
+}
+.main > section {
+	width: 800px;
+	margin: 0px auto;
+	padding: 0px 10px 20px;
+}
+.main > section > header {
+	padding: 0px 0px 20px;
+}
+
+.prettyprint {
+	display: block;
+	margin: 15px 0px;
+	padding: 15px;
+	font-size: 16px;
+	background-color: #333333;
+	color: #f1f1f1;
+	border-radius: 2px;
+	box-shadow: inset 1px 1px 8px #000000;
+}
+/* 
+desert scheme ported from vim to google .prettyprintttify 
+http://code.google.com/p/google-code-prettify/source/browse/trunk/styles/desert.css
+*/
+.prettyprint .str { color: #ffa0a0; }                    /* string */
+.prettyprint .kwd { color: #f0e68c; font-weight: bold; } /* keyword */
+.prettyprint .com { color: #87ceeb; }                    /* comment */
+.prettyprint .typ { color: #98fb98; }                    /* type */
+.prettyprint .lit { color: #cd5c5c; }                    /* literal */
+.prettyprint .pun { color: #ffffff; }                    /* punctuation */
+.prettyprint .pln { color: #ffffff; }                    /* plaintext */
+.prettyprint .tag { color: #f0e68c; font-weight: bold; } /* html/xml tag */
+.prettyprint .atn { color: #bdb76b; font-weight: bold; } /* attribute name */
+.prettyprint .atv { color: #ffa0a0; }                    /* attribute value */
+.prettyprint .dec { color: #98fb98; }                    /* decimal */
+
+.demo {
+	width: 50%;
+}

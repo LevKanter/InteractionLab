@@ -1,6 +1,7 @@
 (function(window, $, PVector) {
 	
-	function Particle(options) {
+	function Particle (options) {
+		
 		var me, o;
 		
 		me = this;
@@ -8,7 +9,7 @@
 			update: $.noop
 		}, options);
 		
-		function init() {
+		function init () {
 			me.mass = 1;
 			me.pos = new PVector();
 			me.vel = new PVector();
@@ -21,7 +22,7 @@
 			me.age = 0;
 		}
 		
-		this.update = function() {
+		this.update = function () {
 			if (! this.dead) {
 				
 				this.acc.div(this.mass);
@@ -42,12 +43,14 @@
 				o.update(this);
 				
 				this.age += 1;
-				this.dead = (this.lifeSpan > 0 && this.age >= this.lifeSpan);
+				if (this.lifeSpan > 0) {
+					this.dead = this.age >= this.lifeSpan;
+				}
 			}
 			return this;
 		};
 		
-		this.repel = function(sPos, sRadius, strength) {
+		this.repel = function (sPos, sRadius, strength) {
 			var v, d;
 			v = PVector.sub(this.pos, sPos);
 			d = v.mag();
@@ -58,11 +61,11 @@
 			return this;
 		};
 		
-		this.attract = function(sPos, sRadius, strength) {
+		this.attract = function (sPos, sRadius, strength) {
 			return this.repel(sPos, sRadius, -1*strength);
 		};
 		
-		this.applyForce = function(v) {
+		this.applyForce = function (v) {
 			this.acc.add(PVector.div(v, this.mass));
 			return this;
 		};
@@ -70,7 +73,8 @@
 		init();
 	}
 	
-	function ParticleSystem(options) {
+	function ParticleSystem (options) {
+		
 		var me, o, particles, capacity;
 		
 		me = this;
@@ -79,12 +83,12 @@
 			overflow: $.noop
 		}, options);
 		
-		function init() {
+		function init () {
 			capacity = o.capacity;
 			me.flush();
 		}
 		
-		this.update = function() {
+		this.update = function () {
 			particles = $.map(particles, function(p, i) {
 				p.update();
 				return p.dead ? null : p;
@@ -92,7 +96,10 @@
 			return this;
 		};
 		
-		this.add = function(p) {
+		this.add = function (p) {
+			if (! p instanceof Particle) {
+				return this;
+			}
 			if (capacity > 0 && particles.length > capacity) {
 				o.overflow(p);
 			} else {
@@ -101,11 +108,16 @@
 			return this;
 		};
 		
-		this.size = function() {
+		this.get = function (index) {
+			return typeof index === "number" && particles[index] ? 
+				particles[index] : false;
+		};
+		
+		this.size = function () {
 			return particles.length;
 		};
 		
-		this.flush = function() {
+		this.flush = function () {
 			particles = [];
 			return this;
 		};
@@ -115,11 +127,11 @@
 
 //------------------------------------------------------------------------------
 
-	window.Particle = function(options) {
+	window.Particle = function (options) {
 		return new Particle(options);
 	};
 	
-	window.ParticleSystem = function(options) {
+	window.ParticleSystem = function (options) {
 		return new ParticleSystem(options);
 	};
 	

@@ -1,6 +1,7 @@
 (function(window, $) {
 	
 	var debug = (window.console && $.isFunction(window.console.log)) ? window.console.log : $.noop;
+	var error = (window.console && $.isFunction(window.console.error)) ? window.console.error : $.noop;
 	
 	// requestAnim shim layer by Paul Irish
 	// http://paulirish.com/2011/requestanimationframe-for-smart-animating/
@@ -17,11 +18,11 @@
 	
 	// remove "px" from a string representing a css pixel dimension
 	// and cast as a Number (i.e. trimpx("10px") returns 10)
-	function trimpx(s) {
+	function trimpx (s) {
 		return Number(s.substring(0, s.length - 2));
 	}
 	
-	function Sketch(options) {
+	function Sketch (options) {
 		
 		var S, o, $c, looping, cache, guid;
 	
@@ -29,9 +30,7 @@
 		o = $.extend({
 			
 			// config
-			selector: null, // required
-			
-			looping: true,
+			selector: null, // required			
 			graphicsMode: "2d",
 			
 			// callbacks
@@ -49,14 +48,15 @@
 		cache = {};
 		guid = "sketch_" + new Date().getTime();
 	
-		function init() {
+		function init () {
 			
 			if (o.selector instanceof $) {
 				$c = o.selector;
 			} else if (typeof o.selector === "string") {
 				$c = $(o.selector);
 			} else {
-				debug("Missing required option: selector");
+				debug("Missing or invalid required option: selector");
+				debug(o.selector);
 				return false;
 			}
 			
@@ -67,7 +67,7 @@
 			}
 
 			if (! $c.length) {
-				debug("Missing required <canvas> element");
+				debug("No <canvas> element");
 				return false;
 				
 			// if we've selected more than one canvas,
@@ -92,7 +92,7 @@
 			
 			// ui & events
 			
-			$(window).bind("resize."+guid, function() {
+			$(window).bind("resize."+guid, function () {
 				var w, h;
 				w = $c.width();
 				h = $c.height();
@@ -103,29 +103,29 @@
 				}
 			});
 			
-			$(window.document).bind("keydown."+guid, function(e) {
+			$(window.document).bind("keydown."+guid, function (e) {
 				o.keyDown(S, e.which);
 			});
 		
-			S.mouseX = 0,
-			S.mouseY = 0,
-			S.pmouseX = 0,
-			S.pmouseY = 0,
+			S.mouseX = 0;
+			S.mouseY = 0;
+			S.pmouseX = 0;
+			S.pmouseY = 0;
 			S.mousePressed = false;
 		
-			$c.bind("mousemove."+guid, function(e) {
+			$c.bind("mousemove."+guid, function (e) {
 				
 				S.pmouseX = S.mouseX;
 				S.pmouseY = S.mouseY;
 				S.mouseX = e.pageX - (this.offsetLeft + cache.padX);
 				S.mouseY = e.pageY - (this.offsetTop + cache.padY);
 
-			}).bind("mousedown."+guid, function() {
+			}).bind("mousedown."+guid, function () {
 			
 				S.mousePressed = true;
 				o.mousePressed(S);
 			
-			}).bind("mouseup."+guid, function() {
+			}).bind("mouseup."+guid, function () {
 			
 				S.mousePressed = false;
 				o.mouseReleased(S);
@@ -133,16 +133,17 @@
 			
 			// start & loop
 			
-			o.setup(S);
-			S.setLooping(o.looping);
+			if (o.setup(S) !== false) {
+				S.setLooping(true);
+			}
 		}
 		
-		function cacheLayout() {
+		function cacheLayout () {
 			cache.padX = trimpx($c.css("border-left-width")) + trimpx($c.css("padding-left"));
 			cache.padY = trimpx($c.css("border-top-width")) + trimpx($c.css("padding-top"));
 		}
 		
-		function setDimensions(w, h) {
+		function setDimensions (w, h) {
 			S.width = w;
 			S.height = h;
 
@@ -153,7 +154,7 @@
 			$c[0].height = S.height;
 		}
 	
-		function loop() {
+		function loop () {
 			o.update(S);
 			o.draw(S);
 			if (looping) {
@@ -161,8 +162,8 @@
 			}
 		}
 	
-		S.setLooping = function(on) {
-			if (on) {
+		S.setLooping = function (on) {
+			if (on && !looping) {
 				looping = true;
 				loop();
 			} else {
@@ -171,7 +172,7 @@
 			return S;
 		};
 		
-		S.destroy = function() {
+		S.destroy = function () {
 			$c.unbind("mousemove."+guid).unbind("mousedown."+guid).unbind("mouseup."+guid);
 			$(window).unbind("resize."+guid);
 			$(window.document).unbind("keydown."+guid);
@@ -179,10 +180,12 @@
 			o.destroy(S);
 		};
 	
-		init();
+		if (init() === false) {
+			error("Sketch not properly initialized");
+		}
 	}
 	
-	window.Sketch = function(options) {
+	window.Sketch = function (options) {
 		return new Sketch(options);
 	};
 
