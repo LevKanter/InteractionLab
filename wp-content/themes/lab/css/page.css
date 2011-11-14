@@ -433,6 +433,7 @@ pre.codebox code {
 .pagination a {
 	display: block;
 	padding: 10px;
+	font-family: "Droid Sans", Tahoma, sans-serif;
 }
 .pagination a:hover {
 	background-color: #f4f4f4;
