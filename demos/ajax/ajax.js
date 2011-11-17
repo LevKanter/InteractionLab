@@ -12,8 +12,8 @@ jQuery(document).ready(function($) {
 			type: "GET",
 			dataType: "text",
 			data: {
-				action: "greet",
-				name: $.trim(input.val())
+				action: "smile",
+				number: $.trim(input.val())
 			},
 			success: function(data, textStatus, jqXHR) {
 				console.info("|------------- RESPONSE -------------|");
