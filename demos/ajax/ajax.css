@@ -1,0 +1,21 @@
+body {
+	background-color: #e6f0da;
+}
+
+.console {
+	width: 500px;
+	margin: 60px auto 20px;
+}
+
+.console .display {
+	padding: 10px;
+	height: 100px;
+	overflow-y: auto;
+	background-color: #ffffff;
+	box-shadow: inset 1px 1px 6px rgba(0, 0, 0, .3);
+	font-family: monospace;
+}
+
+.console .controls {
+	padding: 5px 10px;
+}
