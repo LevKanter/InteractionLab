@@ -5,8 +5,7 @@ jQuery(document).ready(function($) {
 	display = $("#mainframe .display");
 	input = $("#mainframe input[type=text]");
 	
-	$("#dispatch").click(function() {
-		
+	function request() {
 		$.ajax({
 			url: "service.php",
 			type: "GET",
@@ -24,6 +23,10 @@ jQuery(document).ready(function($) {
 				display.empty().append(data);
 			}
 		});
+	}
+	
+	$("#dispatch").click(function() {
+		request();
 	});
 	
 });
