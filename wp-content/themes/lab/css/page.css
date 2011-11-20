@@ -192,7 +192,7 @@ body .page {
 .prime ol,
 .prime dl {
 	font-size: 14px;
-	padding: 10px 0px 0px;
+	padding: 1em 0px 0px;
 }
 
 .content p:first-child,

@@ -11,10 +11,15 @@ body {
 	padding: 10px;
 	height: 100px;
 	overflow-y: auto;
-	background-color: #ffffff;
+	background-color: #306555;
+	color: #ffffff;
 	font-family: monospace;
 }
 
 .console .controls {
 	padding: 5px 10px;
+}
+
+.processing {
+	opacity: 0.5;
 }

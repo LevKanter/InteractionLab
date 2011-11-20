@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Interaction Lab &rarr; Login</title>
+		<link rel="stylesheet" href="ajax.css">
+	</head>
+	<body>
+		
+		<div class="console">
+			<div>
+				<label for="un">Username</label>
+				<input id="un" type="text">
+			</div>
+			<div>
+				<label for="pw">Password</label>
+				<input id="pw" type="password">
+			</div>
+			<button>Login</button>
+		</div>
+		
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+		<script>
+			jQuery(document).ready(function($) {
+
+				var panel, un, pw;
+				
+				panel = $(".console");
+				un = $("#un");
+				pw = $("#pw");
+				
+				function authenticate() {
+					var username, password;
+					
+					username = $.trim(un.val());
+					password = $.trim(pw.val());
+					
+					// let's first just make sure that the
+					// username and password are both not empty,
+					// no need to even try to authenticate otherwise:
+					if (username.length == 0 || password.length == 0) {
+						return;
+					}
+					
+					panel.addClass("processing");
+					
+					$.ajax({
+						url: "services/auth.php",
+						type: "POST",
+						dataType: "text",
+						data: {
+							username: username,
+							password: password
+						},
+						success: function(data, textStatus, jqXHR) {
+							panel.removeClass("processing");
+							if (data == "true") {
+								panel.html("<p>Welcome!</p>");
+							}
+						}
+					});
+				}
+
+				panel.find("button").click(function() {
+					authenticate();
+				});
+
+			});
+		</script>
+	</body>
+</html>
