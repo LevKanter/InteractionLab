@@ -41,14 +41,15 @@ function oAccordion(container, options) {
 	var sections = container.children("section");
 	sections.each(function(i) {
 		var s = sections.eq(i);
-		// we use the jQuery function, .data()
+		// we use the jQuery function, $.data()
 		// to cache a reference to the section's
-		// corresponding body:
-		s.data("body", s.find(".body"));
+		// corresponding body:		
+		$.data(this, "body", s.find(".body"));
+		
 		s.find(".head a").click(function(e) {
 			e.preventDefault();
 			sections.each(function(j) {
-				sections.eq(j).data("body")[i == j ? "slideToggle" : "slideUp"](options.speed);
+				$.data(this, "body")[i == j ? "slideToggle" : "slideUp"](options.speed);
 			});
 		});
 	});
@@ -63,8 +64,19 @@ $.prototype.oAccordion = function(options) {
 	});
 };
 
+// let's inhance our oAccordion plugin by providing default "options"
+$.prototype.oAccordionX = function(options) {
+	// we use the jQuery function, $.extend(),
+	// to merge the passed in "options" object
+	// into an object that represents the default values
+	var o = $.extend({
+		speed: "normal"
+	}, options);
+	return $(this).oAccordion(o);
+};
+
 $(document).ready(function() {
-	$(".accordion").oAccordion({
+	$(".accordion").oAccordionX({
 		speed: 100
 	});
 });
