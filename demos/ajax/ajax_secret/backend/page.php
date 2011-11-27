@@ -11,7 +11,7 @@
 	session_start();
 	
 	// sleep(n) for n seconds to simulate some server latency:
-	sleep(2);
+	//sleep(1);
 	
 	if (!$_SESSION["loggedIn"]) {
 		exit("THIS IS TOP SECRET!");
