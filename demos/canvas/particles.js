@@ -10,7 +10,7 @@
 	    energy;
 	
 	function randomColor() {
-		return '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+		return '#'+(random()*0xFFFFFF<<0).toString(16);
 	}
 	
 	function random() {
@@ -57,7 +57,7 @@
 				resetEnergy();
 				
 				this.ctx.globalAlpha = 0.4;
-				//c = randomColor();
+				c = randomColor();
 			},
 			update: function() {
 				var i;
@@ -80,7 +80,7 @@
 				this.ctx.clearRect(0, 0, this.width, this.height);
 				
 				for (i = 0; i < particles.length; i += 1) {
-					this.ctx.fillStyle = "#79775f";// "#00aacc";
+					this.ctx.fillStyle = c;// "#79775f";// "#00aacc";
 					this.ctx.beginPath();
 					this.ctx.save();
 					this.ctx.translate(particles[i].pos.x, particles[i].pos.y);
