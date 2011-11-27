@@ -5,7 +5,7 @@
 	
 	// requestAnim shim layer by Paul Irish
 	// http://paulirish.com/2011/requestanimationframe-for-smart-animating/
-	var raf = (function(){
+	var requestAnimFrame = (function(){
 		return  window.requestAnimationFrame       || 
 		        window.webkitRequestAnimationFrame || 
 		        window.mozRequestAnimationFrame    || 
@@ -89,6 +89,7 @@
 			
 			cacheLayout();
 			setDimensions($c.width(), $c.height());
+			$c.attr("data-id", guid);
 			
 			// ui & events
 			
@@ -96,7 +97,7 @@
 				var w, h;
 				w = $c.width();
 				h = $c.height();
-				if (o.windowResized(S, w, h) !== false) {
+				if (o.windowResized.apply(S, [w, h]) !== false) {
 					if (w !== S.width || h !== S.height) {
 						setDimensions(w, h);
 					}
@@ -104,7 +105,7 @@
 			});
 			
 			$(window.document).bind("keydown."+guid, function (e) {
-				o.keyDown(S, e.which);
+				o.keyDown.apply(S, [e.which]);
 			});
 		
 			S.mouseX = 0;
@@ -123,17 +124,17 @@
 			}).bind("mousedown."+guid, function () {
 			
 				S.mousePressed = true;
-				o.mousePressed(S);
+				o.mousePressed.apply(S);
 			
 			}).bind("mouseup."+guid, function () {
 			
 				S.mousePressed = false;
-				o.mouseReleased(S);
+				o.mouseReleased.apply(S);
 			});
 			
 			// start & loop
 			
-			if (o.setup(S) !== false) {
+			if (o.setup.apply(S) !== false) {
 				S.setLooping(true);
 			}
 		}
@@ -155,17 +156,19 @@
 		}
 	
 		function loop () {
-			o.update(S);
-			o.draw(S);
 			if (looping) {
-				raf(loop);
+				o.update.apply(S);
+				o.draw.apply(S);
+				requestAnimFrame(loop);
 			}
 		}
 	
 		S.setLooping = function (on) {
-			if (on && !looping) {
-				looping = true;
-				loop();
+			if (on) {
+				if (!looping) {
+					looping = true;
+					loop();
+				}
 			} else {
 				looping = false;
 			}
@@ -177,7 +180,7 @@
 			$(window).unbind("resize."+guid);
 			$(window.document).unbind("keydown."+guid);
 			S.setLooping(false);
-			o.destroy(S);
+			o.destroy.apply(S);
 		};
 	
 		if (init() === false) {

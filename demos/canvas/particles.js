@@ -32,12 +32,12 @@
 		Sketch({
 			selector: "canvas",
 		
-			setup: function(S) {
+			setup: function() {
 				var i, j, p;
 				
 				gspacing = 20;
-				gw = Math.floor(S.width/gspacing);
-				gh = Math.floor(S.height/gspacing);
+				gw = Math.floor(this.width/gspacing);
+				gh = Math.floor(this.height/gspacing);
 				r = 9;
 			
 				particles = [];
@@ -56,48 +56,48 @@
 				
 				resetEnergy();
 				
-				S.ctx.globalAlpha = 0.4;
+				this.ctx.globalAlpha = 0.4;
 				//c = randomColor();
 			},
-			update: function(S) {
+			update: function() {
 				var i;
 				
 				for (i = 0; i < particles.length; i += 1) {
 					particles[i].update();
-					if (S.mousePressed) {
-						particles[i].repel(new PVector(S.mouseX, S.mouseY), 100, energy);
+					if (this.mousePressed) {
+						particles[i].repel(new PVector(this.mouseX, this.mouseY), 100, energy);
 					}
 					particles[i].applyForce(PVector.div(PVector.sub(anchors[i], particles[i].pos), energy));
 				}
 				
-				if (S.mousePressed) {
+				if (this.mousePressed) {
 					energy += 30;
 				}
 			},
-			draw: function(S) {
+			draw: function() {
 				var i;
 				
-				S.ctx.clearRect(0, 0, S.width, S.height);
+				this.ctx.clearRect(0, 0, this.width, this.height);
 				
 				for (i = 0; i < particles.length; i += 1) {
-					S.ctx.fillStyle = "#79775f";// "#00aacc";
-					S.ctx.beginPath();
-					S.ctx.save();
-					S.ctx.translate(particles[i].pos.x, particles[i].pos.y);
-					S.ctx.arc(0, 0, 2*r, 0, 2*Math.PI, true);
-					S.ctx.restore();
-					S.ctx.closePath();
-					S.ctx.fill();
+					this.ctx.fillStyle = "#79775f";// "#00aacc";
+					this.ctx.beginPath();
+					this.ctx.save();
+					this.ctx.translate(particles[i].pos.x, particles[i].pos.y);
+					this.ctx.arc(0, 0, 2*r, 0, 2*Math.PI, true);
+					this.ctx.restore();
+					this.ctx.closePath();
+					this.ctx.fill();
 				}
 			},
-			mousePressed: function(S) {
+			mousePressed: function() {
 				
 			},
 			mouseReleased: function() {
 				resetEnergy();
 			},
-			keyDown: function () {
-			
+			keyDown: function (key) {
+				
 			}
 		});
 	});

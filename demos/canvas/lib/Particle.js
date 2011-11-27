@@ -40,7 +40,7 @@
 				
 				this.acc.mult(0);
 				
-				o.update(this);
+				o.update.apply(this);
 				
 				this.age += 1;
 				if (this.lifeSpan > 0) {
@@ -97,13 +97,12 @@
 		};
 		
 		this.add = function (p) {
-			if (! p instanceof Particle) {
-				return this;
-			}
-			if (capacity > 0 && particles.length > capacity) {
-				o.overflow(p);
-			} else {
-				particles.push(p);
+			if (p instanceof Particle) {
+				if (capacity > 0 && particles.length > capacity) {
+					o.overflow.apply(me, [p]);
+				} else {
+					particles.push(p);
+				}
 			}
 			return this;
 		};
