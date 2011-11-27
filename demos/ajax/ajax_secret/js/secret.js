@@ -75,8 +75,9 @@ var app = {};
 // For organization and convenience sake, 
 // let's store the URLs for our ajax requests in an object:
 app.urls = {
-	auth: "backend/authenticate.php",
-	secretPage: "backend/page.php"
+	auth: "server/authenticate.php",
+	logout: "server/logout.php",
+	secretPage: "server/page.php"
 };
 
 // app.loginPanel() takes two arguments:
@@ -209,6 +210,20 @@ $(document).ready(function() {
 				$(data).hide().appendTo($("#secretPage")).fadeIn(3000);
 			}
 		});
+		
+		$("<a id='btn-logout' class='btn'>Logout</a>").click(function(event) {
+			event.preventDefault();
+			$.ajax({
+				url: app.urls.logout,
+				type: "POST",
+				dataType: "text",
+				success: function(data, textStatus, jqXHR) {
+					if (data == "true") {
+						window.location.reload();
+					}
+				}
+			});
+		}).appendTo("body");
 		
 		document.title = "TOP SECRET";
 	});

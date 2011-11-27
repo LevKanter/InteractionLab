@@ -40,9 +40,7 @@
 		);
 		
 		if ($usermap[$_REQUEST["username"]]) {
-			if ($usermap[$_REQUEST["username"]]["password"] == $_REQUEST["password"]) {
-				$verified = true;
-			} 
+			$verified = ($usermap[$_REQUEST["username"]]["password"] == $_REQUEST["password"]);
 		}
 		
 	}
