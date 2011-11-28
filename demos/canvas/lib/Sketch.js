@@ -5,24 +5,24 @@
 	
 	// requestAnim shim layer by Paul Irish
 	// http://paulirish.com/2011/requestanimationframe-for-smart-animating/
-	var requestAnimFrame = (function(){
+	var requestAnimFrame = (function() {
 		return  window.requestAnimationFrame       || 
 		        window.webkitRequestAnimationFrame || 
 		        window.mozRequestAnimationFrame    || 
 		        window.oRequestAnimationFrame      || 
 		        window.msRequestAnimationFrame     || 
-		        function(/* function */ callback, /* DOMElement */ element){
+		        function(/* function */ callback, /* DOMElement */ element) {
 		        	window.setTimeout(callback, 1000 / 60);
 		        };
 	}());
 	
 	// remove "px" from a string representing a css pixel dimension
 	// and cast as a Number (i.e. trimpx("10px") returns 10)
-	function trimpx (s) {
+	function trimpx(s) {
 		return Number(s.substring(0, s.length - 2));
 	}
 	
-	function Sketch (options) {
+	function Sketch(options) {
 		
 		var S, o, $c, looping, cache, guid;
 	
@@ -42,13 +42,15 @@
 			mousePressed: $.noop,
 			mouseReleased: $.noop,
 			keyDown: $.noop,
-			windowResized: $.noop
+			windowResized: $.noop,
+			
+			canvasUnsuported: $.noop
 			
 		}, options);
 		cache = {};
 		guid = "sketch_" + new Date().getTime();
 	
-		function init () {
+		function init() {
 			
 			if (o.selector instanceof $) {
 				$c = o.selector;
@@ -78,7 +80,7 @@
 
 			if (! $.isFunction($c[0].getContext)) {
 				debug("<canvas> drawing is not supported by this environment");
-				return false;
+				return o.canvasUnsuported.apply(S);
 			}
 			
 			S.ctx = $c[0].getContext(o.graphicsMode);
@@ -139,12 +141,12 @@
 			}
 		}
 		
-		function cacheLayout () {
+		function cacheLayout() {
 			cache.padX = trimpx($c.css("border-left-width")) + trimpx($c.css("padding-left"));
 			cache.padY = trimpx($c.css("border-top-width")) + trimpx($c.css("padding-top"));
 		}
 		
-		function setDimensions (w, h) {
+		function setDimensions(w, h) {
 			S.width = w;
 			S.height = h;
 
@@ -155,7 +157,7 @@
 			$c[0].height = S.height;
 		}
 	
-		function loop () {
+		function loop() {
 			if (looping) {
 				o.update.apply(S);
 				o.draw.apply(S);
@@ -163,7 +165,7 @@
 			}
 		}
 	
-		S.setLooping = function (on) {
+		S.setLooping = function(on) {
 			if (on) {
 				if (!looping) {
 					looping = true;
@@ -175,7 +177,7 @@
 			return S;
 		};
 		
-		S.destroy = function () {
+		S.destroy = function() {
 			$c.unbind("mousemove."+guid).unbind("mousedown."+guid).unbind("mouseup."+guid);
 			$(window).unbind("resize."+guid);
 			$(window.document).unbind("keydown."+guid);
@@ -188,7 +190,7 @@
 		}
 	}
 	
-	window.Sketch = function (options) {
+	window.Sketch = function(options) {
 		return new Sketch(options);
 	};
 

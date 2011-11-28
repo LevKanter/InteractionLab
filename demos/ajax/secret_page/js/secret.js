@@ -89,7 +89,7 @@ app.loginPanel = function(container, callback) {
 	panel = container.find(".panel");
 	
 	// we will display a "spinner" while our login ajax request is pending: 
-	spinner = $("<div class='spinner'><img src='images/spinner.gif'></div>");
+	spinner = $("<div class='spinner'><img src='../common/images/spinner.gif'></div>");
 	spinner.hide().appendTo(panel);
 	
 	fields = {
