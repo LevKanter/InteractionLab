@@ -1,0 +1,36 @@
+body {
+	background-color: #1d181f;
+	-moz-transition: background-color 1s linear;
+	-webkit-transition: background-color 1s linear;
+}
+
+@media all and (max-width: 1400px) and (min-width: 1025px) {
+	
+	body {
+		background-color: #3b424c;
+	}
+}
+
+
+@media all and (max-width: 1024px) and (min-width: 769px) {
+	
+	body {
+		background-color: #306e73;
+	}
+}
+
+
+@media all and (max-width: 768px) and (min-width: 481px) {
+	
+	body {
+		background-color: #b29c85;
+	}
+}
+
+
+@media all and (max-width: 480px) {
+
+	body {
+		background-color: #ff5335;
+	}
+}
