@@ -1,13 +1,63 @@
 body {
-	background-color: #1d181f;
-	-moz-transition: background-color 1s linear;
-	-webkit-transition: background-color 1s linear;
+	margin: 0px;
+	padding: 0px;
+	background-color: #000000;
+	color: #cccccc;
+	font-family: Georgia, serif;
+}
+
+.page {
+	margin: 20px auto;
+	width: 960px;
+}
+
+nav {
+	float: right;
+	width: 200px;
+	margin-left: 60px;
+	font-family: Tahoma, sans-serif;
+}
+nav ul {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+nav li {
+	margin: 3px 0px 0px;
+}
+nav li:first-child {
+	margin-top: 5px;
+}
+nav li a {
+	display: block;
+	padding: 10px;
+	text-decoration: none;
+	background-color: #eeeeee;
+	color: #000000;
+}
+nav li a:hover {
+	background-color: #00aacc;
+	color: #ffffff;
+}
+nav li a:active {
+	box-shadow: inset 2px 2px 6px rgba(0, 0, 0, .4);
+}
+
+article {
+	width: 700px;
+}
+article p {
+	margin: 20px 0px 0px;
+	padding: 0px;
+}
+article p:first-child {
+	margin-top: 0px;
 }
 
 @media all and (max-width: 1400px) and (min-width: 1025px) {
 	
 	body {
-		background-color: #3b424c;
+	
 	}
 }
 
@@ -15,7 +65,7 @@ body {
 @media all and (max-width: 1024px) and (min-width: 769px) {
 	
 	body {
-		background-color: #306e73;
+
 	}
 }
 
@@ -23,14 +73,38 @@ body {
 @media all and (max-width: 768px) and (min-width: 481px) {
 	
 	body {
-		background-color: #b29c85;
+	
 	}
 }
 
 
 @media all and (max-width: 480px) {
 
-	body {
-		background-color: #ff5335;
+	.page,
+	article,
+	nav {
+		width: auto;
+	}
+	
+	.page {
+		margin: 0px;
+		padding: 10px;
+	}
+	
+	nav {
+		float: none;
+		margin-left: 0px;
+	}
+	nav li {
+		float: left;
+		margin: 0px 0px 0px 3px;
+	}
+	nav li:first-child {
+		margin: 0px;
+	}
+	
+	article {
+		clear: left;
+		padding-top: 20px;
 	}
 }
