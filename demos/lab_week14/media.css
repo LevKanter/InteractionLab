@@ -6,21 +6,33 @@ body {
 	font-family: Georgia, serif;
 }
 
+::-moz-selection {
+	color: #ffffff;
+	background-color: #555555; 
+}
+::selection {
+	color: #ffffff;
+	background-color: #555555; 
+}
+
 .page {
 	margin: 20px auto;
 	width: 960px;
 }
 
-nav {
-	float: right;
-	width: 200px;
-	margin-left: 60px;
-	font-family: Tahoma, sans-serif;
-}
-nav ul {
+ul {
 	margin: 0px;
 	padding: 0px;
 	list-style: none;
+}
+
+nav {
+	float: right;
+	width: 200px;
+	font-family: Tahoma, sans-serif;
+}
+nav ul {
+
 }
 nav li {
 	margin: 3px 0px 0px;
@@ -36,14 +48,14 @@ nav li a {
 	color: #000000;
 }
 nav li a:hover {
-	background-color: #00aacc;
-	color: #ffffff;
+	background-color: #66ccff;
 }
 nav li a:active {
-	box-shadow: inset 2px 2px 6px rgba(0, 0, 0, .4);
+	box-shadow: inset 2px 2px 8px rgba(0, 0, 0, .6);
 }
 
 article {
+	float: left;
 	width: 700px;
 }
 article p {
@@ -52,6 +64,34 @@ article p {
 }
 article p:first-child {
 	margin-top: 0px;
+}
+
+.actions {
+	float: right;
+	width: 200px;
+	margin: 20px 0px 0px;
+	font-size: 12px;
+}
+.actions li {
+	margin: 10px 0px 0px;
+}
+.actions li:first-child {
+	margin-top: 0px;
+}
+.actions a {
+	display: block;
+	padding: 5px 10px;
+	border: 1px solid #666666;
+	color: #aaaaaa;
+	text-decoration: none;
+}
+.actions a:hover {
+	color: #66ccff;
+	border-color: #ffffff;
+}
+.actions a:active {
+	
+	box-shadow: inset 2px 2px 8px rgba(0, 0, 0, .6);
 }
 
 @media all and (max-width: 1400px) and (min-width: 1025px) {
@@ -65,7 +105,7 @@ article p:first-child {
 @media all and (max-width: 1024px) and (min-width: 769px) {
 	
 	body {
-
+		
 	}
 }
 
@@ -73,16 +113,16 @@ article p:first-child {
 @media all and (max-width: 768px) and (min-width: 481px) {
 	
 	body {
-	
+		
 	}
 }
 
-
-@media all and (max-width: 480px) {
-
+@media all and (max-width: 1024px) {
+	
 	.page,
 	article,
-	nav {
+	nav,
+	.actions {
 		width: auto;
 	}
 	
@@ -94,17 +134,50 @@ article p:first-child {
 	nav {
 		float: none;
 		margin-left: 0px;
+		background-color: #bbbbbb;
 	}
 	nav li {
 		float: left;
-		margin: 0px 0px 0px 3px;
+		margin: 0px;
 	}
 	nav li:first-child {
 		margin: 0px;
 	}
+	nav li a {
+		border-right: 3px solid #000000;
+	}
 	
 	article {
-		clear: left;
-		padding-top: 20px;
+		float: none;
+		padding: 20px 0px;
 	}
+	
+	.actions {
+		float: none;
+		padding: 10px 0px;
+		border-top: 1px solid #444444;
+		border-bottom: 1px solid #444444;
+	}
+	.actions li {
+		float: left;
+		margin: 0px 10px 0px 0px;
+	}
+	
+}
+
+
+@media all and (max-width: 480px) {
+	
+}
+
+.clearfix:before,
+.clearfix:after { 
+	content: ""; 
+	display: table; 
+}
+.clearfix:after { 
+	clear: both; 
+}
+.clearfix { 
+	zoom: 1; 
 }
