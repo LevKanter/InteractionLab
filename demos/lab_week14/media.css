@@ -8,22 +8,16 @@ body {
 
 ::-moz-selection {
 	color: #ffffff;
-	background-color: #555555; 
+	background-color: #6fc843; 
 }
 ::selection {
 	color: #ffffff;
-	background-color: #555555; 
+	background-color: #6fc843; 
 }
 
 .page {
 	margin: 20px auto;
 	width: 960px;
-}
-
-ul {
-	margin: 0px;
-	padding: 0px;
-	list-style: none;
 }
 
 h1 {
@@ -34,13 +28,16 @@ h1 {
 	color: #ffffff;
 }
 
+ul {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
 nav {
 	float: right;
 	width: 200px;
 	font-family: Tahoma, sans-serif;
-}
-nav ul {
-
 }
 nav li {
 	margin: 3px 0px 0px;
@@ -98,51 +95,28 @@ article p:first-child {
 	background-repeat: no-repeat;
 	background-position: 7px center;
 }
+
+.actions .facebook a { background-image: url("images/facebook.png"); }
+.actions .email a { background-image: url("images/email.png"); }
+.actions .comment a { background-image: url("images/comment.png"); }
+
 .actions a:hover {
 	color: #6fc843;
 	border-color: #ffffff;
 }
 .actions a:active {
-	
+	border-color: #999999;
 	box-shadow: inset 2px 2px 8px rgba(0, 0, 0, .6);
 }
 
-.actions .facebook a {
-	background-image: url("images/facebook.png");
-}
-
-.actions .email a {
-	background-image: url("images/email.png");
-}
-
-.actions .comment a {
-	background-image: url("images/comment.png");
-}
-
-@media all and (max-width: 1400px) and (min-width: 1025px) {
+/*
+Apply styles to "screen" media when the window width 
+is less than or equal to 1024 pixels:
+*/
+@media screen and (max-width: 1024px) {
 	
-	body {
-	
-	}
-}
-
-
-@media all and (max-width: 1024px) and (min-width: 769px) {
-	
-	body {
-		
-	}
-}
-
-
-@media all and (max-width: 768px) and (min-width: 481px) {
-	
-	body {
-		
-	}
-}
-
-@media all and (max-width: 1024px) {
+	/* In this case, we're going to override some previously-defined styles,
+	   to make the layout a single column instead of two: */
 	
 	.page,
 	article,
@@ -194,11 +168,24 @@ article p:first-child {
 	
 }
 
-
-@media all and (max-width: 480px) {
+/*
+Apply styles to "screen" media when the window width 
+is less than or equal to 480 pixels:
+*/
+@media screen and (max-width: 480px) {
+	
+	/* Let's just bump down the header font size a bit: */
 	
 	h1 {
 		font-size: 18px;
+	}
+	
+	.actions li { 
+		float: none;
+		margin: 10px 0px 0px;
+	}
+	.actions li:first-child {
+		margin-top: 0px;
 	}
 	
 }
