@@ -22,7 +22,7 @@ jQuery(document).ready(function() {
 	console.log("The elements are ready!!!");
 	
 	// $ can be used as a shortcut to the "jQuery" function, 
-	// so jQuery("#box") is essentially equivalent to $("#box")
+	// so jQuery("#box") does the same thing as $("#box")
 	
 	var div = $("#box"); // store a jQuery object representing our <div id="box"> in variable named "div"
 	var btn = $("a.button"); // store a jQuery object representing our <a class="button"> in a variable named "btn"
@@ -36,12 +36,11 @@ jQuery(document).ready(function() {
 		// we can cancel the default behavior that occurs when clicking on a link
 		// by calling the function preventDefault on the "object" that was passed as a "parameter" to our EVENT HANDLER function
 		
-		//event.preventDefault(); // ( http://api.jquery.com/event.preventDefault/ )
+		event.preventDefault(); // ( http://api.jquery.com/event.preventDefault/ )
 		
 		// call our function, passing it our div as the "element" parameter
 		
 		//reveal(div);
-		
 		toggle(div);
 		
 	});

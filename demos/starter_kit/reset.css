@@ -10,38 +10,106 @@ article, aside, audio, canvas, command, datalist,
 details, embed, figcaption, figure, footer, header,
 hgroup, mark, meter, nav, output, progress, section,
 summary, time, video {
-	margin:0; padding:0; vertical-align:baseline;
-	border:0; outline:0; font-size:100%;
-	background-color:transparent; background-repeat:no-repeat;
+	margin: 0; 
+	padding: 0; 
+	vertical-align: baseline;
+	border: 0; 
+	outline: 0; 
+	font-size: 100%;
+	background-color: transparent; 
+	background-repeat: no-repeat;
 }
-html { height:100%; }
-body { text-align:center; line-height:1.4; font-size:62.5%; }
-ul, ol { list-style:none; list-style-position:outside; }
-table { border-collapse:collapse; border-spacing:0; }
-caption { text-align:center; caption-side:top; }
-acronym[title], abbr[title] { cursor:help; }
-del { text-decoration:line-through; }
-strong { font-weight:bold; } 
-em { font-style:italic; }
-sup { vertical-align:super; font-size:80%; }
-sub { vertical-align:sub; font-size:80%; }
-small { font-size:80%; }
-big { font-size:120%; }
-hr { height:1px; }
-textarea { overflow:auto; resize:none; }
-input[type="hidden"] { display:none; }
-blockquote, q { quotes:none; }
-q:before, q:after { content:'"'; }
-:focus { outline:0; }
-::-moz-focus-inner { border-color:transparent; }
+
+html { 
+	height: 100%; 
+}
+body { 
+	text-align: center; 
+	line-height: 1.4; 
+	font-size: 62.5%; 
+}
+
+ul, ol { 
+	list-style: none; 
+	list-style-position: outside; 
+}
+
+table { 
+	border-collapse: collapse; 
+	border-spacing: 0; 
+}
+caption { 
+	text-align: center; 
+	caption-side: top; 
+}
+
+acronym[title], abbr[title] { 
+	cursor: help; 
+}
+del { 
+	text-decoration: line-through; 
+}
+strong { 
+	font-weight: bold; 
+} 
+em { 
+	font-style: italic; 
+}
+sup { 
+	vertical-align: super; 
+	font-size: 80%; 
+}
+sub { 
+	vertical-align: sub; 
+	font-size:80%; 
+}
+small { 
+	font-size: 80%; 
+}
+big { 
+	font-size: 120%; 
+}
+
+hr { 
+	height: 1px; 
+}
+
+textarea { 
+	overflow: auto; 
+	resize: none; 
+}
+input[type="hidden"] { 
+	display: none; 
+}
+
+blockquote, q { 
+	quotes: none; 
+}
+q:before, q:after { 
+	content: '"'; 
+}
+
+:focus { 
+	outline: 0; 
+}
+::-moz-focus-inner { 
+	border-color: transparent; 
+}
 
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
-	display:block;
+	display: block;
 }
 
 /* http://nicolasgallagher.com/micro-clearfix-hack */
 .clearfix:before,
-.clearfix:after { content:""; display:table; }
-.clearfix:after { clear:both; }
-.clearfix { zoom:1; }
+.clearfix:after { 
+	content: ""; 
+	display: table; 
+}
+.clearfix:after { 
+	clear: both; 
+}
+.clearfix { 
+	zoom: 1; 
+}

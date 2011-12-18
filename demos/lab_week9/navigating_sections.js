@@ -1,7 +1,7 @@
 
 // We need to pass a function to jQuery(document).ready
 // then, jQuery will execute it as soon as it detects
-// that are HTML page is "ready" (all the elements on the page
+// that our HTML page is "ready" (all the elements on the page
 // have been initialized, so it's safe to manipulate them)
 
 // Let's define the function:
