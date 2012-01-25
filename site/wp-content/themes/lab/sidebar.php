@@ -1,6 +1,6 @@
 
 	<div class="sidebar">
-		<?php if (is_front_page()) { ?>
+		<?php if (is_front_page()) { ?><!--
 			<div class="roster">
 				<h2>Students</h2>
 				<ul class="toc">
@@ -13,5 +13,5 @@
 					?>
 				</ul>
 			</div>
-		<?php } ?>
+		--><?php } ?>
 	</div>

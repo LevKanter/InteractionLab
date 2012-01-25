@@ -1,3 +1,4 @@
 .DS_Store
 site/wp-config.php
+site/wp-content/uploads
 misc
