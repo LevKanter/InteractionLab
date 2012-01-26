@@ -1,0 +1,96 @@
+<!doctype html>  
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8">
+		
+		<title>[slideshow]</title>
+		
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/main.css">
+		<!--<link rel="stylesheet" href="lib/zenburn.css">-->
+	</head>
+	
+	<body>
+		
+		<div id="main">
+			
+			<section>
+				<!--<h1>Reveal.js</h1>
+				<h3 class="inverted">A CSS 3D Slideshow</h3>-->
+			</section>
+			
+			<!-- Example of nested vertical slides -->
+			<section>
+				<section>
+				
+				</section>
+				<section>
+					
+				</section>
+				<section>
+					
+				</section>
+				<section>
+					
+				</section>
+			</section>
+
+			<!--
+			<section>
+				<h2>Fragmented Views</h2>
+				<p>Hit the next arrow...</p>
+				<p class="fragment">... to step through ...</p>
+				<ol>
+					<li class="fragment"><code>any type</code></li>
+					<li class="fragment"><em>of view</em></li>
+					<li class="fragment"><strong>fragments</strong></li>
+				</ol>
+			</section>
+			-->
+			
+		</div>
+		
+		<aside class="controls">
+			<a class="left" href="#">&#x25C4;</a>
+			<a class="right" href="#">&#x25BA;</a>
+			<a class="up" href="#">&#x25B2;</a>
+			<a class="down" href="#">&#x25BC;</a>
+		</aside>
+
+		<div class="progress"><span></span></div>
+		
+		<script src="js/reveal.js"></script>
+		<script src="lib/highlight.js"></script>
+		<script>
+			// Parse the query string into a key/value object
+			var query = {};
+			location.search.replace( /[A-Z0-9]+?=(\w*)/gi, function(a) {
+				query[ a.split( '=' ).shift() ] = a.split( '=' ).pop();
+			} );
+
+			Reveal.initialize({
+				// Display controls in the bottom right corner
+				controls: true,
+
+				// Display a presentation progress bar
+				progress: true,
+
+				// Apply a 3D roll to links on hover
+				rollingLinks: true,
+
+				// UI style
+				theme: query.theme || 'default', // default/neon
+
+				// Transition style
+				transition: query.transition || 'default' // default/box/page/concave/linear(2d),
+			});
+
+			hljs.initHighlightingOnLoad();
+		</script>
+
+
+		
+		
+	</body>
+</html>

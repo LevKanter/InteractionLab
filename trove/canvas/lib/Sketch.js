@@ -1,7 +1,9 @@
 (function(window, $) {
+
+	var DEBUG = true;
 	
-	var debug = (window.console && $.isFunction(window.console.log)) ? window.console.log : $.noop;
-	var error = (window.console && $.isFunction(window.console.error)) ? window.console.error : $.noop;
+	var debug = (DEBUG && window.console && $.isFunction(window.console.log)) ? window.console.log : $.noop;
+	var error = (DEBUG && window.console && $.isFunction(window.console.error)) ? window.console.error : $.noop;
 	
 	// requestAnim shim layer by Paul Irish
 	// http://paulirish.com/2011/requestanimationframe-for-smart-animating/
@@ -84,7 +86,7 @@
 			}
 			
 			S.ctx = $c[0].getContext(o.graphicsMode);
-			if (! S.ctx) {
+			if (!S.ctx) {
 				debug("%s graphics context unavailable", o.graphicsMode);
 				return false;
 			}
@@ -164,14 +166,15 @@
 				requestAnimFrame(loop);
 			}
 		}
-	
+		
+		// start or stop the update-draw loop
 		S.setLooping = function(on) {
-			if (on) {
+			if (on === true) {
 				if (!looping) {
 					looping = true;
 					loop();
 				}
-			} else {
+			} else if (on === false) {
 				looping = false;
 			}
 			return S;
@@ -179,6 +182,7 @@
 		
 		S.destroy = function() {
 			$c.unbind("mousemove."+guid).unbind("mousedown."+guid).unbind("mouseup."+guid);
+			$c.removeAttr("data-id");
 			$(window).unbind("resize."+guid);
 			$(window.document).unbind("keydown."+guid);
 			S.setLooping(false);
