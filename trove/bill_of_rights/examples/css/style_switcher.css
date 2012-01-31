@@ -2,10 +2,11 @@
 	margin: 0px;
 	padding: 1px 0px 1px 1px;
 	position: fixed;
+	z-index: 9999;
 	top: 20px;
 	right: 0px;
-	width: 120px;
-	background-color: #000000;
+	width: 180px;
+	background-color: #171814;
 }
 
 .controls .btn {
@@ -15,7 +16,7 @@
 	text-align: left;
 	font-size: 14px;
 	line-height: 2em;
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: Courier, monospace;
 	font-weight: normal;
 	font-style: normal;
 	text-decoration: none;
@@ -29,15 +30,14 @@
 }
 
 .controls .btn:hover {
-	background-color: #66ccff;
-	color: #000066;
+	background-color: #777775;
 }
 
 .controls .btn.active {
-	background-color: #4b4b4b;
+	background-color: #454542;
 	cursor: default;
 }
 
 .controls .btn.active:hover {
-	color: #ffffff;
+	
 }

@@ -1,42 +1,50 @@
-jQuery(document).ready(function($) {
+(function(stylesheets) {
 
-	var activeStyle = $("#active-style");
-	var controls = $("<div class='controls'></div>");
-	var controlsStyle = $("<link rel='stylesheet' href='css/style_switcher.css'>");
-	
-	$("head").append(controlsStyle);
-	
-	controls.hide().appendTo("body").css({ 
-		right: "-100%" 
-	}).show();
-	
-	$.each({
-		
-		Lev: "css/lev.css",
-		Zeke: "css/zeke.css",
-		Ian: "css/ian.css",
-		Shem: "css/shem.css"
-		
-	}, function(label, href) {
-		var button = $("<a href='#' class='btn'>"+ label +"</a>");
-		
-		button.click(function(e) {
+	jQuery(document).ready(function($) {
+
+		var active_style, controls, handle_btn_click;
+
+		active_style = $("head #active-style");
+		controls = $("<div class='controls'></div>");
+
+		handle_btn_click = function(e) {
+			var button = $(this);
 			e.preventDefault();
-			activeStyle.attr("href", href);
-			$(this).addClass("active").siblings().removeClass("active");
+			if (!button.hasClass("active")) {
+				active_style.attr("href", button.attr("href"));
+				button.addClass("active").siblings().removeClass("active");
+			}
+		};
+		
+		$("head").append("<link rel='stylesheet' href='css/style_switcher.css'>");
+		
+		controls.hide().appendTo("body").css({ 
+			//right: "-100%"
+			right: 0
+		}).show();
+
+		$.each(stylesheets, function(label, href) {
+			$("<a href='"+ href +"' class='btn'>"+ label +"</a>").click(handle_btn_click).appendTo(controls);
 		});
 		
-		controls.append(button);
-	});
-	
-	$(document).keydown(function(e) {
+		$(document).keydown(function(e) {
+			// "c"
+			if (e.which == 67) {
+				controls.animate({
+					right: controls.css("right") === "0px" ? "-100%" : 0
+				}, 200);
+			}
+		});
 		
-		// "c"
-		if (e.which == 67) {
-			controls.animate({
-				right: controls.css("right") == "0px" ? "-100%" : 0
-			}, 200);
-		}
 	});
-	
-});
+
+	if (console && console.log) {
+		console.log(stylesheets);
+	}
+
+}({
+	Lev: "css/lev.css",
+	Zeke: "css/zeke.css",
+	Ian: "css/ian.css",
+	Shem: "css/shem.css"	
+}));
