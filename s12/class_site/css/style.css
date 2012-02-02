@@ -1,0 +1,44 @@
+body {
+	background-color: #272822;
+	color: #86d7e9;
+	font-family: Helvetica;
+	font-size: 18px;
+}
+
+div {
+	width: 800px;
+	margin: 0px auto;
+}
+
+h1 {
+	font-weight: normal;
+	text-transform: uppercase;
+	font-size: 36px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #e046ca;
+}
+
+h2 {
+	font-weight: normal;
+	font-size: 24px;
+}
+
+/* apply styles to <em> elements that are inside <p> elements */
+p em {
+	font-style: normal;
+	color: #acda3e;
+}
+
+img {
+
+}
+
+a {
+	color: #a88efc;
+	/* <a> elements often have text-decoration: underline; by default */
+	text-decoration: none;
+}
+
+ul {
+	/* list-style-type: none; */
+}

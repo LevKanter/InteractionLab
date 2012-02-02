@@ -1,0 +1,92 @@
+<!doctype html>
+<!-- Above is the "doctype", it says to the browser: 
+"what follows is HTML version 5" 
+The doctype must be the very first line of text in the file.
+-->
+
+<!--
+Everything else will live inside the <html> element.
+-->
+<html lang="en">
+	
+	<!--
+	The <head> contains important details about your site,
+	but none of the elements in it are actually going to be displayed when you view the page. <meta>, <title>, and <link> should only ever go inside of
+	<head> (you don't want to put them in <body>).
+	-->
+	<head>
+		<meta charset="utf-8">
+
+		<!--
+		The <title> of this page. This is displayed by browsers in tabs
+		and used by search engines.
+		-->
+		<title>Interaction: Lab</title>
+
+		<!--
+		The <link> element is used here to pull in an external CSS file.
+		The "href" attribute on this element provides a path
+		to the .css file. In this case, we're using a "relative" path
+		to locate the file with respect to this .html file.
+		-->
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+
+	<!--
+	All visible content will live inside the <body> element.
+	-->
+	<body>
+		
+		<div>
+		
+			<!-- Top level heading element -->
+			<h1>Core Interaction: Lab</h1>
+	
+			<!-- Paragraph element -->
+			<p><em>Interaction: Core Lab</em> is about creating user interfaces, and understanding how they work.</p>
+	
+			<p><a href="http://coursekit.com/app#course/pudt-2101.kanter">Visit the Coursekit</a><p>
+	
+			<!-- 
+			Image element. The <img> element cannot contain
+			elements inside it, so there is no need to close it
+			(i.e. "</img>"). The "src" attribute on this
+			provides a path to the actual image file we want to display.
+			The "alt" attribute provides alternate text for the browser
+			to display just in case it is unable to display the image file.
+			-->
+			
+			<img src="images/class.jpg" alt="Classroom">
+			
+			<!-- Secondary level heading element -->
+			<h2>Students</h2>
+	
+			<!-- 
+			Unordered List element.
+			This element groups together a bunch of 'list items', or <li> elements.
+			-->
+			<ul>	
+				<li><a href="http://webspace.newschool.edu/~andrd116/" target="_blank">Darwin</a></li>
+				<li><a href="http://webspace.newschool.edu/~bernr348/" target="_blank">Rachel</a></li>
+				<li><a href="http://webspace.newschool.edu/~calij942/lab/" target="_blank">Joel</a></li>
+				<li><a href="http://webspace.newschool.edu/~chanh307/interactionlab/" target="_blank">Hanna</a></li>
+				<li><a href="http://webspace.newschool.edu/~cheuj820/" target="_blank">Justin</a></li>
+				<li><a href="http://webspace.newschool.edu/~delma042/interactionlab.html" target="_blank">Ambar</a></li>
+				<li><a href="http://webspace.newschool.edu/~gardj202/lab.html" target="_blank">Jane</a></li>
+				<li><a href="http://webspace.newschool.edu/~hadae519/lab/" target="_blank">Elda</a></li>
+				<li><a href="http://webspace.newschool.edu/~hutcs191/interactionlab/" target="_blank">Sam</a></li>
+				<li><a href="http://webspace.newschool.edu/~huync821/" target="_blank">Cong</a></li>
+				<li><a href="http://webspace.newschool.edu/~kimh302/corelab.html" target="_blank">Hyo</a></li>
+				<li><a href="http://webspace.newschool.edu/~morgr183/interactionlab/" target="_blank">Regina M.</a></li>
+				<li><a href="http://webspace.newschool.edu/~punor115/" target="_blank">Regina P.</a></li>
+				<li><a href="http://webspace.newschool.edu/~riven203/first_website.html" target="_blank">Nancy</a></li>
+				<li>Emilio</li>
+				<li><a href="http://webspace.newschool.edu/~santk668/interactionlab.html" target="_blank">Katherine</a></li>
+				<li><a href="http://webspace.newschool.edu/~seros202/interactionlab/index.html" target="_blank">Shelly</a></li>
+				<li><a href="http://webspace.newschool.edu/~singa766/myfirstwebsite" target="_blank">Anjana</a></li>
+				<li><a href="http://webspace.newschool.edu/~tair620/" target="_blank">Rachal</a></li>
+			</ul>
+
+		</div>		
+	</body>
+</html>
