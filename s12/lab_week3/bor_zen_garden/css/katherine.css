@@ -1,0 +1,99 @@
+body {
+	background-color: white;
+	color: rgb(0, 91, 127);
+	font-family: Palatino;
+	text-align: left;
+	
+}
+
+article {
+	border: 2px solid rgb(249, 173, 129);
+	width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 20px 60px;
+}
+
+h1 {
+	color: rgb(249, 173, 129);
+	font-family: Courier New;
+	font-weight: 100;
+	text-transform: uppercase;
+	font-stretch: expanded;
+	font-size: 40px;
+	text-align: center;
+}
+
+
+
+h2 {
+	color: rgb(242, 108, 79);
+	font-size: 20px;
+	font-family: Courier New;
+	font-weight: lighter;
+	text-decoration: underline;
+	padding: 20px 30px 20px 40px; 
+	
+	/*color: rgb(249, 173, 129);
+	font-style: normal;
+	font-size: 16px;
+	font-weight: 100;
+	font-family: Courier New;
+
+	padding: 20px 30px 20px 40px;*/
+}
+
+
+cite {
+	color: rgb(249, 173, 129);
+	font-size: 15px;
+	font-family: Courier New;
+	padding: 20px 40px;
+}
+
+em {
+	font-family: Courier New;
+	font-style: normal;
+	font-size: 18px;
+	
+}
+
+
+div p em {
+	font-size: 20px;
+	color: rgb(0, 118, 163);	
+}
+
+p {
+	color: rgb(0, 118, 163);
+	font-size: 15px;
+	font-weight: lighter;
+	font-stretch: expanded; 
+	padding: 20px 40px 20px 60px;
+
+}
+
+
+ol li {
+	color: rgb(249, 173, 129);
+	font-family: Courier New;
+	font-weight: 100;
+	font-size: 25px;
+	font-stretch: expanded;
+	padding: 20px 50px 20px 20px;
+
+}
+
+
+ol li p {
+	color: rgb(242, 108, 79);
+	font-size: 18px;
+	font-weight: lighter;
+	font-stretch: expanded; 
+	padding: 20px 20px 20px 50px;
+	
+}
+
+
+
+

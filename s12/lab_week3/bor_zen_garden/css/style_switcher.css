@@ -1,0 +1,43 @@
+.controls {
+	margin: 0px;
+	padding: 1px 0px 1px 1px;
+	position: fixed;
+	z-index: 9999;
+	top: 20px;
+	right: 0px;
+	width: 180px;
+	background-color: #171814;
+}
+
+.controls .btn {
+	display: block;
+	margin: 0px;
+	padding: 0px 5px;
+	text-align: left;
+	font-size: 14px;
+	line-height: 2em;
+	font-family: Courier, monospace;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	text-shadow: none;
+	color: #ffffff;
+	border-top: 1px solid #666;
+}
+
+.controls .btn:first-child {
+	border-top: none;
+}
+
+.controls .btn:hover {
+	background-color: #777775;
+}
+
+.controls .btn.active {
+	background-color: #454542;
+	cursor: default;
+}
+
+.controls .btn.active:hover {
+	
+}

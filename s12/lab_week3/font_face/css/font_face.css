@@ -1,0 +1,32 @@
+/*
+The "@font-face" allows us to include a font file
+with our HTML document. This is one potential way
+to make it more likely that a person looking at
+this document will be able to see the intended
+font, even if their computer (or phone, iPad, etc),
+does not already have that font in the system.
+
+Here, we're only supplying one font file,
+which is a ".otf". Computers/browsers/devices do not
+always support the same file formats (for example,
+there is also ".woff", ".ttf", etc) so if we wanted to be
+REALLY safe about this, we would have to provide multiple
+file types per font, as comma separated URLs:
+src: url("my-font.otf"), url("my-font.woff"), url("my-font.ttf")
+*/
+
+@font-face {
+	font-family: "Fette Fraktur";
+	src: url("../fonts/FetteFrakturLTStd.otf");
+}
+
+p {
+	/*
+	The "font-family" here matches what I specified
+	above in the @font-face declaration.
+	*/
+	font-family: "Fette Fraktur", serif;
+	
+	font-size: 36px;
+	width: 800px;
+}

@@ -1,0 +1,47 @@
+ /* 
+The Bill of Rights 
+styles by [you]
+*/
+
+
+body{
+background-color:#FFF8D3;
+border: dotted #C5C7B6;
+border-width: 10px; 
+}
+
+article{
+font-family: Futura;
+}
+
+h1{
+color: #222028;
+font-size: 100px;
+text-align: center;
+font-weight: strong;
+}
+
+h2{
+color: #4c493e;
+font-size: 55px;
+text-align: center;
+font-weight: emphasize;
+}
+
+cite{
+font-variant : small-caps;
+color: #4c493e;
+text-align: center;
+}
+
+
+ol {
+margin: auto;
+list-style-type: none;
+text-align:none;
+width: 1000px;
+text-indent: 2em;
+padding: 30 px;
+color: #2F3837;
+list-style-type: decimal;
+}

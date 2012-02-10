@@ -7,7 +7,7 @@
 		<!-- 
 		Link to external stylesheet. 
 		-->
-		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
 		
@@ -16,23 +16,25 @@
 		The <article> is very similar to a <div>, it's also a general container "block".
 		see [ http://html5doctor.com/the-article-element/ ] for more info.
 		-->
-		<article>
+		<article class="wrapper">
 			<h1>The Bill of Rights</h1>
+			
+			<div class="preamble">
+				<h2>The Preamble to The Bill of Rights</h2>
+			
+				<q><cite><em>Congress of the United States</em> begun and held at the City of New-York, on Wednesday the fourth of March, one thousand seven hundred and eighty nine.</cite></q>
 		
-			<h2>The Preamble to The Bill of Rights</h2>
+				<p><em>The</em> Conventions of a number of the States, having at the time of their adopting the Constitution, expressed a desire, in order to prevent misconstruction or abuse of its powers, that further declaratory and restrictive clauses should be added: And as extending the ground of public confidence in the Government, will best ensure the beneficent ends of its institution.</p>
 			
-			<cite><em>Congress of the United States</em> begun and held at the City of New-York, on Wednesday the fourth of March, one thousand seven hundred and eighty nine.</cite>
-		
-			<p><em>The</em> Conventions of a number of the States, having at the time of their adopting the Constitution, expressed a desire, in order to prevent misconstruction or abuse of its powers, that further declaratory and restrictive clauses should be added: And as extending the ground of public confidence in the Government, will best ensure the beneficent ends of its institution.</p>
+				<p><em>Resolved</em> by the Senate and House of Representatives of the United States of America, in Congress assembled, two thirds of both Houses concurring, that the following Articles be proposed to the Legislatures of the several States, as amendments to the Constitution of the United States, all, or any of which Articles, when ratified by three fourths of the said Legislatures, to be valid to all intents and purposes, as part of the said Constitution; viz.</p>
 			
-			<p><em>Resolved</em> by the Senate and House of Representatives of the United States of America, in Congress assembled, two thirds of both Houses concurring, that the following Articles be proposed to the Legislatures of the several States, as amendments to the Constitution of the United States, all, or any of which Articles, when ratified by three fourths of the said Legislatures, to be valid to all intents and purposes, as part of the said Constitution; viz.</p>
-			
-			<p><em>Articles</em> in addition to, and Amendment of the Constitution of the United States of America, proposed by Congress, and ratified by the Legislatures of the several States, pursuant to the fifth Article of the original Constitution.</p>
+				<p><em>Articles</em> in addition to, and Amendment of the Constitution of the United States of America, proposed by Congress, and ratified by the Legislatures of the several States, pursuant to the fifth Article of the original Constitution.</p>
+			</div>
 			
 			<!--
 			Using an <ol> (ordered list) to structure the list of ammendments.
 			-->
-			<ol>
+			<ol class="someclass">
 				<!-- 
 				each element in the list has to be represented as an <li> (list item) 
 				-->
@@ -72,3 +74,32 @@
 
 	</body>
 </html>
+
+
+
+<!--
+
+	"Dunbar." several people said. "Dunbar. Dunbar."
+	
+	<blockquote>
+		<p>
+			<q>Dunbar.</q> several people said. <q>Dunbar. Dunbar.</q>
+		</p>
+	</blockquote>
+	
+	blockquote p {
+	
+	}
+-->
+
+
+
+
+
+
+
+
+
+
+
+

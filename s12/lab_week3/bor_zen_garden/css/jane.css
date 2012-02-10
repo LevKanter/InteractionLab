@@ -1,0 +1,111 @@
+/* 
+The Bill of Rights 
+styled by Jane Gardner!
+*/
+
+body {
+
+background: url("http://farm8.staticflickr.com/7049/6845303959_b2eea5f198_z.jpg");
+background-attachment: fixed;
+
+}
+
+article {
+
+	width: 650px;
+	height: 185px;
+	margin: 40px auto;
+	padding: 20px;
+	background: #ff6445;
+	border-style:solid;
+	border-width: 20px;
+	border-color: #48d1cc;
+}
+
+h1 {
+
+	font: 80px "rockwell";
+	line-height: 70px;
+	font-weight: bold;
+	letter-spacing: none;
+	text-transform: uppercase;
+	color: #ffffff;
+	text-align: center;
+	margin-top: 0px;
+
+}
+
+h2 {
+
+	font: 25px "rockwell";
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #ffffff;
+	text-align: center;
+	margin-bottom: 60px;
+	margin-top: -50px;
+	background: #48d1cc;
+	text-decoration: none;
+
+}
+
+p {
+
+	font-family: "futura";
+	font-size: 15px;
+	text-align: left;
+	
+}
+
+article {
+
+	font: 15px "rockwell";
+	font-weight: bold;
+	color: #48d1cc;
+	margin-bottom: 80px;
+	margin-top: 30px;
+	text-align: justify;
+}
+
+cite {
+
+	font-family: "futura";
+	font-size: 15px;
+	text-align: left;
+	color: #48d1cc;
+	margin-bottom: 30px;
+	margin-top: 20px;
+	
+}
+
+em {
+
+	font: 25px "rockwell";
+	font-weight: bold;
+	color: #ffffff;
+	margin-bottom: 30px;
+}
+
+ol {
+
+	counter-reset:ammendmentnum; 
+    margin: 40px, 20px, 30px;
+    padding: 10px;
+
+}
+
+li {
+
+	position: relative;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding: 20px; 
+    list-style: none;
+    background: #48d1cc;
+	color: #ffffff;
+	font-size: 5px;
+	border-style:solid;
+	border-width: 10px;
+	border-color: #ffffff;
+	
+}

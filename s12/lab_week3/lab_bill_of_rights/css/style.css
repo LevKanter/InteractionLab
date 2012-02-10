@@ -1,0 +1,133 @@
+@import url(http://fonts.googleapis.com/css?family=Diplomata);
+
+/*
+@font-face {
+	src: url("../fonts/FetteFrakturLTStd.otf");
+	font-family: "Fette";
+}
+*/
+
+
+body {
+	margin: 0px;
+	padding: 0px;
+	background-color: #f9ffeb;
+	font-family: Georgia, serif;
+}
+
+article {
+	margin: 60px;
+	padding: 30px;
+	width: 50%;
+	background-color: #ffffff;
+	box-shadow: 0px 1px 6px rgba(0, 0, 0, .3);
+}
+
+h1, 
+h2 {
+	font-family: "Diplomata", "Fette", serif;
+	font-weight: normal;
+	color: #dd0000;
+}
+
+h1 {
+	font-size: 100px;
+	/*font-family: "Fettes Fraktur";*/
+}
+
+li {
+	color: red;
+	font-size: 72px;
+}
+
+
+li p {
+	font-family: Georgia;
+}
+
+
+p {
+	color: black;
+	font-size: 16px;
+}
+
+.preamble {
+	font-family: sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+q {
+	quotes: none;
+}
+
+q:before,
+q:after {
+	color: red;
+	font-size: 100px;
+}
+
+
+
+q:before {
+	content: '\201C';
+}
+
+q:after {
+	content: '\201D';
+}
+
+
+
+
+article ol {
+	font-family: Georgia;
+}
+
+ol.someclass {
+	font-family: Helvetica;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+em {
+
+}
+
+
+
+/*
+The "@font-face" allows us to include a font file
+with our HTML document. This is one potential way
+to make it more likely that a person looking at
+this document will be able to see the intended
+font, even if their computer (or phone, iPad, etc),
+does not already have that font in the system.
+
+Here, we're only supplying one font file,
+which is a ".otf". Computers/browsers/devices do not
+always support the same file formats (for example,
+there is also ".woff", ".ttf", etc) so if we wanted to be
+REALLY safe about this, we would have to provide multiple
+file types per font, as comma separated URLs:
+src: url("my-font.otf"), url("my-font.woff"), url("my-font.ttf")
+*/
+
+/*@font-face {
+	font-family: "Fette Fraktur";
+	src: url("../fonts/FetteFrakturLTStd.otf");
+}*/

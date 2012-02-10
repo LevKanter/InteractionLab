@@ -1,0 +1,82 @@
+/* 
+The Bill of Rights 
+style by Elda
+*/
+
+body { 
+	font-family: verdana, sans serif;
+	background: black;
+
+	
+}
+article {
+width: 600px;
+height:10px;
+margin:60px auto;
+padding:10px;
+border-top: 3px solid white;
+}
+
+h1{
+	font-family: Helvetica, sans serif;
+	font-weight: bold;
+	font-size: 51px;
+	text-transform: uppercase;
+	text-align:center;
+	color: black;
+	background: white;
+
+}
+
+h2{
+	
+	font-size: 24px;
+	text-transform: uppercase;
+	color: black;
+	background: white;
+	text-align: center; 
+	font-weight: bold
+	margin-bottom:10px;
+	margin-top: 30px;
+	}	
+	
+}
+
+
+p, cite {
+	font-family: verdana;
+	font-size: 14px;
+	text-align: center;
+	font-style: uppercase;
+}
+
+article > p, cite { 
+	color: white;
+	
+}
+	
+cite {  
+	font-size: 18px;
+	text-transform: uppercase;
+	margin-bottom:40px;
+	margin-top: 0px;
+}
+	
+p> em {
+font-style:italic;
+}
+
+ol {
+	margin: 11px 0px 0px -11px;
+	padding:10px; 
+}
+
+li{
+	border-top: 3px solid white;
+	position: relative;
+	font-size: 12.5px;
+
+    color: white;
+	list-style-type: decimal-leading-zero;
+	list-style-position: outside;
+}
