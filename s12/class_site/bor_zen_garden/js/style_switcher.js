@@ -54,6 +54,7 @@
 
 			// left or right or up or down
 			if (e.which == 37 || e.which == 39 || e.which == 38 || e.which == 40) {
+				e.preventDefault();
 				navigate(e.which == 39 || e.which == 40);
 			}
 

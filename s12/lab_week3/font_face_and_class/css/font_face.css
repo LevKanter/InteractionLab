@@ -17,16 +17,26 @@ src: url("my-font.otf"), url("my-font.woff"), url("my-font.ttf")
 
 @font-face {
 	font-family: "Fette Fraktur";
+	/* 
+	We specify a path to the font file. In this case,
+	this is a relative path, WITH RESPECT TO THIS CSS FILE.
+	The "../" in the relative means "back up one directory"
+	*/
 	src: url("../fonts/FetteFrakturLTStd.otf");
 }
 
 p {
+	font-size: 36px;
+	width: 800px;
+}
+
+/*
+Let's only target <p> elements that have a class attribute = "fancy"
+*/
+p.fancy {
 	/*
-	The "font-family" here matches what I specified
+	The "font-family" here matches what we specified
 	above in the @font-face declaration.
 	*/
 	font-family: "Fette Fraktur", serif;
-	
-	font-size: 36px;
-	width: 800px;
 }
