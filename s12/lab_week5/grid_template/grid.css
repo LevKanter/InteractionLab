@@ -1,0 +1,101 @@
+.grid {
+	margin: 0px auto;
+	padding: 0px;
+	border: 1px solid #000;
+}
+
+.column {
+	float: left;
+	margin: 0px;
+	padding: 0px;
+}
+
+/*
+	Our grid consists of 12 "units", with a single unit being 80 pixels wide.
+	12 x 80px = 960px total width
+	
+	This assumes that are "columns" butt-up against each other, 
+	they do not have any left or right margins, padding, or borders.
+	If we wanted to give these properties to the columns, that's cool, 
+	but we would have to account for that in our math. Remember, margins, padding, 
+	and borders all add to the space that an element consumes.
+*/
+
+.x1 { width: 80px; }
+.x2 { width: 160px; }
+.x3 { width: 240px; }
+.x4 { width: 320px; }
+.x5 { width: 400px; }
+.x6 { width: 480px; }
+.x7 { width: 560px; }
+.x8 { width: 640px; }
+.x9 { width: 720px; }
+.x10 { width: 800px; }
+.x11 { width: 880px; }
+.x12 { width: 960px; }
+
+/*
+	Here, we do, however, apply padding to the .box elements
+	that are inside our .column element
+*/
+
+.column .box {
+	padding: 12px;
+	
+	/* 
+	an "outline" is similar to a "border" except
+	it does not take up any space in the layout
+	*/
+	outline: 1px dotted #000000;
+	background-color: #66ccff;
+}
+
+/*--------------------------------------------------------------------------*/
+
+body {
+	margin: 0px;
+	padding: 20px;
+}
+
+header {
+	padding: 24px 12px;
+	background-color: #efefef;
+}
+
+/*
+	We use the "clear" property to insure that the footer element
+	is pushed below our .column elements (which have "float: left;")
+	TRY GETTING RID OF THE CLEAR PROPERTY AND SEE WHAT HAPPENS.
+*/
+footer {
+	clear: both;
+	padding: 24px 12px;
+	text-align: center;
+	background-color: #efefef;
+}
+
+h1 {
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+}
+
+/*
+BONUS STUFF!!
+These very weird-looking "selectors" are used to control
+how text is styled when it is selected/highlighted (i.e. by clicking and
+dragging over it with the mouse). To add to the weirdness, you need to use
+both "::-moz-selection" and "::selection", because Firefox will only recognize
+"::-moz-selection", whereas other browser, such as Chrome and Safari, will
+only recognize "::selection".
+The use of so-called "vendor-specific" selectors is an unfortunate evil
+in writing CSS these days.
+*/
+::-moz-selection {
+	color: #66ccff;
+	background-color: #000000; 
+}
+::selection {
+	color: #66ccff;
+	background-color: #000000; 
+}
