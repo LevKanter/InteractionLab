@@ -5,10 +5,10 @@
 // have been initialized, so it's safe to manipulate them)
 
 // Let's define the function:
-function readyFn() {
+function readyFn($) {
 	
 	// store a jQuery object representing all our <a> elements found within .toc:
-	var linkElements = jQuery(".toc a");
+	var linkElements = $(".toc a");
 	
 	// call .bind() on our <a> elements,
 	// passing .bind() the type of the event we want to respond to (i.e. "click")
@@ -26,25 +26,42 @@ function readyFn() {
 		
 		// we use the "href" as a selector to make another jQuery object
 		// that represents the link's corresponding content panel
-		var content = jQuery(myHref);
+		var content = $(myHref);
 		
-		// show the content:
-		content.show();
-		//content.slideDown();
-		//content.fadeIn();
-		//content.addClass("active");
-		
-		// we also want to hide all the other content panels.
-		// since we structured our HTML so that all the content panel
-		// elements are "siblings" -- we can get another jQuery object
-		// representing just them by calling .siblings() on our current
-		// content panel:
-		var siblings = content.siblings();
-		siblings.hide();
-		//siblings.slideUp();
-		//siblings.fadeOut();
-		//siblings.removeClass("active");	
+		showContent(content);
 	});
+
+	// if the current URL has a "hash" (#xxx) tacked on to it,
+	// we can use that hash to select the initial content section to show
+	if (window.location.hash) {
+		showContent($(window.location.hash));
+	}
+
+}
+
+function showContent(content) {
+
+	// just to be safe let's make sure we actually have a content element
+	// if not, we'll just return out of this function early
+	if (!content || content.length < 1) {
+		return;
+	}
+
+	content.show();
+	//content.slideDown();
+	//content.fadeIn();
+	//content.addClass("active");
+	
+	// we also want to hide all the other content panels.
+	// since we structured our HTML so that all the content panel
+	// elements are "siblings" -- we can get another jQuery object
+	// representing just them by calling .siblings() on our current
+	// content panel:
+	var siblings = content.siblings();
+	siblings.hide();
+	//siblings.slideUp();
+	//siblings.fadeOut();
+	//siblings.removeClass("active");
 }
 
 // Now, let's call jQuery(document) and then call .ready()
