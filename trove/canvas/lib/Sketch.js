@@ -32,7 +32,7 @@
 		o = $.extend({
 			
 			// config
-			selector: null, // required			
+			element: null, // required (selector or $ or DOM element)		
 			graphicsMode: "2d",
 			
 			// callbacks
@@ -54,13 +54,15 @@
 	
 		function init() {
 			
-			if (o.selector instanceof $) {
-				$c = o.selector;
-			} else if (typeof o.selector === "string") {
-				$c = $(o.selector);
+			if (o.element instanceof $) {
+				$c = o.element;
+			} else if (typeof o.element === "string") {
+				$c = $(o.element);
+			} else if (HTMLElement && o.element instanceof HTMLElement) {
+				$c = $(o.element);
 			} else {
-				debug("Missing or invalid required option: selector");
-				debug(o.selector);
+				debug("Missing or invalid required option: element");
+				debug(o.element);
 				return false;
 			}
 			
@@ -77,7 +79,7 @@
 			// if we've selected more than one canvas,
 			// take the first one and ignore the rest
 			} else {
-				$c = $c.eq(0);
+				$c = $c.first();
 			}
 
 			if (! $.isFunction($c[0].getContext)) {
@@ -161,9 +163,12 @@
 	
 		function loop() {
 			if (looping) {
-				o.update.apply(S);
-				o.draw.apply(S);
-				requestAnimFrame(loop);
+				if (o.update.apply(S) === false) {
+					S.setLooping(false);
+				} else {
+					o.draw.apply(S);
+					requestAnimFrame(loop);
+				}
 			}
 		}
 		
