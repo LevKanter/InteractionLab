@@ -44,7 +44,7 @@
 			mousePressed: $.noop,
 			mouseReleased: $.noop,
 			keyDown: $.noop,
-			windowResized: $.noop,
+			resized: $.noop,
 			
 			canvasUnsuported: $.noop
 			
@@ -87,8 +87,8 @@
 				return o.canvasUnsuported.apply(S);
 			}
 			
-			S.ctx = $c[0].getContext(o.graphicsMode);
-			if (!S.ctx) {
+			S.context = $c[0].getContext(o.graphicsMode);
+			if (! S.context) {
 				debug("%s graphics context unavailable", o.graphicsMode);
 				return false;
 			}
@@ -103,10 +103,9 @@
 				var w, h;
 				w = $c.width();
 				h = $c.height();
-				if (o.windowResized.apply(S, [w, h]) !== false) {
-					if (w !== S.width || h !== S.height) {
-						setDimensions(w, h);
-					}
+				if (w !== S.width || h !== S.height) {
+					setDimensions(w, h);
+					o.resized.apply(S, [w, h]);
 				}
 			});
 			
@@ -195,7 +194,7 @@
 		};
 	
 		if (init() === false) {
-			error("Sketch not properly initialized");
+			error("Sketch initialization fail");
 		}
 	}
 	
