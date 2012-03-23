@@ -1,0 +1,17 @@
+
+/* some stuff to get you started */
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0px;
+	clear: both;
+	visibility: hidden;
+}
+
+/* [your css goes here] */

@@ -10,7 +10,7 @@ $(document).ready(function() {
 	}
 	
 	Sketch({
-		selector: "canvas",
+		element: "canvas",
 	
 		setup: function() {
 			resetBrush();
@@ -23,11 +23,11 @@ $(document).ready(function() {
 		draw: function() {
 			if (this.mousePressed) {
 				
-				this.ctx.beginPath();
-				this.ctx.arc(this.mouseX, this.mouseY, brush.size, 0, 2*Math.PI, true);
+				this.context.beginPath();
+				this.context.arc(this.mouseX, this.mouseY, brush.size, 0, 2*Math.PI, true);
 				
-				this.ctx.strokeStyle = brush.color;
-				this.ctx.stroke();
+				this.context.strokeStyle = brush.color;
+				this.context.stroke();
 			}
 		},
 		mousePressed: function() {
@@ -38,6 +38,10 @@ $(document).ready(function() {
 		},
 		keyDown: function (key) {
 			
+		},
+		resized: function(w, h) {
+			console.log(w);
+
 		}
 	});
 });
