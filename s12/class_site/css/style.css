@@ -1,4 +1,9 @@
-@import url(http://fonts.googleapis.com/css?family=Diplomata);
+@import url(http://fonts.googleapis.com/css?family=Nixie+One);
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
 
 body {
 	background-color: #efefef;
@@ -8,7 +13,11 @@ body {
 }
 
 .page {
-	margin: 10px auto;
+	margin: 25px auto;
+	padding: 20px;
+	background-color: #ffffff;
+	border: 1px solid #dddddd;
+	border-radius: 5px;
 }
 
 
@@ -21,8 +30,7 @@ h5,
 h6 {
 	margin: 0px;
 	padding: 5px 0px .8em;
-	/*font-family: 'Diplomata', serif;*/
-	font-weight: bold;
+	font-weight: normal;
 	/*background-color: #000000;
 	color: #ffffff;*/
 }
