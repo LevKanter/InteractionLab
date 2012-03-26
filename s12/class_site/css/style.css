@@ -1,4 +1,10 @@
-@import url(http://fonts.googleapis.com/css?family=Nixie+One);
+@import url(http://fonts.googleapis.com/css?family=Inconsolata);
+
+@font-face {
+	font-family:'MuseoSlab'; font-weight:normal; font-style:normal;
+	src:url('../fonts/museo_slab_500-webfont.eot');
+	src:local('â˜º'), url('../fonts/museo_slab_500-webfont.woff') format('woff'), url('../fonts/museo_slab_500-webfont.ttf') format('truetype'), url('../fonts/museo_slab_500-webfont.svg#webfontRnwDZmOy') format('svg');
+}
 
 * {
 	margin: 0px;
@@ -6,20 +12,29 @@
 }
 
 body {
-	background-color: #efefef;
+	background-color: #f7f7f7;
 	color: #000000;
-	font-family: Helvetica, Arial, sans-serif;
-	font-size: 18px;
+	font-family: Inconsolata, Arial, sans-serif;
+	font-size: 14px;
+}
+
+::-moz-selection { 
+	background-color: #444444; 
+	color: #fcfcfc; 
+}
+::selection { 
+	background-color: #444444; 
+	color: #fcfcfc; 
 }
 
 .page {
-	margin: 25px auto;
-	padding: 20px;
-	background-color: #ffffff;
-	border: 1px solid #dddddd;
-	border-radius: 5px;
+	margin: 0px auto;
 }
 
+.show-grid {
+	background-image: url("../images/grid.png");
+	background-repeat: repeat;
+}
 
 
 h1,
@@ -28,31 +43,29 @@ h3,
 h4,
 h5,
 h6 {
-	margin: 0px;
-	padding: 5px 0px .8em;
+	font-family: "MuseoSlab", Helvetica, Arial, sans-serif;
 	font-weight: normal;
-	/*background-color: #000000;
-	color: #ffffff;*/
 }
 
 h1 {
-	font-size: 36px;
-}
-
-h2 {
 	font-size: 24px;
 }
 
-/* apply styles to <em> elements that are inside <p> elements */
+h2 {
+	padding: 0px 10px 1em;
+	font-size: 24px;
+}
+
 p em {
 
 }
 
 blockquote {
-	margin: 0px;
-	padding: 0px;
-	/*font-family: "Diplomata", serif;*/
-	color: #444444;
+	margin: 0px 0px 15px;
+	padding: 10px;
+}
+blockquote p {
+	font-size: 24px;
 }
 
 blockquote p em {
@@ -65,36 +78,36 @@ img {
 
 a {
 	color: inherit;
-	/* <a> elements often have text-decoration: underline; by default */
 	text-decoration: none;
 }
 
 ul {
 	list-style-type: none;
-	margin: 0px;
-	padding: 0px;
 }
 
-.stack li {
-	padding: 0px;
-	margin: 0px;
-	border-top: 1px solid #cccccc;
+.stack {
+	margin: 0 0 30px;
 }
 
 .stack a {
 	display: block;
 	padding: 5px 10px;
+	border-bottom: 1px solid transparent;
 }
 .stack a:hover {
-	background-color: #000000;
-	color: #ffffff;
+	background-color: #0a90d7;
+	color: #fcfcfc;
 }
 .stack a:active {
-	box-shadow: inset 3px 3px 8px rgba(0, 0, 0, .5);
+	background-color: rgba(0, 0, 0, .7);
 }
 
+.tier {
+	clear: both;
+	padding: 25px 0;
+}
 
- 
+ .tier:after,
  .clearfix:after {
  	content: ".";
  	clear: both;
@@ -130,20 +143,34 @@ ul {
 
 
 
+.header { 
+	position: relative;
+	overflow: hidden;
+}
+.header h1 { 
+	position: absolute; 
+	top: 0px; 
+	left: 0px;
+	width:100%;
+	padding: 10px;
+	background-color: #333333;
+	box-shadow: inset 0 0 2px rgba(0, 0, 0, .6);
+	color: #ffffff;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.button {
+	display: block;
+	float: left;
+	padding: 3px 5px;
+	margin-left: 10px;
+	border: 1px solid #999999;
+	background-color: #ffffff;
+	font-family: "MuseoSlab", Helvetica, sans-serif;
+	box-shadow: 0 1px 3px #999999;
+}
+.button:hover {
+	border-color: #0a90d7;
+}
+.button:active {
+	box-shadow: inset 0 1px 3px #999999;
+}

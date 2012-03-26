@@ -30,10 +30,12 @@ h2 {
 h1 {
 	padding: 0px 0px 10px;
 	font-size: 36px;
+	font-weight: bold;/* this is there by default */
 }
 
 h2 {
 	font-size: 16px;
+	font-weight: bold;/* this is there by default */
 	padding: 0px 0px 1em;
 	border-bottom: 1px dotted #000066;
 }
@@ -54,6 +56,7 @@ cite {
 
 a {
 	color: #00aacc;
+	text-decoration: underline;/* this is there by default */
 }
 
 .page {
@@ -70,6 +73,7 @@ a {
 }
 
 .main p {
+	padding-right: 8px;
 	font-size: 18px;
 	line-height: 1.5;
 }
