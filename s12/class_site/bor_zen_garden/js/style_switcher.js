@@ -35,8 +35,8 @@
 		$("head").append("<link rel='stylesheet' href='css/style_switcher.css'>");
 		
 		controls.hide().appendTo("body").css({ 
-			right: "-100%"
-			//right: 0
+			//right: "-100%"
+			right: 0
 		}).show();
 
 		$.each(stylesheets, function(label, href) {
