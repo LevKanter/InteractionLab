@@ -1,0 +1,10 @@
+
+.map-holder {
+	width: 600px;
+	height: 600px;
+	overflow: scroll;
+	position: relative;
+}
+.map-holder .map {
+	display: block;
+}
