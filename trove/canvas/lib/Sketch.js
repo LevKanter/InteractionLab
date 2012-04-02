@@ -23,6 +23,8 @@
 	function trimpx(s) {
 		return Number(s.substring(0, s.length - 2));
 	}
+
+	var _guid = (new Date().getTime());
 	
 	function Sketch(options) {
 		
@@ -37,8 +39,8 @@
 			
 			// callbacks
 			setup: $.noop,
-			update: $.noop,
-			draw: $.noop,
+			update: $.noop, // loop
+			draw: $.noop, // loop
 			destroy: $.noop,
 			
 			mousePressed: $.noop,
@@ -50,7 +52,7 @@
 			
 		}, options);
 		cache = {};
-		guid = "sketch_" + new Date().getTime();
+		guid = "sketch_" + (_guid++);
 	
 		function init() {
 			
@@ -72,13 +74,13 @@
 				$c = $c.find("canvas");
 			}
 
-			if (! $c.length) {
+			if ($c.length === 0) {
 				debug("No <canvas> element");
 				return false;
 				
 			// if we've selected more than one canvas,
 			// take the first one and ignore the rest
-			} else {
+			} else if ($c.length > 1) {
 				$c = $c.first();
 			}
 
@@ -99,18 +101,18 @@
 			
 			// ui & events
 			
-			$(window).bind("resize."+guid, function () {
+			$(window).bind("resize."+guid, function (e) {
 				var w, h;
 				w = $c.width();
 				h = $c.height();
 				if (w !== S.width || h !== S.height) {
 					setDimensions(w, h);
-					o.resized.apply(S, [w, h]);
+					o.resized.apply(S, [e, w, h]);
 				}
 			});
 			
 			$(window.document).bind("keydown."+guid, function (e) {
-				o.keyDown.apply(S, [e.which]);
+				o.keyDown.apply(S, [e, e.which]);
 			});
 		
 			S.mouseX = 0;
@@ -126,15 +128,15 @@
 				S.mouseX = e.pageX - (this.offsetLeft + cache.padX);
 				S.mouseY = e.pageY - (this.offsetTop + cache.padY);
 
-			}).bind("mousedown."+guid, function () {
+			}).bind("mousedown."+guid, function (e) {
 			
 				S.mousePressed = true;
-				o.mousePressed.apply(S);
+				o.mousePressed.apply(S, [e]);
 			
-			}).bind("mouseup."+guid, function () {
+			}).bind("mouseup."+guid, function (e) {
 			
 				S.mousePressed = false;
-				o.mouseReleased.apply(S);
+				o.mouseReleased.apply(S, [e]);
 			});
 			
 			// start & loop
