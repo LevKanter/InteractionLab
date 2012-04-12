@@ -127,7 +127,7 @@ BONUS! uncomment these styles to get an opacity change effect
 when you "hover" over the list items.
 */
 
-/*
+
 ol:hover li {
 	opacity: 0.2;
 }
@@ -135,4 +135,4 @@ ol:hover li {
 ol:hover li:hover {
 	opacity: 1.0;
 }
-*/
+
