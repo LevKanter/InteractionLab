@@ -1,3 +1,11 @@
+ .clearfix:after { 
+  	content: ".";
+ 	clear: both;
+ 	display: block;
+ 	visibility: hidden;
+ 	height: 0px;
+ }
+
 * {
 	padding: 0px;
 	margin: 0px;
@@ -13,15 +21,6 @@ a {
 	color: #2e2435;
 }
 
-::-moz-selection {
-	color: #fcfcf7;
-	background-color: #285044; 
-}
-::selection {
-	color: #fcfcf7;
-	background-color: #285044; 
-}
-
 .nav {
 	list-style: none;
 	margin: 0px 0px 25px;
@@ -32,9 +31,6 @@ a {
 .nav > li {
 	float: left;
 	font-size: 18px;
-
-	/*box-shadow: inset 1px 2px 6px rgba(0, 0, 0, .7);*/
-
 }
 .nav > li > a {
 	display: block;
@@ -45,8 +41,16 @@ a {
 	color: #ffffff;
 }
 .nav > li > a:active {
-	box-shadow: inset 1px 1px 6px rgba(0, 0, 0, .5);
+	box-shadow: inset 1px 2px 6px rgba(0, 0, 0, .7);
 }
+
+/*
+==========================================================================
+
+	tricks with overflow and positioning
+
+==========================================================================
+*/
 
 .map-holder {
 	width: 600px;
@@ -55,7 +59,6 @@ a {
 	overflow: hidden;
 	float: left;
 	margin-right: 25px;
-	/*border: 1px solid #999999;*/
 }
 
 .map-holder .viewport {
@@ -101,12 +104,19 @@ a {
 	width: 10px;
 }
 
+/*
+==========================================================================
+
+	tricks with :hover and using transitions to fade in/out
+
+==========================================================================
+*/
+
 .info p {
 	margin: 0px 0px 15px;
 	-webkit-transition: opacity 1s ease-in;
 	-moz-transition: opacity 1s ease-in;
 }
-
 .info:hover p {
 	opacity: 0.3;
 }
@@ -114,7 +124,32 @@ a {
 	opacity: 1;
 }
 
+/*
+==========================================================================
+
+	introducing media queries
+
+==========================================================================
+*/
+
+/*
+Media queries, denoted with the @media statement,
+let us specify CSS that should only be applied
+when the document is viewed under certain conditions.
+Here, we use @media (max-width) to specify a set of
+styles that only get applied when the window is less
+than or equal to 480 pixels wide (common when viewing
+a site on a phone).
+
+See [ http://dochub.io/#css/CSS media queries ]
+
+*/
 @media (max-width: 480px) {
+
+	/*
+	When the window is narrow, let's change our navigation
+	from being a horizontal bar, to being a vertical stack...
+	*/
 
 	.nav {
 		border-bottom: none;
@@ -131,15 +166,10 @@ a {
 		margin: 0px auto 25px;
 	}
 
+	/*
+	...and maybe it also makes sense to bump up the font size
+	*/
 	.info p {
 		font-size: 18px;
 	}
 }
-
- .clearfix:after { 
-  	content: ".";
- 	clear: both;
- 	display: block;
- 	visibility: hidden;
- 	height: 0px;
- }

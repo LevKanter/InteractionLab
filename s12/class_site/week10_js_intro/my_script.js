@@ -10,6 +10,23 @@
 
 console.log("start of the script!");
 
+
+
+function repeatLog(message, nTimes) {
+	if (typeof nTimes == "undefined") {
+		nTimes = 5;
+	}
+	
+	for (var i = 0; i < nTimes; i = i + 1) {
+		console.log(message);
+	}
+}
+
+repeatLog("Hello!");
+
+
+
+
 function whenButtonClicked() {
 	console.log("button clicked!");
 	
@@ -30,11 +47,12 @@ function whenButtonClicked() {
 	
 }
 
-var whenDocReady = function() {
+function whenDocReady() {
 	console.log("document is ready!");
 	
 	var button = jQuery(".button");
 	console.log(button);
+
 	if (button.length > 0) {
 		console.log(button.length);
 	} else {
@@ -42,10 +60,18 @@ var whenDocReady = function() {
 	}
 	
 	button.on("click", whenButtonClicked);
-};
+}
 
+// document is also an object that the browser makes available
+// jQuery allows us to get a special representation of the document,
+// and then wait until the document is "ready" to be manipulated
+// We do this by first calling the jQuery function and passing it the document...
 var doc = jQuery(document);
 
+// ...and then specifying a function that should be executed when
+// the document is "ready"
 doc.on("ready", whenDocReady);
+
+
 
 console.log("end of the script");
