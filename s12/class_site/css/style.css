@@ -137,14 +137,9 @@ ul {
 .x9 { width: 900px; }
 .x10 { width: 890px; }
 
-.push1 { margin-right: 90px; }
-.push2 { margin-right: 180px; }
-.push3 { margin-right: 270px; }
-.push4 { margin-right: 360px; }
-.push5 { margin-right: 450px; }
-
 .masthead {
 	background-color: #f7f7f7;
+	border-bottom: 1px dotted #dddddd;
 }
 
 .header { 
@@ -157,7 +152,7 @@ ul {
 	left: 0px;
 	width:100%;
 	padding: 10px;
-	background-color: #333333;
+	background-color: #111111;
 	box-shadow: inset 0 0 2px rgba(0, 0, 0, .6);
 	color: #ffffff;
 }
