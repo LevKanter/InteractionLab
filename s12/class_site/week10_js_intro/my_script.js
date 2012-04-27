@@ -1,3 +1,99 @@
+
+	var saySomething = function(message, num) {
+		
+		//var i = 0;
+		//console.log(i + 5); // 5
+		
+		for (var i = 0; i < num; i = i + 1) {
+			console.log(message);
+		}
+		
+		/*if (num > 1) {
+			console.log(num);
+		} else {
+			console.log("this num is 1");
+		}*/
+	}
+	
+	saySomething("hey, Regina", 1);
+	saySomething("now this is my message", 3);
+	saySomething("and another message", 6);
+	
+	
+	var add = function(a, b) {
+		return a + b;
+		console.log("you will never see this");
+	};
+	
+	var x = add(10, 12);
+	
+	console.log(x);
+	
+	var obj = {
+		x: 10,
+		y: 15,
+		message: "this is a string",
+		logSomething: function(message) {
+			console.log(message);
+		}
+	};
+	
+	obj.x = "hijacked the x property of obj";
+	console.log( obj.x );
+	
+	obj.logSomething("hey Regina!!!!!!");
+	
+
+
+
+	/*function jQuery(someParamater) {
+		var jqueryobj = {
+			show: function() {
+			
+			},
+			hide: function() {
+			
+			},
+			length: 22
+		};
+		return jqueryobj;
+	}*/
+
+
+	
+
+
+
+
+
+
+
+
+	//function() {
+	//	console.log("this function has no name");
+	//}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // In this javascript file,
 // we will define behaviors
 // and associate them with
@@ -51,6 +147,13 @@ function whenDocReady() {
 	console.log("document is ready!");
 	
 	var button = jQuery(".button");
+	
+	console.log("the button object's length is:");
+	console.log(button.length);
+	
+	button.hide();
+	
+	
 	console.log(button);
 
 	if (button.length > 0) {
