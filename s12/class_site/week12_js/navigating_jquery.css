@@ -10,6 +10,11 @@ body {
 	background-color: #ede9d7;
 }
 
+h1 {
+	margin: 0px 0px 1em;
+	text-align: center;
+}
+
 ul {
 	list-style: none;
 }
@@ -18,19 +23,22 @@ p {
 	margin: 20px 0px;
 }
 
-/*** content sections ***/
+.slideshow {
+	width: 1000px;
+	margin: 0px auto;
+	position: relative;
+}
 
-.content {
-	width: 600px;
-}
-.content section {
-	margin: 0px 0px 30px;
+.slideshow section {
 	padding: 15px;
-	
 	display: none;
-	position: absolute;
+	position: absolute; /* so we can "cross-fade" sections */
+	width: 570px;
+	left: 200px;
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, .3);
 }
-.content section.active {
+.slideshow section.active {
+	/* used to need this, but now we're using jQuery to fade slides in and out */
 	/*display: block;*/
 }
 
@@ -50,26 +58,26 @@ p {
 	background-color: #db6980;
 }
 
-/*** slideshow ***/
-
-.slideshow {
-	width: 1000px;
-	margin: 0px auto;
-	position: relative;
-}
-
-.slideshow .content {
-	margin: 0px auto;
-}
+/*** 
+next and previous buttons
+(using background-image sprites!)
+***/
 
 .slideshow .btn {
+	/* stuff that's applied to BOTH the next and previous buttons: */
 	display: block;
 	width: 172px;
 	height: 77px;
 	position: absolute;
 	top: 150px;
+	background-position: 0px 0px; /* default background position */
 }
 .slideshow .btn span {
+	/* 
+	trick to hide the button's text 
+	(we could've alternatively used the text-indent trick we used
+	when we made the drop-caps)
+	*/
 	display: none;
 }
 
@@ -88,17 +96,4 @@ p {
 	background-image: url("images/prev.png");
 	left: 10px;
 }
-
-
-
-
-
-.slideshow .active {
-
-}
-
-
-
-
-
 

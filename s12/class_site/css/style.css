@@ -56,6 +56,14 @@ h2 {
 	font-size: 24px;
 }
 
+del {
+	text-decoration: line-through;
+}
+
+ins {
+	text-decoration: none;
+}
+
 p em {
 
 }
