@@ -1,5 +1,3 @@
-var isTransitioning = false;
-
 // document "ready" event handler:
 // We use this to kickoff all our main code
 $(document).ready(function() {
@@ -27,8 +25,35 @@ function setupSlideshow() {
 			
 	var prevBtn = $(".slideshow .prev");
 	prevBtn.on("click", prevButtonClicked); // attach event handler
+	
+	//var textbox = $("#textbox");
+	//textbox.focus();
+	//textbox.on("keydown", onKeydown);
+	
+	$(document).on("keydown", onKeydown);
+	
+	$("body").on("click", function() {
+		console.log("body click");
+	});
+}
 
-	$(document).on("keydown", keydown);
+function onKeydown(event) {
+	console.log("a key is down");
+	console.log("--");
+	
+	console.log(event.which);
+	
+	if (event.which == 39) {
+		console.log("right arrow key!!!");
+		move(true);
+		
+		
+	} else if (event.which == 37) {
+		console.log("left arrow key!!!");
+		move(false);
+	}
+	
+	
 }
 
 function nextButtonClicked() {
@@ -41,18 +66,6 @@ function prevButtonClicked() {
 	move(false);
 }
 
-function keydown(e) {
-	console.log("keydown!!");
-	if (isTransitioning) {
-		return;
-	}
-	if (e.which == 39) {
-		move(true);
-	} else if (e.which == 37) {
-		move(false);
-	}
-}
-
 // the bulk of the logic we use to move from slide to slide
 // takes place in this function. We pass it a boolean parameter
 // (i.e. true or false) to specify whether we want to move to the next
@@ -60,8 +73,6 @@ function keydown(e) {
 function move(isNext) {
 	// find the currently active slide,
 	// then based on that find the target slide:
-
-	isTransitioning = true;
 
 	var activeSlide = $(".slideshow .active");
 
@@ -103,7 +114,5 @@ function move(isNext) {
 	
 	// activate the target slide:
 	targetSlide.addClass("active");
-	targetSlide.fadeIn("slow", function() {
-		isTransitioning = false;
-	});
+	targetSlide.fadeIn("slow");
 }
