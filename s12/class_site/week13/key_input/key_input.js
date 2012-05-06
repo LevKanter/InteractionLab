@@ -1,7 +1,6 @@
 
-// to receive events when the user is typing
-// when an event is triggered, jQuery always passes an argument
-// to the handler function that's an object that holds info
+// When an event is triggered, jQuery always passes an argument
+// to the handler function that's an "object" that holds info
 // about the event (for details, see http://api.jquery.com/category/events/event-object/)
 
 // Here, we look at the "which" property of the event object to determine
@@ -9,12 +8,19 @@
 // for a table of key codes, see http://www.cambiaresearch.com/articles/15/javascript-char-codes-key-codes
 function onTextboxKeydown(event) {
 	console.log("a key is down!");
-	console.log(event.which);
-	console.log("--------------");
+	console.log("keycode ==> " + event.which);
 
 	var displaybox = $("#displaybox");
 
-	displaybox.html("<p>Pressed a key with 'key code': <span class='keycode' of: >"+ event.which +"</span></p>");
+	// we use jQuery's .html() function to update the inner html of an element:
+	// see http://api.jquery.com/html/
+	displaybox.html("<p>You pressed a key with <q>key code</q>: <span class='keycode' of: >"+ event.which +"</span></p>");
+}
+
+function onTextboxBlur() {
+	console.log("blur!");
+	var displaybox = $("#displaybox");
+	displaybox.html("<p><q>Focus</q> on the text box and beginning typing&hellip;</p>");
 }
 
 $(document).on("ready", function() {
@@ -24,5 +30,9 @@ $(document).on("ready", function() {
 
 	// Associate a "keydown" event "handler" with the input element
 	textbox.on("keydown", onTextboxKeydown);
+
+	// Associate a "blur" event "handler" with the input element
+	// The "blur" event occurs on the element when it loses focus
+	textbox.on("blur", onTextboxBlur);
 
 });

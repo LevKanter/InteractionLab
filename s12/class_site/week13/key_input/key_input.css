@@ -17,8 +17,6 @@ h1 {
 }
 
 input[type="text"] {
-	display: block;
-	width: 500px;
 	padding: 15px;
 	font-size: 20px;
 	border: 1px solid #999999;
@@ -37,4 +35,17 @@ input[type="text"]:focus {
 
 .keycode {
 	color: #cc0000;
+}
+
+q {
+	quotes: none;
+	color: #00aacc;
+}
+
+q:before {
+	content: '\201C';
+}
+
+q:after {
+	content: '\201D';
 }

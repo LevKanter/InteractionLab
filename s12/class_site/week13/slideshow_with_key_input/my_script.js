@@ -22,38 +22,41 @@ function setupSlideshow() {
 	console.log("We found this many next buttons: ");
 	console.log( nextBtn.length );
 	nextBtn.on("click", nextButtonClicked); // attach event handler
-			
+
 	var prevBtn = $(".slideshow .prev");
 	prevBtn.on("click", prevButtonClicked); // attach event handler
 	
-	//var textbox = $("#textbox");
-	//textbox.focus();
-	//textbox.on("keydown", onKeydown);
-	
-	$(document).on("keydown", onKeydown);
-	
+
+	// Typically, most events will "bubble", which means that they travel up
+	// from the HTML element where they initially occurred, and visit each
+	// parent element in order. For example, no matter what element you click on,
+	// eventually the <body> element will also receive that click event.
 	$("body").on("click", function() {
 		console.log("body click");
 	});
+
+	// We can take advantage of event "bubbling" by attaching our keydown
+	// event handler to the <body> element, instead of having to create an
+	// <input> element and attaching our event handler to it directly.
+	// This way, the user can press keys without having to ever focus on any <input>
+	$("body").on("keydown", onKeydown);
 }
 
 function onKeydown(event) {
-	console.log("a key is down");
-	console.log("--");
-	
-	console.log(event.which);
-	
+	console.log("a key is down!");
+	console.log("keycode ==> " + event.which);
+
+
+	// the "keycode" for the right arrow key is 39
 	if (event.which == 39) {
 		console.log("right arrow key!!!");
 		move(true);
 		
-		
+	// the "keycode" for the left arrow key is 37
 	} else if (event.which == 37) {
 		console.log("left arrow key!!!");
 		move(false);
 	}
-	
-	
 }
 
 function nextButtonClicked() {
