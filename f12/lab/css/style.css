@@ -163,9 +163,6 @@ a:hover {
 	color: #fcfcfc;
 }
 
-.panels {
-	overflow: hidden;
-}
 .panel {
 	display: none;
 }
