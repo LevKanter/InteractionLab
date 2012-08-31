@@ -1,12 +1,184 @@
+@import url(http://fonts.googleapis.com/css?family=Hammersmith+One);
+
+
 body {
-	background-color: #cccccc;
+	padding: 0 0 40px;
+	background-color: #f7f7f7;
+	font-family: Georgia, serif;
 }
 
+::-moz-selection { 
+	background-color: #444444; 
+	color: #fcfcfc; 
+}
+::selection { 
+	background-color: #444444; 
+	color: #fcfcfc; 
+}
+
+.tier:before,
+.tier:after { 
+	content: ""; 
+	display: table;
+}
+.tier:after { 
+	clear:both; 
+}
+.tier {
+	margin: auto;
+}
+
+.column {
+	float: left;
+	margin-left: 10px;
+}
+.column:first-child {
+	margin-left: 0;
+}
+.column-r {
+	float: right;
+}
+
+.x1 { width: 70px; }
+.x2 { width: 150px; }
+.x3 { width: 230px; } 
+.x4 { width: 310px; }
+.x5 { width: 390px; }
+.x6 { width: 470px; }
+.x7 { width: 550px; } 
+.x8 { width: 630px; }
+.x9 { width: 710px; }
+.x10 { width: 790px; }
+.x11 { width: 870px; }
+.x12 { width: 950px; }
+
+.box {
+	padding: 10px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 { font-family: "Hammersmith One", sans-serif; }
+
 h1 {
-	font-size: 100px
-	font-weight: normal;
+	font-size: 48px;
+	margin: 40px 0 25px;
+	/*background-color: #000000;
+	color: #f7f7f7;*/
 }
 
 h2 {
-	color: #e5693a;
+	font-size: 21px;
+	padding: 2px 10px;
+	margin: 0 0 10px;
+	/*text-align: center;*/
+	border-bottom: 2px solid #cccccc;
 }
+
+h3 {
+	font-size: 14px;
+	padding: 10px;
+	text-transform: uppercase;
+	color: #999999;
+}
+
+p,
+dl {
+	padding: 10px;
+	line-height: 1.5;
+}
+
+dl {
+	overflow: hidden;
+}
+dl dt {
+	float: left;
+	margin-right: 6px;
+	font-style: italic;
+}
+dl dd {
+}
+
+em {
+	font-style: italic;
+}
+
+a {
+	text-decoration: none;
+	color: #dd5c3f;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+.stack li {
+	margin: 2px 0 0;
+}
+.stack li:first-child {
+	margin-top: 0;
+}
+.stack a {
+	display: block;
+	padding: 5px 10px;
+}
+.stack a:hover {
+	text-decoration: none;
+	background-color: #dd5c3f;
+	color: #fcfcfc;
+}
+.stack a:active {
+	background-color: rgba(0, 0, 0, .9);
+}
+
+.tabs {
+	margin: 0 0 75px;
+}
+.tabs > li {
+	float: left;
+	margin: 0 0 0 2px;
+	font-family: "Hammersmith One", sans-serif;
+}
+.tabs > li:first-child {
+	margin-left: 0;
+}
+.tabs > li > a {
+	display: block;
+	background-color: #ffffff;
+	padding: 7px 10px 5px;
+}
+.tabs > li > a:hover {
+	text-decoration: none;
+	background-color: #dd5c3f;
+	color: #fcfcfc;
+}
+.tabs > li > a:active {
+	background-color: rgba(0, 0, 0, .9);
+}
+.tabs > li.active > a {
+	cursor: default;
+	background-color: #000000;
+	color: #fcfcfc;
+}
+
+.panels {
+	overflow: hidden;
+}
+.panel {
+	display: none;
+}
+
+article {
+	margin: 60px 0 0;
+}
+article:first-child {
+	margin-top: 0;
+}
+
+.notice {
+	background-color: #f8f0a2;
+	text-align: center;
+}
+
