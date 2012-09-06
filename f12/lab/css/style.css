@@ -176,6 +176,7 @@ article:first-child {
 
 .notice {
 	background-color: #f8f0a2;
+	border: 3px solid #f0e79c;
 	text-align: center;
 }
 
