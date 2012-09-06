@@ -8,10 +8,6 @@
 	</head>
 	<body>
 
-		<div class="notice">
-			<p>We've been switched to a better room. From now on class meets in 55 W 13th, Room 405.</p>
-		</div>
-
 		<div class="tier x12">
 			<h1>Core Lab: Interaction</h1>
 
@@ -24,9 +20,46 @@
 					<div id="assignments-material" class="panel">
 
 						<article>
+							<h2>Week 2</h2>
+							<div class="tier">
+								<div class="column x7">
+									<p>Please note, I've added a few comments to the files from class, as well <strong>as one new thing</strong>. You'll notice that the <code>&lt;article&gt;</code> element we were starting to work with in class now has a width and is horizontally centered in the page!</p>
+
+									<h3>Assignment</h3>
+
+									<p>In your site for this class, create a section with the heading <em>Homework</em> and an unordered list (<code>&lt;ul&gt;</code>). From now on, all your work should be uploaded to your webspace and linked to from this part of your site (i.e. a list item <code>&lt;li&gt;</code> per assignment).</p>
+
+
+									<p>Download the <a href="lab_bill_of_rights.zip">Bill of Rights Files</a>. You will find a raw, plain version of the Bill of Rights text for reference, a .html file with the "marked up" version we <del>rushed through</del> <ins>produced</ins> in class, and an empty .css file. This week, please write your own stylesheet for the Bill of Rights &mdash; <strong>without</strong> changing the .html at all. Infuse your own visual flare into the page. Experiment with spacing out elements by manipulating their margins, paddings, etc. Think about how you might apply styles to the paragraphs that are in the preamble, versus the paragraphs that make up the ammendments themselves (HINT: <code>li p { }</code>). You're probably also going to want to play a lot with <a href="http://dochub.io/#css/list-style" target="_blank">list-style</a> properties. Get as fancy as you want, or keep it simple, but make it look dope!
+When you upload/link to this on your site, upload both bill_of_rights.html and style.css (and of course, any other assets you have if you end up using font files or something), and have the link point to your bill_of_rights.html file.</p>
+
+
+									<h3>Connecting to the new server space</h3>	
+									<p>Just to recap, I've created a server space for each of you, that you can connect to using an FTP program, and upload your files to. Keep in mind that Fugu does not do FTP (only SFTP - which is similar but different). I recommend using <a href="http://cyberduck.ch/" target="_blank">Cyberduck</a>, which is free and available for Mac and Windows. The computers at school all have <a href="http://fetchsoftworks.com/">Fetch</a>. Fetch is very similar to Cyberduck (really most FTP programs are analagous).</p>
+									<p>Each of you can view your space on the internet by going to <code>interactionlab.info/students/[your newschool username]</code>.</p>
+									<p>To connect to your space, you need to specify the server to be <code>levkanter.com</code>, and your username will be <code>[your newschool username]@levkanter.com</code>. Your password is just your newschool ID, starting with the capital letter N.</p>
+									<p><img src="images/server_connect_cyberduck.png" alt="Cyber screenshot"></p>
+									<p>There is no <code>public_html</code> folder. What you upload in the directory where you land when you connect will be public. If anyone has trouble with this, please let me know.</p>
+								</div>
+								<div class="column-r x4">
+									<h3>Files, Links, etc</h3>
+									<ul class="stack">
+										<li><a href="from_class/lab_week2.zip">Files from class</a></li>
+										<li><a href="lab_bill_of_rights.zip">Bill of Rights files for HW</a></li>
+										<li><a href="http://cyberduck.ch/" target="_blank">Cyberduck</a></li>
+										<li><a href="http://www.google.com/webfonts" target="_blank">Google Web Fonts</a></li>
+										<li><a href="http://lostworldsfairs.com/" target="_blank">Lost World's Fairs</a></li>
+										<li><a href="http://www.csszengarden.com/" target="_blank">CSS Zen Garden</a></li>
+										<li><a href="http://dochub.io/#css/list-style" target="_blank">list-style reference</a></li>
+									</ul>
+								</div>
+							</div>
+						</article>
+
+						<article>
 							<h2>Week 1</h2>
 							<div class="tier">
-								<div class="column x6">
+								<div class="column x7">
 									<p>I highly recommend watching the introductory video series, <a href="http://www.dontfeartheinternet.com" target="_blank">Don't Fear the Internet</a>. It consists of six short videos, which should be watched in order (No. 1 is towards the bottom of the page).</p>
 									<p>For homework, please create an HTML page that will evolve into the place where you keep links to your work throughout the semester (i.e. your website for this class). This week, it should start out simple. Your page should, at the very least, display a title (e.g. "My Lab Page"), a short paragraph of text about yourself (or about anything you want), and an image. You should also use a <code>&lt;link&gt;</code> element to associate a .css stylesheet with your HTML document (use a <em>relative</em> path!). Don't worry about controlling layout or anything fancy right now, but experiment with manipulating the colors and typography of your HTML elements. This week is really just about getting your feet wet with this stuff. Definitely email me with any questions, etc.</p>
 

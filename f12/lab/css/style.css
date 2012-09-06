@@ -80,7 +80,7 @@ h2 {
 
 h3 {
 	font-size: 14px;
-	padding: 10px;
+	padding: 10px 10px 5px;
 	text-transform: uppercase;
 	color: #999999;
 }
@@ -100,6 +100,10 @@ dl dt {
 	font-style: italic;
 }
 dl dd {
+}
+
+strong {
+	font-weight: bold;
 }
 
 em {
