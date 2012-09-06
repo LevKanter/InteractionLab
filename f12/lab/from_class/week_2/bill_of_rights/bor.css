@@ -3,7 +3,6 @@ article {
 }
 
 p {
-
 	/*margin: 0px;*/
 	margin-top: 0px;
 	margin-right: 0px;
@@ -24,6 +23,3 @@ p {
 p em {
 	text-transform: uppercase;
 }
-
-
-
