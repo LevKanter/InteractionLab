@@ -3,14 +3,15 @@ $(function() {
 	var $tabs = $(".tabs");
 
 	$tabs.find("> li > a").click(function(e) {
-		e.preventDefault();
 		var $tab = $(this);
 		var href = $tab.attr("href");
 		var $panel = $(href);
-		$tab.parent().addClass("active").siblings().removeClass("active");
-		$panel.show().siblings().hide();
-		window.location.hash = href.split("-").join("_");
-		//$(window).scrollTop(0);
+		if ($panel.length == 1) {
+			e.preventDefault();
+			$tab.parent().addClass("active").siblings().removeClass("active");
+			$panel.show().siblings().hide();
+			window.location.hash = href.split("-").join("_");
+		}
 	});
 
 	if (window.location.hash) {
