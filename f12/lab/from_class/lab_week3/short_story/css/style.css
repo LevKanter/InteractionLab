@@ -1,64 +1,121 @@
+/*
+This introduces:
+
+"block" elements,
+background-images,
+"image replacement" (using text-indent trick),
+targeting elements by their "class" attributes,
+the "float" property,
+
+BONUS
+:before, :after, and generating decorative details
+with the "content" property
+*/
+
 body {
 	background-color: #222222;
 	color: #eeeeee;
 	padding-bottom: 100px;
+
+	/* 
+	background image path -- if using a relative path here,
+	it's RELATIVE TO THIS CSS FILE!
+	*/
 	background-image: url("../images/M.png");
-	background-repeat: no-repeat;
+	
+	/*(use background-repeat property to control bg image tiling)*/
+	background-repeat: repeat;
 }
 
 article {
-	width: 50%;
+	width: 600px;
+
+	/* horizontally center the element... */
 	margin-left: auto;
 	margin-right: auto;
 	
+	/* ...not to be confused with centering the element's text */
 	/*text-align: center;*/
 	
 	font-family: Georgia, serif;
+
+	background-color: #000000;
+
+	/* 2 values ==> top/bottom left/right  */
+	padding: 5px 10px;
 }
 
-h1 {
-	/*padding-bottom: 50px;*/
-	
-	/* top right bottom left */
+h1 {	
+	/* 4 values ==> top right bottom left */
 	padding: 17px 24px 96px 0px;
 	margin-bottom: 10px;
-	
+
 	background-color: #cc0000;
 	
 	font-family: Helvetica, sans-serif;
-	
+	text-align: center;
 }
 
 h2 {
+	/* 1 value ==> apply to all 4 sides */
 	padding: 50px;
 }
 
 p {
 	font-size: 21px;
+	
+	/* 
+	The leading of the text, defined
+	as porportionate to the font size
+	(by using the "em" unit, rather than "px") 
+	*/
 	line-height: 1.2em;
 }
 
-/*.fancy p {
+/*
+(all <p>'s that are INSIDE an element that has a class attribute "fancy")
+.fancy p {
 	font-size: 40px;
 	font-style: italic;
 }
 
+(all <p>'s that themselves have a class attribute "fancy")
 p.fancy {
 
 }*/
 
+/* target all <span>s that have a class attribute "highlight" */
 span.highlight {
+	/*
+	(<span>s are display: inline; by default (rather than "block"))
 	display: inline;
-	background-color: yellow;
+	*/
+	background-color: #00aacc;
 }
 
+/* target all elements that have a class "drop-cap" */
 .drop-cap {
-	font-size: 40px;
-	margin-top: 20px;
-	display: block; /* vs. inline */
+	/*
+	We need to ensure that this is a "block" (vs. "inline") --
+	so we can mess around with its margins, padding, width, height, etc
+	*/
+	display: block;
+
+	margin: 0px 5px 5px 0px;
+
+	/* 
+	We can "float" a block element to allow other
+	elements to flow around it.
+	*/
 	float: left;
-	margin-bottom: 20px;
+
 	background-repeat: no-repeat;
+	
+	/* 
+	text-indent trick to "hide" the actual html
+	text in the drop cap, by indenting it way
+	off screen
+	*/
 	text-indent: -999px;
 }
 
@@ -78,33 +135,54 @@ span.highlight {
 	background-image: url("../images/E.png");
 }
 
+/*
+<q> tags can be used to markup quotes.
+*/
+
 q {
+	/* 
+	By default, <q> tags automatically generate quotation marks.
+	For better control over how these look, we can first turn
+	off the default-generated ones by setting the "quotes"
+	property to "none"
+	*/
 	quotes: none;
 }
 
+/*
+We use the :before and :after "psuedo-class" selectors,
+in combination with the "content" property to insert
+decorative content right before and after our <q>
+elements.
+
+See http://dochub.io/#css/content for more info.
+
+Also, see http://www.danshort.com/HTMLentities/ for a small
+table mapping characters to their HTML entity and respective unicode 
+representation (HINT: the unicode is taken from the 'Code Hex' column
+in this table)
+*/
+
 q:before {
+	/* the "unicode" representation
+	of an opening quote symbol */
 	content: "\201C";
-	color: red;
-	font-size: 40px;
 }
 
 
 q:after {
+	/* the "unicode" representation	
+	of a close quote symbol */
 	content: "\201D";
-	color: red;
-	font-size: 40px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* 
+we can string multiple selectors together
+(seperated by commas) to apply the same
+set of css to them
+*/
+q:before,
+q:after {
+	color: #cc0000;
+	font-size: 40px;
+}
