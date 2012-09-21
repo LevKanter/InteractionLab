@@ -1,0 +1,148 @@
+/* 
+universal selector (*)
+
+apply a set of styles to ALL
+elements in the entire HTML doc
+
+Use this VERY conservatively.
+Here, we use it to "zero out"
+all default margins and paddings
+*/
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	font-family: Georgia, serif;
+}
+
+h1 {
+	padding: 5px;
+	text-align: center;
+	background-color: #dddddd;
+	font-weight: normal;
+}
+
+h2 {
+	padding: 5px 5px 10px;
+	background-color: #b8d1c8;
+	font-weight: normal;
+}
+
+p {	
+
+	background-color: #84d2b5;
+
+	/* "outline" is similar to "border",
+	but (unlike borders) it doesn't reserve any space  */
+	outline: 1px solid #000000;
+	
+	/* 
+	By default, block elements are "width: auto;" --
+	which causes them to fill out the horizontal plane
+	(stretch horizontally as as they can go)
+
+	This is NOT the same as "width: 100%;" --
+	which sets there width explicitly to be 100% of
+	the width of their parent element.
+	*/
+	/*width: auto;*/
+	/*width: 100%;*/
+
+	/* Even with an explicitly-defnined fixed width,
+	block elements will reserve all the space in the
+	horizontal plane they occupy... */
+	width: 500px;
+}
+
+.demo {
+	/*
+	By default, block elements are "height: auto;" --
+	which causes them to expand their height to hold
+	all of their NON-FLOATED children elements
+	*/
+	/*height: auto;*/
+		
+	margin: 50px;
+	background-color: #8ec2ed;
+}
+
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	Demo 2
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+
+.demo2 p {
+	float: left;
+}
+
+/*.fixer {
+	clear: both;
+}*/
+
+/*
+When you "float" elements, their parent element no longer 
+takes the space they take up into account.
+
+We can define a "clearfix" class to provide 
+a set of properties that, when applied to a block-level
+element, will enable it to appear to "contain" floated
+elements that are inside it.
+Note that we could name this whatever we want. It's just
+common in the web development community to refer to this
+trick as a "clearfix".
+
+For an in-depth overview of this technique, see
+http://www.positioniseverything.net/easyclearing.html 
+*/
+.clearfix:after {
+	display: block;
+	content: ".";
+	clear: both;
+	height: 0px;
+	visibility: hidden;
+}
+
+
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	Demo 3
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+
+.sidebar {
+	float: left;
+	width: 300px;
+	margin-right: 20px;
+}
+
+.sidebar ul {
+	list-style: none;
+}
+
+.sidebar ul li a {
+	display: block;
+	margin: 0px 0px 5px;
+	padding: 5px;
+	background-color: #000000;
+	color: #ffffff;
+	text-decoration: none;
+}
+
+/* :hover pseudo-class to apply styles to elements only
+when they are in a "hover" state (i.e. mouse over) */
+.sidebar ul li a:hover {
+	background-color: #aa0000;
+}
+
+/* :active pseudo-class to apply styles to elements only
+when they are in an "active" state (i.e. mouse down) */
+.sidebar ul li a:active {
+	background-color: #ffffff;
+	color: #000000;
+}
+
+.main {
+	/*-- als see what happens to this element when it's NOT floated --*/
+	float: left;
+}
