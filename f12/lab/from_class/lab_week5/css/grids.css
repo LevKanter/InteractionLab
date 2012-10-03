@@ -1,0 +1,162 @@
+/**
+ * Grids and stuff
+ */
+
+body {
+	background-color: #000000;
+	color: #ffffff;
+	font-family: "Courier New", Courier, monospace;
+}
+
+.clearfix:after {
+	content: ".";
+	clear: both;
+	display: block;
+	visibility: hidden;
+	height: 0;
+}
+
+h1 {
+	font-weight: normal;
+}
+
+.grid {
+	margin: 10px auto;
+}
+
+/*--- Grid (1st variation):
+
+ Our first grid layout will consist of 10 columns,
+ with a single column being 100 pixels wide.
+ Here, the columns butt up against each other
+ (...if they had margins, padding, or borders,
+ they won't all fit).
+
+Full width = 1000px
+10 columns
+Gutter width = 0px 
+----------------------
+1 column unit = 100px
+
+---*/
+
+/*
+.column { float: left; outline: 1px solid blue; }
+
+.box { padding: 15px; } 
+
+.x1 { width: 100px; }
+.x2 { width: 200px; }
+.x3 { width: 300px; }
+.x4 { width: 400px; }
+.x5 { width: 500px; }
+.x6 { width: 600px; }
+.x7 { width: 700px; }
+.x8 { width: 800px; }
+.x9 { width: 900px; }
+.x10 { width: 1000px; }
+*/
+
+
+/*--- Grid (2nd variation):
+
+ Our second grid will also consist of 10 columns.
+ Here, let's make a single column 80 pixels wide,
+ and use a margin to create a 10 pixel "gutter"
+ between each column.
+
+Full width = 890px
+10 columns
+Gutter width = 10px
+---------------------
+1 column unit = (colwidth * n) + (gutterWidth * (n - 1))
+
+*/
+
+/* 
+Let's use a tiled background image to show us where the grid is
+(when our site is ready, we can hide this simply by removing
+the 'WORK-IN-PROGRESS' class from the <body>)
+*/
+body.WORK-IN-PROGRESS .grid {
+	background-image: url('../images/grid_background.png');
+	background-repeat: repeat;
+}
+
+ 
+.column {
+ 	float: left;
+	margin-right: 10px;/* gutter */
+}
+
+ /* we don't need a gutter space after our rightmost column,
+ so let's provide another class to zero out the margin */
+.column.edge { margin-right: 0; }
+
+.x1 { width: 80px; }
+.x2 { width: 170px; }
+.x3 { width: 260px; } 
+.x4 { width: 350px; }
+.x5 { width: 440px; }
+.x6 { width: 530px; }
+.x7 { width: 620px; } 
+.x8 { width: 710px; }
+.x9 { width: 800px; }
+.x10 { width: 890px; }
+ 
+.sub-level {
+	/* 'clear' (i.e. drop down bellow) all the floated elements */
+	clear: both;
+}
+
+
+
+img {
+	/* constrain the width of an image to not go any wider than
+	its parent */
+	max-width: 100%;
+}
+
+
+
+.picture .caption {
+	/*display: none;*/
+	/*visibility: hidden;*/
+	opacity: 0;
+	
+	 /*
+	 Using "transition" to tell the browser to animate properties
+	 of an element when they change.
+	 Note that we use vendor-specific prefixes for this property,
+	 because it is not actually standardly supported yet. :(
+	 
+	 see http://dochub.io/#css/transition AND 
+	 http://net.tutsplus.com/tutorials/html-css-techniques/css-fundametals-css-3-transitions/
+	 */
+	-webkit-transition: opacity 1s ease-in;
+	-moz-transition: opacity 1s ease-in;
+	transition: opacity 1s ease-in;
+}
+
+.picture:hover .caption {
+	/*display: block;*/
+	/*visibility: visible;*/
+	opacity: 1;
+}
+
+/*--- other approaches to play with:
+
+.caption {
+	display: none;
+}
+
+.column:hover .caption {
+	display: block;
+}
+
+img:hover + .caption {
+	display: block;
+}
+*/
+
+
