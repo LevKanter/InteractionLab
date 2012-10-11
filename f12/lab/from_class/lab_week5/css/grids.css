@@ -117,6 +117,14 @@ img {
 	max-width: 100%;
 }
 
+.picture {
+	position: relative;
+}
+.picture:hover {
+	top: 10px;
+	left: 10px;
+}
+
 
 
 .picture .caption {
