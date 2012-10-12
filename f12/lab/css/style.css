@@ -185,6 +185,14 @@ article:first-child {
 	margin-top: 0;
 }
 
+.bullet-list {
+	list-style-type: disc;
+	padding: 0 0 0 30px;
+}
+.bullet-list li {
+	padding: 5px 0;
+}
+
 .notice {
 	background-color: #f8f0a2;
 	border: 3px solid #f0e79c;

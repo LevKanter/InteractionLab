@@ -21,31 +21,76 @@
 					<div id="assignments-material" class="panel">
 
 						<article>
+							<h2>Week 6</h2>
+							<div class="tier">
+								<div class="column x7">
+
+									<h3>Quiz Next Week</h3>
+
+									<p>Next week, there will be a quiz in class. I will give you an image of a simple web page, and you have to reproduce it &mdash; as close as you can &mdash; using HTML and CSS in a text editor. I'll also provide you with a base HTML file and a base CSS file that has .clearfix defined in it, just in case you need to use it. Any text and images you’ll need will be provided as well (so you can just copy and paste paragraphs of text into your HTML, etc). You will have an hour and a half to complete this.</p>
+
+									<p>The quiz will cover HTML and CSS from the first five weeks of the semester. Make sure you understand the following:</p>
+
+									<ul class='bullet-list'>
+										<li>Working with various header elements, paragraphs, lists, <code>&lt;em&gt;</code> tags, and hyperlinks (the <code>&lt;a&gt;</code> tag).</li>
+
+										<li>Including an image in the HTML content using the <code>&lt;img&gt;</code> tag.</li>
+
+										<li>Margins, padding, and borders.Centering a container (such as a <code>&lt;div&gt;</code>) on the page using "auto" margins.</li>
+
+										<li>Making two block-elements sit side by side using the float property.</li>
+
+										<li>.clearfix</li>
+
+										<li>Applying a tiled background image to an element using the background-image and background-repeat property.</li>
+									</ul>
+
+									<p>To submit your quiz in class, you will have to upload the files to your webspace and put a link to it on your index site (the same site where you've been adding links to your individual homeworks).</p>
+
+									<p>There might also be an extra-credit component that involves absolute positioning. Please email me if you have any questions, need help, etc!</p>
+
+									<h3>Map Project (due 10/24 &mdash; not next week)</h3>
+
+									<p>Please design and build a visualizaton that consists of overlaying various content above specific points on a map. This stems from the maps+flags exercise we did in class, except what you're going to make should be way more fleshed-out and <em>awesome</em> than just putting flags on top of countries. You must have a minimum of <em>three</em> different points on the map where content is overlayed (though I encourage you to have more).</p>
+
+									<p>As long as you satisify the essential requirements I'm specifying for this assignment, the content and map that you develop is entirely up to you. You can use a map of the world, a country, a city, an architectural blueprint, a subway map, any kind of map you come up with. The content you choose to associate with your map is up to you as well. You can overlay images, text, video (we'll learn that in class next week!), a combination of different things, etc. It can be serious, funny, informative, whacky, anything! Make something that's genuinely interesting to you. If you feel stuck, let me know and I'll try to help brainstorm ideas. Your project doesn't need to be crazy complex or fancy. It can be simple, but it should be compelling, aesthetically pleasing, and well-executed.</p>
+
+									<p>The page you make should be an overall cohesive interface. If somebody not in this class were to land on it, they should be able to understand what it is (i.e. what your map and content are showing). So think about other elements besides just the map itself, such as a title, overview text, etc. Everything should be on one HTML page.</p>
+
+									<p>You are responsible for gathering and preparing the images or any other assets that you need. I recommend searching the web for high quality images that are in the public domain (i.e. not copyrighted). For maps, large vector (.eps) files can be particularly useful because you can open them in Illustrator or Photoshop and scale and crop them however you like. Do a search for 'public domain maps .eps' and you'll see how easy it is to find stuff. Ultimately, all media assets should be local in your project. This means, if you find an image online that you want to use, you have to download it and pull it into your HTML/CSS using relative paths, rather than linking directly to its original URL!</p>
+
+									<p>Use relative/absolute positioning to layer things above your map. Remember to pay attention to what happens to the positioning of your elements when the size of the browser window changes, as you may not want the layout of your overlays to shift around.</p>
+									
+								</div>
+								<div class="column-r x4">
+									<h3>Files, Links, etc</h3>
+									<ul class="stack">
+										<li><a href="from_class/lab_week6.zip">Files from class</a></li>
+										<li><a href="http://dochub.io/#css/position" target="_blank">Positioning reference</a></li>
+									</ul>
+								</div>
+							</div>
+						</article>
+
+						<article>
 							<h2>Week 5</h2>
 							<div class="tier">
 								<div class="column x7">
 
 									<h3>Assignment</h3>
 
-									<p>This week, please begin by devising your own CSS grid system, in a similar vein as what we did in class (we did two different versions. It may be easiest to start by figuring out how many columns you want to fit, and how wide you want your outermost container to be. The dimensions of your grid are up to you, but they should be different than the particular dimensions we used in class. The number of columns is also up to you, but please accommodate at least 8 columns (grid-based layouts in websites tend to consist of somewhere between 8 and 16 columns -- we had 10 columns for both grids we did in class). Provide classes in your CSS to define the width for each multiple of columns, like we did with ".x1", ".x2", ".x3", and so on. (While of course these classes can be named however you want -- I used x1, x2, etc just to indicate that x1 represented the width of one column, x2 represented two-columns wide, etc etc). Feel free to use that same naming scheme in your grid system, though you're not required to. Also think about how you might want to space your grid columns apart. In our first grid example we didn't have any margins and padding on our ".column" containers, but we created space by adding padding around the contents inside individual columns, whereas in the second variation we actually used margins on the columns themselves.</p>
+									<p>This week, please begin by devising your own CSS grid system, in a similar vein as what we did in class (we did two different versions. It may be easiest to start by figuring out how many columns you want to fit, and how wide you want your outermost container to be. The dimensions of your grid are up to you, but they should be different than the particular dimensions we used in class. The number of columns is also up to you, but please accommodate at least 8 columns (grid-based layouts in websites tend to consist of somewhere between 8 and 16 columns &mdash; we had 10 columns for both grids we did in class). Provide classes in your CSS to define the width for each multiple of columns, like we did with ".x1", ".x2", ".x3", and so on. (While of course these classes can be named however you want &mdash; I used x1, x2, etc just to indicate that x1 represented the width of one column, x2 represented two-columns wide, etc etc). Feel free to use that same naming scheme in your grid system, but you're not required to if you want to come up with your own. Also think about how you might want to space your grid columns apart. In our first grid example we didn't have any margins and padding on our ".column" containers, but we created space by adding padding around the contents inside individual columns, whereas in the second variation we actually used margins on the columns themselves.</p>
 
-									<p>Then, choose at least 5 images (these can be images of your work (i.e. your portfolio), a collection of photos, drawings, anything you want) and create a webpage that presents them in a grid-based layout, using your CSS system to group images into various columns.</p> 
+									<p>Then, choose at least 5 images (these can be images of your work (i.e. your portfolio), a collection of photos, drawings, anything you want) and create a webpage that presents them in a grid-based layout, using your CSS system to group images into various columns.</p>
 
-									<p>See the screenshot attached to this assignment as a rough example of what I mean. In addition to at least 4 images arranged into some column-based layout, your page should have a title header (i.e. "My Image Gallery"). Ultimately, your gallery shouldn't show the grid columns like in my example -- those are just there to illustrate how things are alligned with columns.</p>
-
-<p>A potentially useful trick: if your <img> happens to be wider than the width of the column that it ends up in, you can insure that it's scaled down to fit by giving it a max-width property of "100%;", something like this: img { max-width: 100%; }</p>
-
- 
-
- 
-
+									<p>In addition to at least 5 images arranged into some column-based layout, your page should have a title header (i.e. "My Image Gallery" or whatever). Ultimately, your gallery shouldn't show the grid columns like in my example -- those are just there to illustrate how things are alligned with columns. However, <em>as a bonus</em> (not required), actually provide a way to see your grid columns in the background, by adding a class to the <code>&lt;body&gt;</code> like we did with the WORK-IN-PROGRESS class.</p>
 									
 								</div>
 								<div class="column-r x4">
 									<h3>Files, Links, etc</h3>
 									<ul class="stack">
 										<li><a href="from_class/lab_week5.zip">Files from class</a></li>
-										
+										<li><a href="http://www.subtraction.com/2004/12/31/grid-computi" target="_blank">Subtraction: Grid Computing&hellip; and Design</a></li>
 									</ul>
 								</div>
 							</div>
