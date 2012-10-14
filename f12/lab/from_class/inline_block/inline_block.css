@@ -1,0 +1,16 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	list-style: none;
+	text-align: center;
+}
+
+li {
+	display: inline-block;
+	/*float: left;
+	margin: 5px;*/
+	margin-right: 50px;
+}
