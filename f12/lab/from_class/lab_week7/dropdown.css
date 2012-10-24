@@ -1,0 +1,129 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+ 
+body {
+	padding: 20px;
+}
+ 
+.clearfix:after {
+	display:block;
+	clear: both;
+	content: ".";
+	height: 0;
+	visibility: hidden;
+}
+ 
+ul {
+	list-style: none;
+}
+ 
+p {
+	padding: 20px;
+}
+ 
+a {
+	text-decoration: none;
+	color: #00aacc;
+}
+ 
+.dropdown {
+	border: 1px solid #666666;
+	margin-top: 50px;
+	background-color: #eeeeee;
+}
+ 
+/*
+We don't want to apply these styles to ALL <li>s that
+live inside .dropdown, just the first nesting-level of
+them. We can use a "child selector" (the ">") to only
+target the <li> elements that are direct "children" of
+.dropdown.
+see http://dochub.io/#css/Child selectors
+*/
+.dropdown > li {
+	float: left;
+	margin: 0px 15px;
+}
+ 
+/*
+Our <li>s are positioned, so that we can
+offset absolutely positioned elements inside them
+with respect to their parent <li>
+*/
+.dropdown li {
+	position: relative;
+}
+ 
+.dropdown li ul {
+	display: none;
+	position: absolute;
+	left: 0px;
+	
+	/* 100% of the HEIGHT of the first positioned parent 
+	(effectively, pushed down directly below it) */
+	top: 100%;
+	
+	/* absolutely positioned elements do not expand
+	their width as far as it can go, so we might want
+	to specify one explicitly */
+	width: 200px;
+	
+	background-color: #fff;
+	border: 1px solid #666;
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, .5);
+}
+ 
+/*
+Expose the first nested list in an 
+item when the user rolls over it
+*/
+.dropdown li:hover > ul {
+	display: block;
+}
+ 
+/* 
+Setting the offset of the sub-SUB lists,
+which we want to pop out to the right instead
+of directly below its "parent" <li> 
+*/
+.dropdown ul ul {
+	top: 0px;
+	
+	/* 100% of the WIDTH of the first positioned parent  	
+	(effectively, pushed directly to the right it) */
+	left: 100%;
+}
+ 
+.dropdown a {
+	display: block; /* so we can use padding */
+	padding: 10px;
+	background-color: #eeeeee;
+}
+.dropdown a:hover {
+	background-color: #ffffff;
+}
+.dropdown a:active {
+	background-color: #444444;
+	color: #ffffff;
+}
+ 
+/*
+Using "transition" to tell the browser to animate properties
+of an element when they change.
+Note that we use vendor-specific prefixes for this property,
+because it is not actually standardly supported yet. :(
+
+see http://dochub.io/#css/transition AND 
+http://net.tutsplus.com/tutorials/html-css-techniques/css-fundametals-css-3-transitions/
+*/
+.dropdown ul a {
+	-webkit-transition: padding .5s ease;
+	-moz-transition: padding .5s ease;
+	transition: padding .5s ease;
+}
+.dropdown ul a:hover {
+	padding-left: 50px;
+}
+ 

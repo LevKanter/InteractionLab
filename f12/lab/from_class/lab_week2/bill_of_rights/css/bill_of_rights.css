@@ -1,0 +1,56 @@
+/*
+The <article> element can be used as a general container
+for individual areas of content. We will be seeing more of
+these types of elements as we begin controlling layout
+and our HTML structures get more complex.
+
+The <article> is a "block level" element by default, which means
+you can affect its layout by applying margins, padding, and borders
+to it. We've already come across other "block level" elements as well,
+such as <h1>, <h2>, <h3>, <h4>, <h5>, <h6>, <p>, <ul>, <ol>.
+
+On the other hand, <a>, <img>, <cite>, and <em> tags are NOT
+"block level" by default, so margins and padding and borders
+will not behave the same way when applied to them.
+*/
+article {
+	/*margin-left: 400px;*/
+
+	/* we can use a width property to constrain
+	a "block" element to a certain width (in this example, 800 pixels) */
+	width: 800px;
+
+	/*
+	When a 'block' element has a width defined, setting its
+	left and right margin values to "auto" will cause it to be
+	horizontally centered within its parent element.
+	*/
+	margin-left: auto;
+	margin-right: auto;
+}
+
+p {
+	/*margin: 0px; (is shorthand for the following...) */
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 10px;
+	margin-left: 0px;
+	
+	/*padding: 0px 0px 50px 0px; (is shorthand for the following...) */
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 50px;
+	padding-left: 0px;
+	
+	/*border: 10px solid red; (is shorthand for the following...) */
+	border-width: 10px;
+	border-style: solid;
+	border-color: red;
+	
+	background-color: yellow;
+}
+
+p em {
+	/* capitalize the letters in all <em> elements that are inside of <p>s */
+	text-transform: uppercase;
+}

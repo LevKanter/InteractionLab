@@ -1,0 +1,106 @@
+
+/* some stuff to get you started */
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0px;
+	clear: both;
+	visibility: hidden;
+}
+
+/* [your css goes here] */
+
+/*da5288*/
+
+body {
+	font-family: Georgia, serif;
+	background-image: url('images/pattern.png');
+	background-repeat: repeat;
+}
+
+p {
+	line-height: 1.4;
+}
+
+h1 {
+	font-size: 36px;
+	font-weight: normal;
+}
+
+h2 {
+	font-size: 14px;
+}
+
+em {
+	font-style: normal;
+	font-weight: bold;
+}
+
+article {
+	margin: 15px auto;
+	padding: 20px;
+	background-color: #fff;
+	width: 760px;
+}
+
+.main {
+	float: left;
+	width: 500px;
+}
+
+
+
+.main .header {
+	padding: 20px 0;
+	border-top: 2px solid #da5288;
+	border-bottom: 2px solid #da5288;
+	text-align: center;
+}
+
+.main p {
+	font-size: 21px;
+}
+
+.sidebar {
+	float: right;
+	width: 205px;
+}
+
+.sidebar p {
+	font-size: 14px;
+	margin-bottom: 1em;
+}
+
+
+ul.list {
+	display: none;
+}
+
+ul.list.active {
+	display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
