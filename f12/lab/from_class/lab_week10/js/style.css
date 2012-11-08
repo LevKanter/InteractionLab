@@ -1,0 +1,10 @@
+.click-me {
+	text-decoration: none;
+	display: block;
+	padding: 20px;
+	background-color: #ccc;
+}
+.click-me:hover {
+	background-color: #000;
+	color: #fff;
+}

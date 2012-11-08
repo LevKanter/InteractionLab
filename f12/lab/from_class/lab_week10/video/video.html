@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Lab: Video</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+
+		<!--
+		The <video> element.
+		See http://html5doctor.com/the-video-element/
+		for more-in-depth info, especially the various
+		attributes available on the video tag ("controls", "autoplay", etc)
+		-->
+		<!--<video controls autoplay>-->
+		<video controls>
+			<!-- video source files via http://videojs.com/ -->
+			
+			<!-- 
+			We provide multiple different encodings of our video,
+			because not every browser can play the same video formats.
+			
+			Browsers will use the first source file that it supports.
+			There is no single format that just works across the board.
+			The common web-video-encodings are mp4, webm, and ogg (sometimes
+			ogg is referred to as Theora).
+			Tools like Miro (http://www.mirovideoconverter.com/) can be used
+			to convert one video to various other encodings.
+			-->
+			<source src="http://video-js.zencoder.com/oceans-clip.mp4">
+			<!--<source src="http://video-js.zencoder.com/oceans-clip.webm">
+			<source src="http://video-js.zencoder.com/oceans-clip.ogg">-->
+			
+			<!--
+			We can nest regular HTML elements inside the <video>,
+			but they will only be rendered by browsers that don't recognize/support
+			<video>. This allows us to apply fallback content for people.
+			-->
+			<p>If you see this text, your browser or device doesn't support HTML video</p>
+		</video>
+			
+	</body>
+</html>
