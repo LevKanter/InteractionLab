@@ -4,13 +4,29 @@
 		<meta charset="utf-8">
 		<title>Lab: Introducing Javascript with jQuery</title>
 		<link rel="stylesheet" href="style.css">
+
 		<!--<script src="intro.js"></script>-->
 		
-		<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js'></script>
 		
-		<script src='jquery_intro.js'></script>
 	</head>
 	<body>
-		<a href='' class='click-me'>Click on me</a>
+		<a href='#' class='click-me'>Click me!</a>
+
+		<article class='main-text'>
+			<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+		</article>
+
+		<!--
+		The <script> tag is used here to link in a JAVASCRIPT file.
+		This is linking to a version of the jQuery javascipt library that is hosted on a google server.
+		A <script> tag can go anywhere in an HTML file (either <head> or <body>), butwe have to load this in before we can use functions that jQuery provides.
+		-->
+		<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js'></script>
+		
+		<!--
+		Now that we have included jQuery, 
+		let's also load in our own javascript.
+		-->
+		<script src='jquery_intro.js'></script>
 	</body>
 </html>

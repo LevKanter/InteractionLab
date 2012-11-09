@@ -1,10 +1,22 @@
+body {
+	font-family: Georgia, serif;
+}
+
 .click-me {
 	text-decoration: none;
 	display: block;
 	padding: 20px;
-	background-color: #ccc;
+	background-color: #eeeeee;
+	color: #00aacc;
+	font-size: 21px;
+	font-style: italic;
 }
 .click-me:hover {
-	background-color: #000;
-	color: #fff;
+	background-color: #000000;
+	color: #ffffff;
+}
+
+.main-text {
+	display: none;
+	width: 50%;
 }

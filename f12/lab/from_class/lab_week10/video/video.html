@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Lab: Video</title>
-		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="video_style.css">
 	</head>
 	<body>
 
@@ -15,7 +15,7 @@
 		-->
 		<!--<video controls autoplay>-->
 		<video controls>
-			<!-- video source files via http://videojs.com/ -->
+			<!-- Sample video source files via http://videojs.com/ -->
 			
 			<!-- 
 			We provide multiple different encodings of our video,
@@ -29,13 +29,12 @@
 			to convert one video to various other encodings.
 			-->
 			<source src="http://video-js.zencoder.com/oceans-clip.mp4">
-			<!--<source src="http://video-js.zencoder.com/oceans-clip.webm">
-			<source src="http://video-js.zencoder.com/oceans-clip.ogg">-->
+			<source src="http://video-js.zencoder.com/oceans-clip.webm">
+			<source src="http://video-js.zencoder.com/oceans-clip.ogg">
 			
 			<!--
 			We can nest regular HTML elements inside the <video>,
-			but they will only be rendered by browsers that don't recognize/support
-			<video>. This allows us to apply fallback content for people.
+			but they will only be rendered by browsers that don't recognize/support <video>. This allows us to apply fallback content for people.
 			-->
 			<p>If you see this text, your browser or device doesn't support HTML video</p>
 		</video>

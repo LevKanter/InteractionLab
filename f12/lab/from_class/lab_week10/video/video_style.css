@@ -1,0 +1,25 @@
+/**
+ * Video!
+ */
+
+body {
+	background-color: #f1f1e9;
+}
+
+video {
+	/* 
+	Like <img>s, <video> elements are display: inline; by default
+	We can make it a block to allow it to have margins and stuff:
+	*/
+	display: block;
+	
+	width: 640px;
+	height: 264px;
+	
+	margin: 0px auto;
+	padding: 15px;
+	border: 1px solid #000000;
+	border-radius: 8px; /* border-radius allows to make rounded corners */
+	background-color: #ffffff;
+	box-shadow: 0px 0px 12px rgba(0, 0, 0, .6); /* drop shadow */
+}
