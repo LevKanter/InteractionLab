@@ -1,0 +1,44 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Georgia, serif;
+}
+
+.demo {
+	position: relative;
+	margin: 20px;
+	outline: 1px solid red;
+}
+
+.button {
+	text-decoration: none;
+	display: block;
+	padding: 20px;
+	background-color: #eeeeee;
+	color: #00aacc;
+	font-size: 21px;
+	font-style: italic;
+	float: left;
+}
+.button:hover {
+	background-color: #000000;
+	color: #ffffff;
+}
+
+.demo-thing {
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	position: absolute;
+	top: 100px;
+	left: 0px;
+	-webkit-transition: all 500ms ease-in-out;
+}
+.demo-thing.activated {
+	left: 100%;
+	margin-left: -100px;
+	background-color: black;
+}
