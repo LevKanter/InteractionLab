@@ -21,6 +21,36 @@
 					<div id="assignments-material" class="panel">
 
 						<article>
+							<h2>Week 11</h2>
+							<div class="tier">
+								<div class="column x7">
+
+									<h3>Assignment</h3>
+
+									<p>In the <a href="from_class/lab_week10.zip">files from class</a>, the example I called <em>navigation</em> (containing just a navigation.html file) is just what we got started in class, and not at all complete. We will use it in class on Tuesday and, using both CSS and Javascript, end up making it into an image slideshow.</p>
+
+									<p>This week, please begin by making a copy of the <em>navigation.html</em> file. Find at least 5 images that you will eventually use for your slideshow. The images can be whatever you want, but they should be prepared for web usage (i.e. RGB color, 72dpi, not ridiculously large, probably JPEG or PNG, etc). In your <em>navigation.html</em>, begin by replacing all the placeholder contents of each <code>&lt;section&gt;</code> element with one of your images, so that you end up with one image per <code>&lt;section&gt;</code>. Eventually the links in the <em>table of contents</em> <code>.toc</code> list will be used to navigate through your slideshow, by showing one <code>&lt;section&gt;</code> at a time (and hiding all the rest).</p>
+
+									<p>Create a new stylesheet and link it to your <em>navigation.html</em>. Provide CSS that hides all the <code>&lt;section&gt;</code> elements (i.e. using <code>display: none;</code>). Then, also provide a way to show any <code>&lt;section&gt;</code> that also has a given class (like we did with the <code>.demo-thing</code> in our addClass example). Without worrying yet about Javascript or jQuery, you can manually put that class on the first <code>&lt;section&gt;</code> element in your page. You should end up seeing just one of your images, with all the other ones hidden. Also take some time to visually style your page&mdash; color, typography, layout, and everything. Think about how you will want it to look once it becomes a functioning slideshow, where you want the navigation links to be in relation to the slideshow content, etc!</p>
+
+									<p>Create a new javascript file and include it in your <em>navigation.html</em> as well (make sure to include <em>after</em> the <code>&lt;script&gt;</code> tag that loads jQuery). Setup a function to be automatically executed once the <code>documemnt</code> is <em>ready</em> (confirm that this function is properly executed by having it log a message, such as "document is ready" to the <code>console</code>).</p>
+
+									<p>That's as far you need to get this week. In addition to posting a link to this assignment on your class website, please bring your files to class on Tuesday&mdash; we will be using them.</p>
+
+									<p>If you want to keep going, the next step will be to use jQuery to find all the <code>&lt;a&gt;</code> elements in the <code>.toc</code> list. Associate a click event handler with those elements. The click event handler will be responsible for figuring out which <code>&lt;section&gt;</code> corresponds to the element that was clicked on (<em>hint, use jQuery's <a href="http://api.jquery.com/attr/" target="_blank">attr function</a> to read the href attribute of the element that was clicked on</em>), and subsequently adding the class to it that causes it to become visible. The click event handler will also need to remove that class from any of the other sections.</p> 
+									
+								</div>
+								<div class="column-r x4">
+									<h3>Files, Links, etc</h3>
+									<ul class="stack">
+										<li><a href="from_class/lab_week11.zip">Files from class</a></li>
+										<li><a href="http://www.chromeexperiments.com/" target="_blank">Chrome Experiments (mentioned briefly in class, not relevent to jQuery, explore this for fun!)</a></li>
+									</ul>
+								</div>
+							</div>
+						</article>
+
+						<article>
 							<h2>Week 10</h2>
 							<div class="tier">
 								<div class="column x7">

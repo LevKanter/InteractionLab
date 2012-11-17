@@ -10,7 +10,6 @@ body {
 .demo {
 	position: relative;
 	margin: 20px;
-	outline: 1px solid red;
 }
 
 .button {
@@ -35,10 +34,30 @@ body {
 	position: absolute;
 	top: 100px;
 	left: 0px;
+
+	 /*
+	 Using "transition" to tell the browser to animate properties
+	 of an element when they change.
+	 Note that we use vendor-specific prefixes for this property,
+	 because it is not actually standardly supported yet. :(
+	 
+	 see http://dochub.io/#css/transition AND 
+	 http://net.tutsplus.com/tutorials/html-css-techniques/css-fundametals-css-3-transitions/
+	 */
 	-webkit-transition: all 500ms ease-in-out;
+	-moz-transition: all 500ms ease-in-out;
+	transition: all 500ms ease-in-out;
 }
+/* Modify the properties of .demo-thing
+when the class 'activated' is also present */
 .demo-thing.activated {
-	left: 100%;
-	margin-left: -100px;
 	background-color: black;
+	left: 100%;
+	/* After moving the element left by 100%,
+	we want to pull it back over to the left by its width
+	so that it's right edge is at the 100% point.
+	We can use a negative margin to achieve this. */
+	margin-left: -100px;
+	color: white;
 }
+
