@@ -1,0 +1,30 @@
+	
+	.toc {
+		float: left;
+		margin-right: 20px;
+		list-style: none;
+		position: fixed;
+		top: 30px;
+		left: 30px;
+	}
+	
+	.toc a.active {
+		background-color: black;
+		color: white;
+	}
+	
+	.content {
+		width: 500px;
+		margin-left: 200px;
+	}
+	.content img {
+		max-width: 100%;
+	}
+	
+	section {
+		display: none;
+	}
+	
+	.active {
+		display: block;
+	}
