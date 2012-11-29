@@ -1,3 +1,7 @@
+body {
+	font-family: Helvetica, Arial, sans-serif;
+}
+
 .toc {
 	list-style: none;
 	/* 'fixed' positioning! */
@@ -28,5 +32,31 @@ section {
 	display: none;
 }
 section.active {
-	display: block;
+	/*display: block;*/
 }
+
+.next-button {
+	position: fixed;
+	top: 30px;
+	left: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
