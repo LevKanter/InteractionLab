@@ -1,13 +1,21 @@
+// declaring mylinks variable up here
+// so that it can be later referred to
+// from within any of our functions.
+// Variables are not accessible outside of
+// a function they are declared in.
+// Notice we haven't assigned mylinks yet.
+// We will set it to be equal to something
+// later in this code.
 var mylinks;
 
 function activateSection(linkToActivate) {
 	var previousLink = $('.toc a.active');
 	previousLink.removeClass('active');
 
-	$('.content section.active').removeClass('active').slideUp();
+	var previousSection = $('.content section.active');
+	previousSection.removeClass('active');
 
 	linkToActivate.addClass('active');
-
 	var currentHref = linkToActivate.attr('href');
 	//console.log(currentHref);
 
@@ -15,7 +23,6 @@ function activateSection(linkToActivate) {
 
 	if (correspondingSection.length == 1) {
 		correspondingSection.addClass('active');
-		correspondingSection.slideDown();
 	} else {
 		console.log('Cannot find section corresponding to this link!');
 	}
@@ -23,12 +30,14 @@ function activateSection(linkToActivate) {
 
 function linkClickHandler(event) {
 	event.preventDefault();
+
 	var currentLink = $(this);
 	activateSection(currentLink);
 }
 
 function nextClickHandler(event) {
 	event.preventDefault();
+
 	var currentActive = $('.toc a.active');
 	var currentParent = currentActive.parent();
 	var nextParent = currentParent.next();
@@ -43,15 +52,17 @@ function nextClickHandler(event) {
 function activateFirstLink() {
 	var firstLink = mylinks.first();
 	//var firstLink = mylinks.eq(0);
-	//firstLink.trigger('click');
-		
+
+	//firstLink.trigger('click');	
 	activateSection(firstLink);
-		
+	
+	// If we wanted the last one instead of the first...
 	//var lastLink = myLinks.last();
 	//var lastLink = myLinks.eq(myLinks.length - 1);
 }
 
-
+// passing $() a function is a shortcut for
+// jQuery(document).on('ready', function() {...});
 $(function() {
 	console.log('doc is ready');
 	
@@ -59,47 +70,13 @@ $(function() {
 	mylinks = jQuery(mylinksSelector);
 	
 	if (mylinks.length > 0) {
-		
 		mylinks.on('click', linkClickHandler);
 		
-		activateFirstLink();
-		
 		var nextButton = $('.next-button');
+		// .click() function shorthand for
 		//nextButton.on('click', nextClickHandler);
 		nextButton.click(nextClickHandler);
-		
-		var input = $('input');
-		console.log(input.attr('value'));
-		
-		input.on('keypress', function(event) {
-			var currentInput = $(this);
-			var val = currentInput.attr('value');
-			console.log(typeof val);
-			
-			var paragraph = $('<p>'+ val +'</p>');
-			$('body').prepend(paragraph);
-		});
-		
+
+		activateFirstLink();
 	}
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -32,7 +32,7 @@ section {
 	display: none;
 }
 section.active {
-	/*display: block;*/
+	display: block;
 }
 
 .next-button {
