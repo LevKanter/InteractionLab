@@ -40,7 +40,8 @@ section.active {
 	display: block;
 }
 
-.next-button {
+.next-button,
+.prev-button {
 	float: left;	
 }
 

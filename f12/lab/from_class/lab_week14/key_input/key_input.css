@@ -1,0 +1,55 @@
+.wrapper {
+	margin: 30px auto;
+	padding: 20px;
+	background-color: #eeeeee;
+	border: 1px solid #cccccc;
+	border-radius: 6px;
+	box-shadow: 0px 0px 12px rgba(0, 0, 0, .1);
+}
+
+h1 {
+	margin: 0px 0px 20px;
+	padding: 0px;
+	font-family: Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 48px;
+}
+
+input[type=text] {
+	padding: 15px;
+	font-size: 20px;
+	border: 1px solid #999999;
+	outline: none;
+	box-shadow: inset 1px 1px 5px rgba(0, 0, 0, .2);
+}
+
+input[type=text].placeholder-state {
+	color: #ccc;
+	opacity: .8;
+}
+
+input[type="text"]:focus {
+	background-color: #faffbd;
+	border-color: #000000;
+}
+
+#displaybox {
+	font-size: 24px;
+}
+
+.keycode {
+	color: #cc0000;
+}
+
+q {
+	quotes: none;
+	color: #00aacc;
+}
+
+q:before {
+	content: '\201C';
+}
+
+q:after {
+	content: '\201D';
+}

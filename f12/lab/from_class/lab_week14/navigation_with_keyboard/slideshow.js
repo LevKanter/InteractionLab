@@ -1,6 +1,6 @@
 
 var RIGHT_ARROW_KEY = 39;
-
+var LEFT_ARROW_KEY = 37;
 
 // declaring mylinks variable up here
 // so that it can be later referred to
@@ -44,6 +44,11 @@ function nextClickHandler(event) {
 	next();
 }
 
+function prevClickHandler(event) {
+	event.preventDefault();
+	prev();
+}
+
 function next() {
 	var currentActive = $('.toc a.active');
 	var currentParent = currentActive.parent();
@@ -53,6 +58,18 @@ function next() {
 	} else {
 		var nextParentsChild = nextParent.find('a');
 		activateSection(nextParentsChild);
+	}
+}
+
+function prev() {
+	var currentActive = $('.toc a.active');
+	var currentParent = currentActive.parent();
+	var prevParent = currentParent.prev();
+	if (prevParent.length < 1) {
+		activateSection(mylinks.last()); 
+	} else {
+		var prevParentsChild = prevParent.find('a');
+		activateSection(prevParentsChild);
 	}
 }
 
@@ -84,24 +101,23 @@ $(function() {
 		//nextButton.on('click', nextClickHandler);
 		nextButton.click(nextClickHandler);
 
+		var prevButton = $('.prev-button');
+		prevButton.click(prevClickHandler);
+
 		activateFirstLink();
 	}
 	
+	// Because the keydown event 'bubbles' up through the hierarchy of elements
+	// in the html document, we can actually listen for it on the jQuery object
+	// representing the entire document (i.e. $(document)).
 	var keyInputReceiver = $(document);
 	keyInputReceiver.on('keydown', function(event) {
-		event.preventDefault();
 		if (event.which == RIGHT_ARROW_KEY) {
 			next();
+		} else if (event.which == LEFT_ARROW_KEY) {
+			prev();
 		}
 	});
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 });
