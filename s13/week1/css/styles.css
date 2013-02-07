@@ -1,0 +1,20 @@
+body {
+	background-color: black;
+}
+
+h1 {
+	font-size: 72px;
+	font-weight: normal;
+	/*color: red;*/
+	color: yellow;
+}
+
+h2 {
+	color: yellow;
+}
+
+p {
+	font-size: 18px;
+	font-family: Helvetica;
+	color: white;
+}
