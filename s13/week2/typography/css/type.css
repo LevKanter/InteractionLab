@@ -1,6 +1,29 @@
+@font-face {
+	font-family: "Fette";
+	src: url("../fonts/fette.otf");
+}
+
+body {
+	/*font-family: "Fette";*/
+	font-family: "Jacques Francois Shadow";
+	/*font-family: "Fette Fraktur LT Std", Palatinod, serif;*/
+	/*font-family: Helvetica, Arial, sans-serif;*/
+	background-color: #333333;
+	color: #cccccc;
+}
+
+h1 {
+	color: inherit;
+}
+
 p {
-	font-family: "Fette Fraktur LT Std", serif;
-	
 	font-size: 36px;
-	width: 800px;
+	/*color: rgb(0, 255, 0);*/
+	/*font-style: italic;*/
+	line-height: 130%;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
 }
