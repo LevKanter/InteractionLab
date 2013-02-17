@@ -1,0 +1,101 @@
+body {
+	font-size: 18px;
+	background-color: #cccccc;
+	padding: 100px;
+}
+
+h1,
+h2 {
+	font-weight: normal;
+}
+
+h1 {
+	background-color: black;
+	color: white;
+	display: inline;
+}
+
+p {
+	font-family: Georgia, serif;
+	line-height: 160%;
+	/*color: #ff0000;*/
+}
+
+
+li {
+	list-style-position: inside;
+	list-style-type: lower-roman;
+	font-size: 72px;
+	color: orange;
+}
+
+li p {
+	font-size: 18px;
+	color: white;
+	background-color: black;
+
+	/*border-width: 12px;
+	border-style: solid;
+	border-color: orange;*/
+
+	border: 2px solid orange;
+	margin: 10px;
+	padding: 10px;
+
+
+	/*margin: 50px; /* all sides */
+
+	/*padding: 100px 50px 10px 25px;*/
+
+}
+
+strong {
+	display: block;
+	background-color: pink;
+	text-transform: uppercase;
+	/*width: 900px;*/
+}
+
+article {
+	background-color: #fff;
+
+	/*margin-left: 100px;
+	margin-right: 100px;*/
+	/*margin: 0 100px;*/
+
+	width: 700px;
+	padding: 20px;
+	margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
