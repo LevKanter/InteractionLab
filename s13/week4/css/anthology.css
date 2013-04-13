@@ -1,0 +1,133 @@
+
+* {
+	margin: 0px;
+	padding: 0px;	
+}
+
+body {
+	background-color: #333333;
+	color: #aaaaaa;
+	padding: 15px;
+
+}
+
+article {
+	margin: 0px auto 50px;
+	width: 800px;
+	/*height: 100px;*/
+	/*overflow: scroll;*/
+	/*background-color: gray;*/
+}
+
+h1 {
+	color: #eeeeee;
+	font-weight: normal;
+	font-size: 36px;
+	font-family: inherit;
+}
+
+h1 div {
+	display: inline;
+	font-style: italic;
+	color: orange;
+}
+
+h2 {
+	font-weight: normal;
+	background-color: black;
+	color: white;
+}
+
+p {
+	
+}
+
+ol {
+	list-style-type: none;
+}
+
+li {
+}
+
+q {
+	quotes: none;
+	/*display: block;*/
+	/*background-color: yellow;*/
+	/*color: red;*/
+}
+
+q span {
+	/*font-size: 72px;*/
+	color: red;
+}
+
+article.short-story {
+	/*border: 2px solid orange;*/
+}
+
+.short-story {
+	/*border: 3px dashed red;*/
+}
+
+.short-story .story-header {
+	width: 300px;
+	float: left;
+}
+
+.short-story .story-main {
+	width: 400px;
+	float: right;
+}
+
+
+div.short-story {
+
+}
+
+.by-murakami {
+	/*font-size: 42px;*/
+}
+
+
+.poem {
+	background-color: transparent;
+}
+
+.drop-cap {
+	display: block;
+	float: left;
+
+	background-color: red;
+
+	margin: 0px 20px 20px 0px;
+
+
+	background-image: url('../images/S.png');
+	background-repeat: no-repeat;
+	width: 86px;
+	height: 89px;
+	/*outline: 1px solid green;*/
+	text-indent: 100%;
+	overflow: hidden;
+
+
+
+}
+
+.drop-cap span {
+	display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

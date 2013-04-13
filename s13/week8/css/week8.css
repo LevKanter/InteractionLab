@@ -1,0 +1,126 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    height: 0px;
+    visibility: hidden;
+}
+
+body {
+    padding: 20px;
+    font-family: Georgia, serif;
+}
+
+h1 {
+    margin-bottom: 10px;
+    font-weight: normal;
+    font-size: 36px;
+}
+
+nav {
+    /*height: 51px;*/
+    background-color: #00aacc;
+    /*border: 5px dotted orange;*/
+
+    -webkit-transition: box-shadow .5s ease-in-out;
+    -moz-transition: box-shadow .5s ease-in-out;
+    transition: box-shadow .5s ease-in-out;
+
+    box-shadow: 4px 5px 7px rgba(0, 0, 0, .5);
+}
+
+nav:hover {
+    /*padding-top: 300px;*/
+    box-shadow: 4px 5px 5px rgba(0, 0, 0, .7);
+}
+
+nav li {
+    /*list-style-position: inside;*/
+    list-style-type: none;
+    display: block;
+    float: left;
+    font-size: 18px;
+    font-style: italic;
+    margin: 0 1px;
+}
+
+nav li a {
+    display: block;
+    /*width: 100px;*/
+    background-color: #666666;
+    padding: 5px 40px 25px 5px;
+    text-decoration: none;
+    /*text-align: center;*/
+    color: #cccccc;
+
+    /*border-radius: 5px;*/
+
+
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+
+    /*-webkit-transform: rotate(60deg);*/
+    -webkit-transform: scale(1);
+
+}
+
+nav:hover a {
+    opacity: .5;
+}
+
+nav:hover a:hover {
+    opacity: 1;
+}
+
+nav li a:hover {
+    /*width: 200px;*/
+    padding: 5px 59px 77px 5px;
+    margin-top: 200px;
+    background-color: #333333;
+    color: white;
+    /*-webkit-transform: rotate(350deg);*/
+    -webkit-transform: scale(2);
+}
+nav li a:active {
+    background-color: #000000;
+    color: orange;
+}
+
+div.main {
+    margin-top: 25px;
+    /*clear: both;*/
+}
+
+.fixer {
+    clear: both;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,48 @@
+
+/* some stuff to get you started */
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0px;
+	clear: both;
+	visibility: hidden;
+}
+
+/* Notes:
+    
+    - The font being used everywhere is Georgia
+    - The main text on the left ("Where we juxtapose news...")
+      has a line-height of 1.4
+
+*/
+
+/* [your css goes here] */
+
+body {
+    font-family: Georgia, serif;
+    background-image: url('images/pattern.png');
+}
+
+article {
+    background-color: white;
+    width: 760px;
+    padding: 20px;
+    margin: 10px auto;
+}
+
+.main {
+    width: 500px;
+    float: left;
+}
+
+.secondary {
+    width: 205px;
+    float: right;
+}
+

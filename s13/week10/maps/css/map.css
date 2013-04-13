@@ -1,0 +1,63 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    height: 0px;
+    visibility: hidden;
+}
+
+body {
+    padding: 30px;
+}
+
+img {
+    display: block;
+}
+
+.map-holder {
+    position: relative;
+}
+
+.map {
+    position: absolute;
+    /*margin-top: 100px;*/
+}
+
+.flag {
+    position: absolute;
+}
+
+.austria {
+    /*z-index: 2;*/
+    top: 509px;
+    left: 469px;
+}
+
+.france {
+    /*z-index: 3;*/
+    top: 509px;
+    left: 300px;
+}
+
+p {
+    margin: 20px 0;
+}
+
+p.special {
+    position: relative;
+    top: 20px;
+    left: 30px;
+}
+
+
+
+
+
+
+
+

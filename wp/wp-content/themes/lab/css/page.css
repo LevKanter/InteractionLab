@@ -297,29 +297,39 @@ p.download a:hover {
 	padding: 0px;
 }
 
-.stack {
+.stack,
+.prime .stack {
 	padding: 10px 0px 0px;
 }
-.stack > li {
+.stack > li,
+.prime .stack > li {
 	margin: 10px 0px 0px;
 	padding: 10px;
 	overflow: hidden;
 	border: 1px solid #efefef;
 }
-.stack > li:first-child {
+.stack > li:first-child,
+.prime .stack > li:first-child {
 	margin-top: 0px;
+	padding-top: 10px;
 }
-.stack img.icon {
+.stack img.icon,
+.prime .stack img.icon {
 	display: block;
 	float: left;
 	margin: 0px 10px 0px 0px;
 	width: 50px;
 }
-.stack .info {
+.stack .info,
+.prime .stack .info {
 	overflow: hidden;
 }
-.stack .info .note {
+.stack .info .note,
+.prime .stack .info .note {
 	font-size: 12px;
+}
+.prime .stack h3 {
+	padding: 0;
 }
 
 .content table {

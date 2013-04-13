@@ -1,0 +1,72 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	padding: 20px;
+	font-family: Georgia, serif;
+	font-size: 21px;
+}
+
+article {
+	/*padding: 15px;
+	border: 1px solid red;*/
+	/*width: 100%;*/
+	background-color: #d0e9f5;
+	/*border: 1px solid red;*/
+	margin-bottom: 60px;
+	width: 600px;
+	/*float: left;*/
+	margin: 20px auto;
+	/*height: 359px;*/
+}
+
+article footer {
+	clear: both;
+}
+
+p {
+
+}
+
+.side {
+	float: left;
+	width: 100px;
+}
+
+.main {
+	float: right;
+	width: 450px;
+}
+
+.clear {
+	clear: both;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
