@@ -1,0 +1,18 @@
+h1.crazy {
+    background-color: red;
+    font-size: 72px;
+}
+
+h1.cool {
+    background-color: yellow;
+    font-size: 18;
+    font-style: italic;
+}
+
+p {
+    display: none;
+}
+
+p.uncool {
+    background-color: #aa00cc;
+}

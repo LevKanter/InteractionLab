@@ -1,0 +1,51 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.clearfix:after {
+    content: '.';
+    display: block;
+    clear: both;
+    height: 0px;
+    visibility: hidden;
+}
+
+body {
+    background-color: #eeeeee;
+    padding: 10px;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+nav {
+    /*float: left;*/
+    width: 300px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+
+nav a {
+    display: block;
+    background-color: white;
+    margin-bottom: 1px;
+}
+nav a.active {
+    background-color: orange;
+    color: white;
+}
+
+.panel-holder {
+    /*float: left;*/
+    margin-left: 320px;
+    width: 500px;
+}
+
+.panel {
+    margin-bottom: 300px;
+    display: none;
+}

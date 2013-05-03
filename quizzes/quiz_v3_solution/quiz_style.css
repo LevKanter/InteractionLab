@@ -14,7 +14,13 @@
 	visibility: hidden;
 }
 
-/* [your css goes here] */
+/* Notes:
+    
+    - The font being used everywhere is Georgia
+    - The main text on the left ("Where we juxtapose news...")
+      has a line-height of 1.4
+
+*/
 
 body {
 	background-image: url('images/pattern.png');

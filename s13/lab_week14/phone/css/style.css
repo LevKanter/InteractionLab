@@ -1,0 +1,89 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.clearfix:after {
+    content: '.';
+    display: block;
+    clear: both;
+    height: 0px;
+    visibility: hidden;
+}
+
+body {
+    background-color: #eeeeee;
+    padding: 10px;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+.phone {
+    width: 389px;
+    height: 719px;
+    margin: auto;
+    background-image: url("../images/iphone_black.png");
+    position: relative;
+}
+
+.phone > .display {
+    width: 320px;
+    height: 480px;
+    position: absolute;
+    top: 120px;
+    left: 36px;
+}
+
+.phone .page-holder {
+    height: 416px; /* 480 - 64 */
+    overflow-y: auto;
+    position: relative;
+}
+
+.phone .page-nav li {
+    float: left;
+}
+.phone .page-nav li a {
+    display: block;
+    width: 64px;
+    height: 64px;
+    outline: 1px solid #999999;
+}
+.phone .page-nav li a.active {
+    background-color: #aaaaaa;
+}
+
+.phone .page {
+    display: none;
+}
+.phone .page.active {
+    display: block;
+}
+
+.phone .page > header {
+    height: 69px;
+    border-bottom: 1px solid #cccccc;
+    text-align: center;
+    text-transform: uppercase;
+}
+.phone .page > header h2 {
+    margin: 10px 0px 0px;
+}
+
+.phone .page-content {
+    position: relative;
+    padding: 10px;
+}
+
+.phone .page .keyboard {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 320px;
+    height: 260px;
+    background-image: url('../images/keyboard.png');
+}
+
